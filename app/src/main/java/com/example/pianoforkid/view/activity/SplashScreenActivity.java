@@ -2,10 +2,12 @@ package com.example.pianoforkid.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pianoforkid.R;
+import com.example.pianoforkid.data.key.KeyNote;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.Sound;
 import com.example.pianoforkid.viewmodel.SongViewModel;
@@ -23,6 +25,15 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         song = new ArrayList<>();
+        final KeyNote keyNote = new KeyNote(getApplication());
+        keyNote.playNote(1);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                keyNote.playNote(2);
+            }
+        }, 500);
+
     }
     void reset() {
         song = new ArrayList<>();
