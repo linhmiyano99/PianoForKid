@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PianoForKid</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="text_title">Let\'s play music</string>
+    <string name="todo">TODO</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="list_song">List song</string>
+    <string name="instruction">Instruction</string>
+    <string name="instrument">Instrument</string>
 </resources>

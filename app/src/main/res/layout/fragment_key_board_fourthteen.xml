@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    tools:context=".view.fragment.KeyBoardFourthteenFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/imageButton18"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/margin_kb_seven"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_c"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton5"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_d"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton6"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton18" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_e"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton7"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton5" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_f"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton8"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_g"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton9"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton7" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_a"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton10"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton8" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_b"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton11"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton9" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_c"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton12"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton10" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_d"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton13"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton11" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_e"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton14"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton12" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_f"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton15"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton13" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_g"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton16"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton16"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton14" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_a"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        style="@style/image_button_style"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="@dimen/margin_kb_seven"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/kb_b"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton16" />
+</androidx.constraintlayout.widget.ConstraintLayout>

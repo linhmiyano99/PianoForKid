@@ -1,10 +1,36 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="button_style">
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    <style name="smallbutton_style">
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="text_button">
+        <item name="android:textColor">#FFFCFC</item>
+        <item name="android:fontFamily">@font/rammetto_one</item>
+        <item name="android:padding">@dimen/padding_title</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="image_button_style">
+        <item name="android:background">@null</item>
+        <item name="android:baselineAlignBottom">true</item>
+        <item name="android:contentDescription">@string/todo</item>
+        <item name="android:scaleType">fitXY</item>
     </style>
 
 </resources>

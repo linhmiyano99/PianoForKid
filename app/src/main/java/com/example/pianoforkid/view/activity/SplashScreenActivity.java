@@ -1,7 +1,12 @@
 package com.example.pianoforkid.view.activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,16 +19,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SplashScreenActivity extends AppCompatActivity {
-
+    public static int SPLASH_TIME_OUT =1000;
     List<Sound> song;
     SongViewModel viewModel;
     int songId = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_splash_screen);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashScreenActivity.this, MainMenuActivity.class));
+                finish();
+            }
+        },SPLASH_TIME_OUT);
         song = new ArrayList<>();
     }
+
+
     void reset() {
         song = new ArrayList<>();
     }
