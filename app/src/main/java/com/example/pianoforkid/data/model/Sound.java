@@ -1,6 +1,5 @@
 package com.example.pianoforkid.data.model;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -8,7 +7,6 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "sound_table")
 public class Sound {
     @PrimaryKey(autoGenerate = true)
-    @NonNull
     @ColumnInfo(name = "soundId")
     public int soundId;
     public int songId;

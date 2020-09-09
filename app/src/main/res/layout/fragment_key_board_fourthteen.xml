@@ -5,177 +5,177 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@null"
-    tools:context=".view.fragment.KeyBoardFourthteenFragment">
+    tools:context=".view.fragment.KeyBoardFourteenFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageButton
-        android:id="@+id/imageButton18"
+        android:id="@+id/ibC1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginStart="@dimen/margin_kb_seven"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_c"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton5"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibD1"
+        app:layout_constraintEnd_toStartOf="@+id/ibD1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/ibD1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_d"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton6"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibE1"
+        app:layout_constraintEnd_toStartOf="@+id/ibE1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton18" />
+        app:layout_constraintStart_toEndOf="@+id/ibC1" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/ibE1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_e"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton7"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibF1"
+        app:layout_constraintEnd_toStartOf="@+id/ibF1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5" />
+        app:layout_constraintStart_toEndOf="@+id/ibD1" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/ibF1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_f"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibG1"
+        app:layout_constraintEnd_toStartOf="@+id/ibG1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6" />
+        app:layout_constraintStart_toEndOf="@+id/ibE1" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/ibG1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_g"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton9"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibA1"
+        app:layout_constraintEnd_toStartOf="@+id/ibA1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7" />
+        app:layout_constraintStart_toEndOf="@+id/ibF1" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/ibA1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_a"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton10"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibB1"
+        app:layout_constraintEnd_toStartOf="@+id/ibB1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8" />
+        app:layout_constraintStart_toEndOf="@+id/ibG1" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/ibB1"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_b"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton11"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton11"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibC2"
+        app:layout_constraintEnd_toStartOf="@+id/ibC2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9" />
+        app:layout_constraintStart_toEndOf="@+id/ibA1" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/ibC2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_c"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton12"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton12"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibD2"
+        app:layout_constraintEnd_toStartOf="@+id/ibD2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton10" />
+        app:layout_constraintStart_toEndOf="@+id/ibB1" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/ibD2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_d"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton13"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton13"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibE2"
+        app:layout_constraintEnd_toStartOf="@+id/ibE2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11" />
+        app:layout_constraintStart_toEndOf="@+id/ibC2" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/ibE2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_e"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton14"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibF2"
+        app:layout_constraintEnd_toStartOf="@+id/ibF2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12" />
+        app:layout_constraintStart_toEndOf="@+id/ibD2" />
 
     <ImageButton
-        android:id="@+id/imageButton14"
+        android:id="@+id/ibF2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_f"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton15"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton15"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibG2"
+        app:layout_constraintEnd_toStartOf="@+id/ibG2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13" />
+        app:layout_constraintStart_toEndOf="@+id/ibE2" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/ibG2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_g"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton16"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton16"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibA2"
+        app:layout_constraintEnd_toStartOf="@+id/ibA2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton14" />
+        app:layout_constraintStart_toEndOf="@+id/ibF2" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/ibA2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_a"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
+        app:layout_constraintEnd_toStartOf="@+id/ibB2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15"
+        app:layout_constraintStart_toEndOf="@+id/ibG2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton17"
+        android:id="@+id/ibB2"
         style="@style/image_button_style"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginEnd="@dimen/margin_kb_seven"
         android:contentDescription="@string/todo"
         android:src="@drawable/kb_b"
-        app:layout_constraintBaseline_toBaselineOf="@+id/imageButton16"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ibA2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton16" />
+        app:layout_constraintStart_toEndOf="@+id/ibA2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

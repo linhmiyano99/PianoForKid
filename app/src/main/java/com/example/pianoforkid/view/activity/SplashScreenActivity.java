@@ -3,8 +3,10 @@ package com.example.pianoforkid.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.model.Song;
@@ -23,12 +25,12 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                MainMenuActivity.startActivity(SplashScreenActivity.this);
-                finish();
-            }
+        Log.d("SplashScreenActivity", "onCreate");
+        viewModel = new ViewModelProvider(this).get(SongViewModel.class);
+
+        new Handler().postDelayed(() -> {
+            MainActivity.startActivity(SplashScreenActivity.this);
+            finish();
         },SPLASH_TIME_OUT);
         song = new ArrayList<>();
     }
