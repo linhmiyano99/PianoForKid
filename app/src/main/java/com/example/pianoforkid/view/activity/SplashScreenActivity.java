@@ -1,12 +1,8 @@
 package com.example.pianoforkid.view.activity;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,19 +22,16 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash_screen);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreenActivity.this, MainMenuActivity.class));
+                MainMenuActivity.startActivity(SplashScreenActivity.this);
                 finish();
             }
         },SPLASH_TIME_OUT);
         song = new ArrayList<>();
     }
-
-
     void reset() {
         song = new ArrayList<>();
     }

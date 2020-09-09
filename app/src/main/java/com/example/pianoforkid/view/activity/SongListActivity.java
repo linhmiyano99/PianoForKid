@@ -1,5 +1,7 @@
 package com.example.pianoforkid.view.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,6 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.pianoforkid.R;
 
 public class SongListActivity extends AppCompatActivity {
+
+    public static void startActivity(Context context){
+        Intent intent = new Intent(context, SongListActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

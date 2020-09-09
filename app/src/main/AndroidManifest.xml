@@ -13,7 +13,9 @@
 
         <activity
             android:name=".view.activity.MainMenuActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape">
+
+        </activity>
         <activity
             android:name=".view.activity.SplashScreenActivity"
             android:screenOrientation="landscape">

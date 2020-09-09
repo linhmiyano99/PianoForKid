@@ -1,14 +1,18 @@
 package com.example.pianoforkid.view.activity;
 
-import android.content.pm.ActivityInfo;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pianoforkid.R;
 
 public class MainMenuActivity extends AppCompatActivity {
+
+    public static void startActivity(Context context){
+        Intent intent = new Intent(context, MainMenuActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
