@@ -18,7 +18,7 @@
         android:src="@drawable/ic_back" />
     <ImageButton
         android:layout_marginStart="@dimen/margin_button"
-        android:id="@+id/button_record"
+        android:id="@+id/btnRecord"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_toEndOf="@id/button_back"
@@ -30,7 +30,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/margin_button"
-        android:layout_toEndOf="@id/button_record"
+        android:layout_toEndOf="@id/btnRecord"
         android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:scaleX="2"

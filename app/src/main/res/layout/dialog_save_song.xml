@@ -43,7 +43,7 @@
             android:inputType="text|number"
             android:autofillHints="@string/song_name"
             android:padding="5dp"
-            android:id="@+id/edit_dialog_save"
+            android:id="@+id/edt_dialog_save"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:textColor="#000"

@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp">
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_replay"
+            android:id="@+id/cardView_replay"
             android:elevation="10dp"
             android:layout_width="230dp"
             android:layout_height="50dp">
@@ -73,7 +73,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/image_replay"
+                    android:id="@+id/imageListen"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="2dp"
@@ -100,7 +100,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_cancel"
+            android:id="@+id/cardView_cancel"
             android:elevation="10dp"
             android:layout_marginTop="10dp"
             android:layout_width="230dp"
@@ -111,7 +111,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/image_cancel"
+                    android:id="@+id/imagePlay"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="2dp"

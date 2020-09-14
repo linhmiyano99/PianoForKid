@@ -17,7 +17,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/tvDetail"
                 android:text="@string/_1"
                 android:textSize="@dimen/num_text_size"
                 android:layout_marginStart="@dimen/margin_top_button"
