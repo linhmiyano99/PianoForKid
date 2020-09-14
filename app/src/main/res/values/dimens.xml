@@ -3,10 +3,12 @@
     <dimen name="margin_title">50dp</dimen>
     <dimen name="padding_title">10dp</dimen>
     <dimen name="padding_image">5dp</dimen>
-    <dimen name="title_textsize">36sp</dimen>
-    <dimen name="num_textsize">30sp</dimen>
-    <dimen name="textsize">25sp</dimen>
+    <dimen name="title_text_size">36sp</dimen>
+    <dimen name="num_text_size">30sp</dimen>
+    <dimen name="text_size">25sp</dimen>
     <dimen name="margin_kb_seven">16dp</dimen>
     <dimen name="margin_button">80dp</dimen>
     <dimen name="margin_top_button">20dp</dimen>
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="margin_star">10dp</dimen>
 </resources>

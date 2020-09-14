@@ -29,7 +29,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
 
         new Handler().postDelayed(() -> {
-            MainActivity.startActivity(SplashScreenActivity.this);
+            MainMenuActivity.startActivity(SplashScreenActivity.this);
             finish();
         },SPLASH_TIME_OUT);
         song = new ArrayList<>();

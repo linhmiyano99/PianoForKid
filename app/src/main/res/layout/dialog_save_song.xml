@@ -3,9 +3,68 @@
     android:scaleX="1"
     android:scaleY="1"
     android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="300dp"
     android:gravity="center"
     android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/image_dialog_user"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/todo"
+        android:padding="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_save_song" />
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:background="#FAF8F8"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#1EA0DA"
+            android:padding="10dp"
+            android:text="@string/song_name"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:hint="@string/song_name"
+            android:inputType="text|number"
+            android:autofillHints="@string/song_name"
+            android:padding="5dp"
+            android:id="@+id/edt_dialog_save"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:textColor="#000"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_save"
+            android:text="@string/Save"
+            style="@style/button_dialog" />
+
+        <Button
+            android:layout_marginStart="@dimen/margin_top_button"
+            android:id="@+id/button_cancel"
+            style="@style/button_dialog"
+            android:text="@string/cancel" />
+    </LinearLayout>
 </LinearLayout>

@@ -19,7 +19,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instruction);
+        setContentView(R.layout.activity_play_music_with_instruction);
 
     }
 

@@ -6,11 +6,14 @@
     android:layout_width="400dp"
     android:layout_height="100dp">
     <EditText
-        android:id="@+id/editext_dialog_save"
+        android:inputType="text|number"
+        android:hint="@string/song_name"
+        android:autofillHints="@string/song_name"
+        android:id="@+id/edt_dialog_save"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="#000"
-        android:textSize="15dp"
+        android:textSize="@dimen/button_text_size"
         android:layout_width="match_parent"
         android:layout_height="40dp"/>
 

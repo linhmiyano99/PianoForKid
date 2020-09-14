@@ -1,8 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:background="@drawable/bg_dialog"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="300dp"
     android:gravity="center"
     android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/image_dialog_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_user_dialog" />
+    <TextView
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:id="@+id/txt_title_dialog_user"
+        android:textColor="#000"
+        android:text="@string/username"
+        android:textSize="@dimen/button_text_size"
+        android:layout_below="@id/image_dialog_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textColor="#000"
+        android:text="@string/username"
+        android:textStyle="bold"
+        android:layout_below="@+id/txt_title_dialog_user"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/txt_dialog_user"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#11000000"
+        android:ems="100"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txt_title_dialog_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_dialog_user"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:text="@string/password"
+        android:textColor="#000"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold" />
+    <TextView
+        android:textColor="#000"
+        android:text="@string/password"
+        android:layout_below="@id/txt_title_dialog_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/txt_dialog_password"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#11000000"
+        android:ems="100"
+        android:textSize="16sp"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@id/txt_dialog_password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <Button
+            android:id="@+id/button_cancel"
+            android:text="@string/cancel"
+            style="@style/button_dialog"/>
+        <Button
+            android:layout_marginStart="30dp"
+            android:id="@+id/button_continue"
+            android:text="@string/button_goToActivityUser"
+            style="@style/button_dialog"/>
+    </LinearLayout>
 </RelativeLayout>

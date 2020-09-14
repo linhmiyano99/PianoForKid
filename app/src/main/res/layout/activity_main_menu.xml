@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="10dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/bg_main_menu"
     tools:context=".view.activity.MainMenuActivity">
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/text_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_title"
+        android:gravity="center_horizontal"
+        android:text="@string/text_title"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonListSong"
+        style="@style/text_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:background="@drawable/button_list_song"
+        android:baselineAlignBottom="true"
+        android:text="@string/list_song"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonInstruction"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInstruction"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonInstruction"
+        style="@style/text_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:layout_marginEnd="@dimen/margin_button"
+        android:background="@drawable/button_play_songs"
+        android:baselineAlignBottom="true"
+        android:text="@string/instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInstrument" />
+
+    <Button
+        android:id="@+id/buttonInstrument"
+        style="@style/text_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:background="@drawable/button_instrument"
+        android:text="@string/instrument"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <ImageButton
+        android:src="@drawable/user"
+        android:id="@+id/imageButtonUser"
+        style="@style/small_button_style"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:layout_marginEnd="@dimen/margin_top_button"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSetting"
+        style="@style/small_button_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
