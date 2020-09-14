@@ -25,20 +25,20 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
         Log.d("SplashScreenActivity", "onCreate");
+
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
 
         new Handler().postDelayed(() -> {
+            song = getSongConCoBeBe();
+            save();
             MainMenuActivity.startActivity(SplashScreenActivity.this);
             finish();
         },SPLASH_TIME_OUT);
-        song = new ArrayList<>();
     }
-    void reset() {
-        song = new ArrayList<>();
-    }
-    void save(String songName) {
-        Song _song = new Song(songId, songName);
+    void save() {
+        Song _song = new Song(songId, "Con co");
         viewModel.insertSong(_song, song);
         startActivity(new Intent(SplashScreenActivity.this, MainMenuActivity.class));
         finish();

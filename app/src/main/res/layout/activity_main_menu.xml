@@ -28,27 +28,38 @@
         style="@style/text_button"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="@dimen/margin_button"
+        android:layout_marginStart="80dp"
         android:background="@drawable/button_list_song"
         android:baselineAlignBottom="true"
         android:text="@string/list_song"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button_instrument"
-        app:layout_constraintEnd_toStartOf="@+id/button_instrument"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonInstruction"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInstruction"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <Button
-        android:layout_marginTop="@dimen/margin_button"
-        android:id="@+id/button_instrument"
+        android:id="@+id/buttonInstruction"
         style="@style/text_button"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margin_top_button"
         android:layout_marginEnd="@dimen/margin_button"
         android:background="@drawable/button_play_songs"
         android:baselineAlignBottom="true"
+        android:text="@string/instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInstrument" />
+
+    <Button
+        android:id="@+id/buttonInstrument"
+        style="@style/text_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:background="@drawable/button_instrument"
         android:text="@string/instrument"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
     <ImageButton

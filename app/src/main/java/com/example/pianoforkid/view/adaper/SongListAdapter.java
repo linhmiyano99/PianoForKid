@@ -28,6 +28,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         void onItemClick(int id);
     }
 
+    @NonNull
     @Override
     public SongListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
@@ -49,13 +50,10 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         TextView tvDetail;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            //tvDetail = itemView.findViewById(R.id.tvSong);
-            tvDetail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        listener.onItemClick((int) v.getTag());
-                    }
+            tvDetail = itemView.findViewById(R.id.tvDetail);
+            tvDetail.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick((int) v.getTag());
                 }
             });
         }
