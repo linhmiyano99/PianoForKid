@@ -21,7 +21,7 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_save_music);
+        setContentView(R.layout.activity_setting);
 
         Log.d("SettingActivity", "onCreate");
 

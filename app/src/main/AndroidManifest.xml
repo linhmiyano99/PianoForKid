@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".view.activity.MainMenuActivity"
+        <activity android:name=".view.activity.LoginActivity"
             android:screenOrientation="landscape">
 
         </activity>
+        <activity android:name=".view.activity.UserActivity"></activity>
+        <activity
+            android:name=".view.activity.MainMenuActivity"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.SplashScreenActivity"
             android:screenOrientation="landscape">
@@ -26,19 +28,18 @@
         </activity>
         <activity
             android:name=".view.activity.InstructionActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".view.activity.PlayMusicWithInstructionActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
-
-        <activity android:name=".view.activity.SongListActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".view.activity.SaveMusicActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.PlayMusicWithInstructionActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.SongListActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.SaveMusicActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.SettingActivity"
             android:screenOrientation="landscape">
 
         </activity>

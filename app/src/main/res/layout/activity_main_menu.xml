@@ -23,52 +23,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/buttonListSong"
         style="@style/text_button"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
         android:background="@drawable/button_list_song"
-        android:baselineAlignBottom="true"
+        android:layout_marginTop="@dimen/margin_title"
         android:text="@string/list_song"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonInstruction"
-        app:layout_constraintEnd_toStartOf="@+id/buttonInstruction"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonInstruction"
-        style="@style/text_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="@dimen/margin_top_button"
-        android:layout_marginEnd="@dimen/margin_button"
-        android:background="@drawable/button_play_songs"
-        android:baselineAlignBottom="true"
-        android:text="@string/instruction"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInstrument" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
     <Button
         android:id="@+id/buttonInstrument"
         style="@style/text_button"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="@dimen/margin_top_button"
+        android:layout_marginTop="@dimen/margin_title"
         android:background="@drawable/button_instrument"
         android:text="@string/instrument"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
     <ImageButton
-        android:src="@drawable/user"
         android:id="@+id/imageButtonUser"
         style="@style/small_button_style"
         android:layout_marginTop="@dimen/margin_top_button"
         android:layout_marginEnd="@dimen/margin_top_button"
         android:contentDescription="@string/todo"
+        android:src="@drawable/user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

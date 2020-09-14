@@ -48,4 +48,17 @@
     <string name="button_goToActivityUser">CONTINUE</string>
     <string name="username">Username:</string>
     <string name="password">Password:</string>
+    <string name="sound_settings">Sound Settings</string>
+    <string name="sound_on_off">Turn Sound On/Off</string>
+    <string name="background_music_on_off">Turn Background Music On/Off</string>
+    <string name="on_off">Turn On/ Off Background Music</string>
+    <string name="sound_text_view">Turn On/Off Sound</string>
+    <string name="register_here">No account yet?<i><u>  Create one</u></i> .</string>
+    <string name="email">Email</string>
+    <string name="account_information">Account Information</string>
+    <string name="sign_out_title">Sign Out</string>
+    <string name="login_title">Login</string>
+    <string name="sign_up_title">Sign Up</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="login_here">Already have an account? Login here!</string>
 </resources>

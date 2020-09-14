@@ -39,7 +39,18 @@
         android:scaleType="fitXY"
         android:scaleX="2"
         android:src="@drawable/ic_image_note" />
-
+    <TextView
+        android:id="@+id/txt_note"
+        android:layout_toEndOf="@id/button_record"
+        android:layout_marginStart="@dimen/margin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        tools:text="22"
+        android:textColor="#212122"
+        android:textSize="@dimen/num_text_size"
+        android:textStyle="bold" />
     <HorizontalScrollView
         android:background="@null"
         android:layout_width="match_parent"
