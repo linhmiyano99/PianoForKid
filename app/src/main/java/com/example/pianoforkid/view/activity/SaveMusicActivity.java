@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -79,6 +80,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	int lastNote = -1;
 
 	KeyNote keyNote;
+	TextView txt_note;
 
 	public static void startActivity(Context context){
 		Intent intent = new Intent(context, SaveMusicActivity.class);
@@ -140,27 +142,35 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		btn13.setOnClickListener(this);
 		btn14.setOnClickListener(this);
 
-		imageA = findViewById(R.id.imageView1);
-		imageB = findViewById(R.id.imageView2);
-		imageC = findViewById(R.id.imageView3);
-		imageD = findViewById(R.id.imageView4);
-		imageE = findViewById(R.id.imageView5);
-		imageF = findViewById(R.id.imageView6);
-		imageG = findViewById(R.id.imageView7);
-		imageA2 = findViewById(R.id.imageView8);
-		imageB2 = findViewById(R.id.imageView9);
-		imageC2 = findViewById(R.id.imageView10);
-		imageD2 = findViewById(R.id.imageView11);
-		imageE2 = findViewById(R.id.imageView12);
-		imageF2 = findViewById(R.id.imageView13);
-		imageG2 = findViewById(R.id.imageView14);
-		onUp = imageA.getTop() - 80;
-		onUp2 = imageA2.getTop() - 80;
-		resetAllNote();
-		onDown = imageA.getTop() + 30;
-		onUp = onDown + 30;
-		onDown2= imageA2.getTop() + 30;
-		onUp2= onDown + 30;
+		imageC = findViewById(R.id.imageView1);
+		imageD = findViewById(R.id.imageView2);
+		imageE = findViewById(R.id.imageView3);
+		imageF = findViewById(R.id.imageView4);
+		imageG = findViewById(R.id.imageView5);
+		imageA = findViewById(R.id.imageView6);
+		imageB = findViewById(R.id.imageView7);
+		imageC2 = findViewById(R.id.imageView8);
+		imageD2 = findViewById(R.id.imageView9);
+		imageE2 = findViewById(R.id.imageView10);
+		imageF2 = findViewById(R.id.imageView11);
+		imageG2 = findViewById(R.id.imageView12);
+		imageA2 = findViewById(R.id.imageView13);
+		imageB2 = findViewById(R.id.imageView14);
+
+		txt_note = findViewById(R.id.txt_note);
+		txt_note.setText(String.valueOf(songLeft));
+
+	}
+
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		super.onWindowFocusChanged(hasFocus);
+		Log.d("onWindowFocusChanged", "xx");
+
+		onUp = (int) imageA.getY();
+		onUp2 = (int) imageA2.getY();
+		onDown = onUp - 100;
+		onDown2 = onUp2 - 100;
 
 	}
 
@@ -177,6 +187,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		Log.d("Sound", String.valueOf(lastDown));
 		if(record_status == 1){
 			songLeft++;
+			txt_note.setText(String.valueOf(songLeft));
 		}
 		if (lastDown > 0) {
 			lastDuration = System.currentTimeMillis() - lastDown;
@@ -233,10 +244,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		sound = new Sound();
 		lastDown = System.currentTimeMillis();
 		sound.setNote(note);
+		Log.d("XXX", String.valueOf(note));
+
 		check(note);
-		/*if (soundPlayer.isNotePlaying(note)) {
-			soundPlayer.playNote(note);
-		}*/
 		keyNote.playNote(note);
 	}
 
@@ -244,20 +254,20 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 
 		if (record_status == 0) {
 			button_record.setBackgroundColor(Color.parseColor("#0BC205"));
-			//button_record.setBackground(this.getResources().getDrawable(R.drawable.round_button_pressed));
-			//button_record.setText(R.string.record_ing);
+			button_record.setImageResource(R.drawable.play);
 			record_status = 1;
 			resetSetSong();
+			resetAllNote();
 		} else {
 			if (record_status == 1) {
 				button_record.setBackgroundColor(Color.parseColor("#fa09ad"));
-				//button_record.setBackground(this.getResources().getDrawable(R.drawable.round_button));
-				//button_record.setText(R.string.recording);
+				button_record.setImageResource(R.drawable.pause);
 				showAlertDialogButtonClicked();
 				record_status = 0;
 			}
 		}
 		songLeft = 0;
+		txt_note.setText(String.valueOf(songLeft));
 	}
 
 	public void showAlertDialogButtonClicked() {
@@ -300,13 +310,12 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	}
 	public void check(int note) {
 		resetAllNote();
-/*
-		if (soundPlayer.isNotePlaying(note)) {
-			soundPlayer.playNote(note);
-		}*/
+
 		keyNote.playNote(note);
 		setNoteAni(note);
 		clearAni(lastNote);
+		Log.d("XXX_image", String.valueOf(note));
+
 		switch (note) {
 			case 1:
 				imageC.setY(onDown);
@@ -375,7 +384,6 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		position = 0;
 		lastDown = 0;
 		lastDuration = 0;
-		resetAllNote();
 	}
 
 	void setNoteAni(int note){
