@@ -10,7 +10,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -56,8 +55,8 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     Button btn13;
     Button btn14;
 
-    float onUp;
-    float onDown;
+    int onUp;
+    int onDown;
 
     List<Sound> song;
     int lastNote = 0;
@@ -116,14 +115,12 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         ImageButton button_back = findViewById(R.id.button_back);
         anim_not_nhac= AnimationUtils.loadAnimation(this,R.anim.anim_key_board);
         button_back.setOnClickListener(v -> onBackPressed());
-        LinearLayout ll1 = findViewById(R.id.ll_star);
-        onDown = ll1.getTop() + 10;
-        onUp = onDown + 50;
-        resetAllNote();
+
 
         songId = 1;
-        songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
-        Log.d("TAG Song", String.valueOf(songId));
+        if(getIntent().getExtras() != null) {
+            songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
+        }        Log.d("TAG Song", String.valueOf(songId));
         song = new ArrayList<>();
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
         viewModel.loadSongById(songId);
@@ -134,6 +131,19 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        int[] arrInt = new int[2];
+        imageA.getLocationInWindow(arrInt);
+        onUp = arrInt[1] + 240;
+        onDown = onUp - 100;
+        Log.d("[XXXX onResume]", String.valueOf(onUp));
+        Log.d("[XXXX onResume]", String.valueOf(onDown));
+        resetAllNote();
     }
 
     void play() {
@@ -159,66 +169,66 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         setNoteAni(note);
         switch (note) {
             case 1:
-                imageC.setY(onDown);
+                imageC.setTop(onDown);
                 break;
             case 2:
-                imageD.setY(onDown);
+                imageD.setTop(onDown);
                 break;
             case 3:
-                imageE.setY(onDown);
+                imageE.setTop(onDown);
                 break;
             case 4:
-                imageF.setY(onDown);
+                imageF.setTop(onDown);
                 break;
             case 5:
-                imageG.setY(onDown);
+                imageG.setTop(onDown);
                 break;
             case 6:
-                imageA.setY(onDown);
+                imageA.setTop(onDown);
                 break;
             case 7:
-                imageB.setY(onDown);
+                imageB.setTop(onDown);
                 break;
             case 8:
-                imageC2.setY(onDown);
+                imageC2.setTop(onDown);
                 break;
             case 9:
-                imageD2.setY(onDown);
+                imageD2.setTop(onDown);
                 break;
             case 10:
-                imageE2.setY(onDown);
+                imageE2.setTop(onDown);
                 break;
             case 11:
-                imageF2.setY(onDown);
+                imageF2.setTop(onDown);
                 break;
             case 12:
-                imageG2.setY(onDown);
+                imageG2.setTop(onDown);
                 break;
             case 13:
-                imageA2.setY(onDown);
+                imageA2.setTop(onDown);
                 break;
             case 14:
-                imageB2.setY(onDown);
+                imageB2.setTop(onDown);
                 break;
         }
         lastNote = note;
 
     }
     void resetAllNote(){
-        imageC.setY(onUp);
-        imageD.setY(onUp);
-        imageE.setY(onUp);
-        imageF.setY(onUp);
-        imageG.setY(onUp);
-        imageA.setY(onUp);
-        imageB.setY(onUp);
-        imageC2.setY(onUp);
-        imageD2.setY(onUp);
-        imageE2.setY(onUp);
-        imageF2.setY(onUp);
-        imageG2.setY(onUp);
-        imageA2.setY(onUp);
-        imageB2.setY(onUp);
+        imageC.setTop(onUp);
+        imageD.setTop(onUp);
+        imageE.setTop(onUp);
+        imageF.setTop(onUp);
+        imageG.setTop(onUp);
+        imageA.setTop(onUp);
+        imageB.setTop(onUp);
+        imageC2.setTop(onUp);
+        imageD2.setTop(onUp);
+        imageE2.setTop(onUp);
+        imageF2.setTop(onUp);
+        imageG2.setTop(onUp);
+        imageA2.setTop(onUp);
+        imageB2.setTop(onUp);
     }
 
     void setNoteAni(int note){

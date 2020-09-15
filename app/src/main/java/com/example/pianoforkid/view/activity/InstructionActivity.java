@@ -62,8 +62,8 @@ public class InstructionActivity extends AppCompatActivity {
     int fault;
     int sizeTemp;
 
-    float onUp2;
-    float onDown2;
+    int onUp;
+    int onDown;
     private Animation anim_not_nhac;
     int songLeft =0;
 
@@ -121,8 +121,9 @@ public class InstructionActivity extends AppCompatActivity {
         songSize = 0;
         songId = 1;
         sizeTemp = 0;
-        songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
-        Log.d("TAG Song", String.valueOf(songId));
+        if(getIntent().getExtras() != null) {
+            songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
+        }        Log.d("TAG Song", String.valueOf(songId));
         song = new ArrayList<>();
         songTemp = new ArrayList<>();
 
@@ -161,22 +162,27 @@ public class InstructionActivity extends AppCompatActivity {
         btn13.setOnClickListener(this::check);
         btn14.setOnClickListener(this::check);
 
-
-        onUp2 = image1.getTop() - 40;
-        resetAllNote();
-        onUp2 = image1.getTop() + 30;
-        onDown2 = onUp2 - 30;
-        image1.setY(onDown2 - 80);
-
-        button_back.setOnClickListener(v -> {
-            /*Intent goBackToMainMenu = new Intent(this, MainMenuActivity.class);
-            startActivity(goBackToMainMenu);*/
-            onBackPressed();
-
-        });
+        button_back.setOnClickListener(v -> onBackPressed());
 
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        int[] arrInt = new int[2];
+        image1.getLocationInWindow(arrInt);
+        onUp = arrInt[1] - 100;
+        onDown = onUp - 100;
+
+        Log.d("[XXXX onResume]", String.valueOf(onUp));
+        Log.d("[XXXX onResume]", String.valueOf(onDown));
+        resetAllNote();
+    }
+
     public void check(View view) {
+        Log.d("[XXXX]", String.valueOf(onUp));
+        Log.d("[XXXX]", String.valueOf(onDown));
         Log.d("[sizeTemp]", String.valueOf(sizeTemp));
         Log.d("[songSize]", String.valueOf(songSize));
         Log.d("[songSize]", String.valueOf(song.size()));
@@ -216,19 +222,20 @@ public class InstructionActivity extends AppCompatActivity {
 
                 }
             }
-
+            Log.d("[XXXX]", String.valueOf(onUp));
+            Log.d("[XXXX]", String.valueOf(onDown));
             switch (position) {
                 case 0:
-                    image1.setY(onDown2);
-                    image7.setY(onUp2);
+                    image1.setTop(onDown);
+                    image7.setTop(onUp);
                     setNoteAni((Integer) image1.getTag());
                     image1.startAnimation(anim_not_nhac);
                     image7.clearAnimation();
                     // animation1.start();
                     break;
                 case 1:
-                    image2.setY(onDown2);
-                    image1.setY(onUp2);
+                    image2.setTop(onDown);
+                    image1.setTop(onUp);
                     setNoteAni((Integer) image2.getTag());
                     image2.startAnimation(anim_not_nhac);
                     image1.clearAnimation();
@@ -236,40 +243,40 @@ public class InstructionActivity extends AppCompatActivity {
                     // animation2.start();
                     break;
                 case 2:
-                    image3.setY(onDown2);
-                    image2.setY(onUp2);
+                    image3.setTop(onDown);
+                    image2.setTop(onUp);
                     setNoteAni((Integer) image3.getTag());
                     image3.startAnimation(anim_not_nhac);
                     image2.clearAnimation();
                     // animation3.start();
                     break;
                 case 3:
-                    image4.setY(onDown2);
-                    image3.setY(onUp2);
+                    image4.setTop(onDown);
+                    image3.setTop(onUp);
                     setNoteAni((Integer) image4.getTag());
                     image4.startAnimation(anim_not_nhac);
                     image3.clearAnimation();
                     // animation4.start();
                     break;
                 case 4:
-                    image5.setY(onDown2);
-                    image4.setY(onUp2);
+                    image5.setTop(onDown);
+                    image4.setTop(onUp);
                     setNoteAni((Integer) image5.getTag());
                     image5.startAnimation(anim_not_nhac);
                     image4.clearAnimation();
                     // animation5.start();
                     break;
                 case 5:
-                    image6.setY(onDown2);
-                    image5.setY(onUp2);
+                    image6.setTop(onDown);
+                    image5.setTop(onUp);
                     setNoteAni((Integer) image6.getTag());
                     image6.startAnimation(anim_not_nhac);
                     image5.clearAnimation();
                     // animation6.start();
                     break;
                 case 6:
-                    image7.setY(onDown2);
-                    image6.setY(onUp2);
+                    image7.setTop(onDown);
+                    image6.setTop(onUp);
                     setNoteAni((Integer) image7.getTag());
                     image7.startAnimation(anim_not_nhac);
                     image6.clearAnimation();
@@ -434,7 +441,7 @@ public class InstructionActivity extends AppCompatActivity {
         return 1;
     }
 
-    void resetinstruction(){
+    void resetInstruction(){
         fault = 0;
         position = 0;
         sizeTemp = 0;
@@ -496,45 +503,45 @@ public class InstructionActivity extends AppCompatActivity {
 
         CardView replay =  customLayout.findViewById(R.id.card_view_replay);
         CardView cancel =  customLayout.findViewById(R.id.card_view_cancel);
-/*        ImageView star1 = customLayout.findViewById(R.id.image_star1);
+        ImageView star1 = customLayout.findViewById(R.id.image_star1);
         ImageView star2 = customLayout.findViewById(R.id.image_star2);
-        ImageView star3 = customLayout.findViewById(R.id.image_star3);*/
+        ImageView star3 = customLayout.findViewById(R.id.image_star3);
 
 
         // create and show the alert dialog
         AlertDialog dialog = builder.create();
         dialog.show();
 
-      /*  int score = getScore();
+        int score = getScore();
         if(score == 100){
-            star1.setImageResource(R.drawable.star_true);
-            star2.setImageResource(R.drawable.star_true);
-            star3.setImageResource(R.drawable.star_true);
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.star);
+            star3.setImageResource(R.drawable.star);
         }
         else if (score == 60){
-            star1.setImageResource(R.drawable.star_true);
-            star2.setImageResource(R.drawable.star_true);
-            star3.setImageResource(R.drawable.star_auto);
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.star);
+            star3.setImageResource(R.drawable.star_null);
         }
         else if(score == 30){
-            star1.setImageResource(R.drawable.star_true);
-            star2.setImageResource(R.drawable.star_auto);
-            star3.setImageResource(R.drawable.star_auto);
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.star_null);
+            star3.setImageResource(R.drawable.star_null);
         }
         else{
-            star1.setImageResource(R.drawable.star_auto);
-            star2.setImageResource(R.drawable.star_auto);
-            star3.setImageResource(R.drawable.star_auto);
-        }*/
+            star1.setImageResource(R.drawable.star_null);
+            star2.setImageResource(R.drawable.star_null);
+            star3.setImageResource(R.drawable.star_null);
+        }
         replay.startAnimation(anim_not_nhac);
         replay.setOnClickListener(v -> {
-            resetinstruction();
+            resetInstruction();
             dialog.cancel();
             setNoteAni((Integer) image1.getTag());
             resetAllNote();
             replay.clearAnimation();
             image1.startAnimation(anim_not_nhac);
-            image1.setY(onDown2);
+            image1.setTop(onDown);
             songLeft = songSize;
             dialog.cancel();
         });
@@ -544,13 +551,13 @@ public class InstructionActivity extends AppCompatActivity {
         });
     }
     void resetAllNote(){
-        image1.setY(onUp2);
-        image2.setY(onUp2);
-        image3.setY(onUp2);
-        image4.setY(onUp2);
-        image5.setY(onUp2);
-        image6.setY(onUp2);
-        image7.setY(onUp2);
+        image1.setTop(onDown);
+        image2.setTop(onUp);
+        image3.setTop(onUp);
+        image4.setTop(onUp);
+        image5.setTop(onUp);
+        image6.setTop(onUp);
+        image7.setTop(onUp);
 
         image1.clearAnimation();
         image2.clearAnimation();
