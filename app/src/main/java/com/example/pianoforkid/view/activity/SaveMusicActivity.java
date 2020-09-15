@@ -31,7 +31,7 @@ import java.util.List;
 
 public class SaveMusicActivity extends AppCompatActivity implements View.OnClickListener {
 
-	ImageButton button_record;
+	Button button_record;
 	int record_status = 0;
 	Sound sound;
 	long lastDown = 0;
@@ -184,7 +184,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 
 	@Override
 	public void onClick(View view) {
-		Log.d("Sound", String.valueOf(lastDown));
+		Log.d("onClick_sound", String.valueOf(lastDown));
 		if(record_status == 1){
 			songLeft++;
 			txt_note.setText(String.valueOf(songLeft));
@@ -251,23 +251,26 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	}
 
 	public void button_recordOnClick(View v) {
+		Log.d("XXX", "button_recordOnClick");
+
 
 		if (record_status == 0) {
 			button_record.setBackgroundColor(Color.parseColor("#0BC205"));
-			button_record.setImageResource(R.drawable.play);
+			button_record.setBackground(this.getResources().getDrawable(R.drawable.pause));
 			record_status = 1;
 			resetSetSong();
-			resetAllNote();
 		} else {
 			if (record_status == 1) {
 				button_record.setBackgroundColor(Color.parseColor("#fa09ad"));
-				button_record.setImageResource(R.drawable.pause);
+				button_record.setBackground(this.getResources().getDrawable(R.drawable.stop));
 				showAlertDialogButtonClicked();
 				record_status = 0;
 			}
 		}
 		songLeft = 0;
 		txt_note.setText(String.valueOf(songLeft));
+
+
 	}
 
 	public void showAlertDialogButtonClicked() {

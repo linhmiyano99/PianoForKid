@@ -31,8 +31,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
 
         new Handler().postDelayed(() -> {
-            song = getSongConCoBeBe();
-            save();
             MainMenuActivity.startActivity(SplashScreenActivity.this);
             finish();
         },SPLASH_TIME_OUT);
