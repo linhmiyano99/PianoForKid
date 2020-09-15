@@ -137,12 +137,8 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        int[] arrInt = new int[2];
-        imageA.getLocationInWindow(arrInt);
-        onUp = arrInt[1] + 240;
+        onUp = (int) imageA.getY();
         onDown = onUp - 100;
-        Log.d("[XXXX onResume]", String.valueOf(onUp));
-        Log.d("[XXXX onResume]", String.valueOf(onDown));
         resetAllNote();
     }
 
@@ -169,46 +165,46 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         setNoteAni(note);
         switch (note) {
             case 1:
-                imageC.setTop(onDown);
+                imageC.setY(onDown);
                 break;
             case 2:
-                imageD.setTop(onDown);
+                imageD.setY(onDown);
                 break;
             case 3:
-                imageE.setTop(onDown);
+                imageE.setY(onDown);
                 break;
             case 4:
-                imageF.setTop(onDown);
+                imageF.setY(onDown);
                 break;
             case 5:
-                imageG.setTop(onDown);
+                imageG.setY(onDown);
                 break;
             case 6:
-                imageA.setTop(onDown);
+                imageA.setY(onDown);
                 break;
             case 7:
-                imageB.setTop(onDown);
+                imageB.setY(onDown);
                 break;
             case 8:
-                imageC2.setTop(onDown);
+                imageC2.setY(onDown);
                 break;
             case 9:
-                imageD2.setTop(onDown);
+                imageD2.setY(onDown);
                 break;
             case 10:
-                imageE2.setTop(onDown);
+                imageE2.setY(onDown);
                 break;
             case 11:
-                imageF2.setTop(onDown);
+                imageF2.setY(onDown);
                 break;
             case 12:
-                imageG2.setTop(onDown);
+                imageG2.setY(onDown);
                 break;
             case 13:
-                imageA2.setTop(onDown);
+                imageA2.setY(onDown);
                 break;
             case 14:
-                imageB2.setTop(onDown);
+                imageB2.setY(onDown);
                 break;
         }
         lastNote = note;
