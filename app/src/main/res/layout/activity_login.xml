@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_play_song"
     android:orientation="vertical"
-    tools:context="com.e.happpymusic.view.activity.LoginActivity">
+    tools:context=".view.activity.LoginActivity">
 
     <ImageButton
         android:id="@+id/button_back"

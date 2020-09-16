@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
     android:background="@drawable/bg_main_menu"
-    tools:context="com.e.happpymusic.view.activity.MainMenuActivity">
+    tools:context=".view.activity.MainMenuActivity">
 
     <TextView
         android:id="@+id/text_title"

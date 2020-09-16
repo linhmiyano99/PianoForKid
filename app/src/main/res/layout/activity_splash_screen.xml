@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/splashscreen"
-    tools:context="com.e.happpymusic.view.activity.SplashScreenActivity">
+    tools:context=".view.activity.SplashScreenActivity">
 
 </LinearLayout>
