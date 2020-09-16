@@ -1,0 +1,127 @@
+package com.e.happpymusic.view.activity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.happymusic.R;
+import com.e.happpymusic.data.model.Song;
+import com.e.happpymusic.data.model.Sound;
+import com.e.happpymusic.viewmodel.SongViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SplashScreenActivity extends AppCompatActivity {
+    List<Sound> song;
+    SongViewModel viewModel;
+    int songId = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_screen);
+
+        Log.d("SplashScreenActivity", "onCreate");
+
+        viewModel = new ViewModelProvider(this).get(SongViewModel.class);
+        viewModel.getLastSongId().observe(this, integer -> {
+            if(integer>0) {
+                MainMenuActivity.startActivity(this);
+                finish();
+            }
+            else{
+                song = new ArrayList<>();
+                song.addAll(getSongConCoBeBe());
+                save();
+            }
+        });
+    }
+    void save() {
+        Song _song = new Song(songId, "Con cò bé bé");
+        viewModel.insertSong(_song, song);
+        songId++;
+        MainMenuActivity.startActivity(this);
+        finish();
+    }
+    List<Sound> getSongConCoBeBe(){
+        List<Sound> soundList = new ArrayList<>();
+
+        Sound sound = new Sound(songId, 5, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 2, 600);
+        soundList.add(sound);
+        sound = new Sound(songId,2,600);
+        soundList.add(sound);
+        sound = new Sound(songId,7,300);
+        soundList.add(sound);
+        sound = new Sound(songId,7,600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 3, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 3, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 3, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 9, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 3, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 2, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 2, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 7, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 6, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 600);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 300);
+        soundList.add(sound);
+        sound = new Sound(songId, 5, 600);
+        soundList.add(sound);
+        return soundList;
+    }
+}
