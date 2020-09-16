@@ -211,20 +211,20 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
 
     }
     void resetAllNote(){
-        imageC.setTop(onUp);
-        imageD.setTop(onUp);
-        imageE.setTop(onUp);
-        imageF.setTop(onUp);
-        imageG.setTop(onUp);
-        imageA.setTop(onUp);
-        imageB.setTop(onUp);
-        imageC2.setTop(onUp);
-        imageD2.setTop(onUp);
-        imageE2.setTop(onUp);
-        imageF2.setTop(onUp);
-        imageG2.setTop(onUp);
-        imageA2.setTop(onUp);
-        imageB2.setTop(onUp);
+        imageC.setY(onUp);
+        imageD.setY(onUp);
+        imageE.setY(onUp);
+        imageF.setY(onUp);
+        imageG.setY(onUp);
+        imageA.setY(onUp);
+        imageB.setY(onUp);
+        imageC2.setY(onUp);
+        imageD2.setY(onUp);
+        imageE2.setY(onUp);
+        imageF2.setY(onUp);
+        imageG2.setY(onUp);
+        imageA2.setY(onUp);
+        imageB2.setY(onUp);
     }
 
     void setNoteAni(int note){
