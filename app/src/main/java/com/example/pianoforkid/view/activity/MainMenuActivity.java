@@ -59,6 +59,12 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             case R.id.buttonInstrument:
                 SaveMusicActivity.startActivity(this);
                 break;
+            case R.id.imageButtonSetting:
+                SettingActivity.startActivity(this);
+                break;
+            case R.id.imageButtonUser:
+                UserActivity.startActivity(this);
+                break;
         }
     }
 

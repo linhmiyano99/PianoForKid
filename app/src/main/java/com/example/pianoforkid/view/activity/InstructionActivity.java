@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +55,7 @@ public class InstructionActivity extends AppCompatActivity {
     Button btn13;
     Button btn14;
     ImageButton button_back;
+    TextView txt_note;
 
     int songId;
     int songSize;
@@ -82,6 +84,9 @@ public class InstructionActivity extends AppCompatActivity {
 
         keyNote = new KeyNote(this.getApplication());
         anim_not_nhac= AnimationUtils.loadAnimation(this,R.anim.anim_key_board);
+
+        txt_note = findViewById(R.id.txt_note);
+        txt_note.setText(String.valueOf(songLeft));
 
         image1 = findViewById(R.id.imageView1);
         image2 = findViewById(R.id.imageView2);
@@ -175,8 +180,6 @@ public class InstructionActivity extends AppCompatActivity {
     }
 
     public void check(View view) {
-        Log.d("XX_check_image1", String.valueOf(image1.getY()));
-        Log.d("XX_check_image2", String.valueOf(image2.getY()));
         int currentId = getCurrentId(view);
 
    /*     soundPlayer.stopNote(lastNote);
@@ -190,12 +193,13 @@ public class InstructionActivity extends AppCompatActivity {
         }
         // String x = String.valueOf(listNote.charAt(position));
         int x = song.get(position).note;
-        Log.d("TAG", "hello");
         Log.d("TAG", String.valueOf(currentId));
 
         if (currentId == x) {
             clearAni(x);
             songLeft--;
+            txt_note.setText(String.valueOf(songLeft));
+
             sizeTemp++;
             position++;
             if (position >= 7) {
@@ -268,14 +272,6 @@ public class InstructionActivity extends AppCompatActivity {
         else{
             fault++;
         }
-        Log.d("XX2image1", String.valueOf(image1.getY()));
-        Log.d("XX2image2", String.valueOf(image2.getY()));
-        Log.d("XX2image3", String.valueOf(image3.getY()));
-        Log.d("XX2image4", String.valueOf(image4.getY()));
-        Log.d("XX2image5", String.valueOf(image5.getY()));
-        Log.d("XX2image6", String.valueOf(image6.getY()));
-        Log.d("XX2image7", String.valueOf(image7.getY()));
-
     }
 
     public void updateView() {
@@ -333,14 +329,6 @@ public class InstructionActivity extends AppCompatActivity {
             else {
                 image1.setImageResource(android.R.color.transparent);
             }
-
-            Log.d("XX_res_image1", String.valueOf(image1.getTop()));
-            Log.d("XX2_res_image2", String.valueOf(image2.getTop()));
-            Log.d("XX2_res_image3", String.valueOf(image3.getTop()));
-            Log.d("XX2_res_image4", String.valueOf(image4.getTop()));
-            Log.d("XX2_res_image5", String.valueOf(image5.getTop()));
-            Log.d("XX2_res_image6", String.valueOf(image6.getTop()));
-            Log.d("XX2_res_image7", String.valueOf(image7.getTop()));
         }
     }
 

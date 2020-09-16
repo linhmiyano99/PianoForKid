@@ -1,5 +1,6 @@
 package com.example.pianoforkid.view.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -250,6 +251,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		keyNote.playNote(note);
 	}
 
+	@SuppressLint("UseCompatLoadingForDrawables")
 	public void button_recordOnClick(View v) {
 		Log.d("XXX", "button_recordOnClick");
 

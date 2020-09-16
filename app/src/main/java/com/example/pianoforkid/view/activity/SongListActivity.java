@@ -49,7 +49,6 @@ public class SongListActivity extends AppCompatActivity {
         viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
 
         recyclerView.setAdapter(songListAdapter);
-        Log.i("intent", "String.valueOf(id)");
 
         songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
     }
