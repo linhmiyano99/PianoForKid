@@ -23,14 +23,12 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/margin_button"
-        android:layout_toEndOf="@id/button_record"
         android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:scaleX="2"
         android:src="@drawable/ic_image_note" />
     <TextView
         android:id="@+id/txt_note"
-        android:layout_toEndOf="@id/button_record"
         android:layout_marginStart="@dimen/margin_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -57,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp">
 
-                <ImageButton
+               <ImageButton
                     android:id="@+id/imageView1"
                     style="@style/star_style_relative"
                     android:contentDescription="@string/todo"
@@ -166,118 +164,118 @@
                     android:layout_toEndOf="@+id/imageView13"
                     android:contentDescription="@string/todo"
                     app:srcCompat="@drawable/star_b2" />
+                <!--
+                               <ImageButton
+                                   android:id="@+id/imageView15"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView14"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_c3" />
 
-                <ImageButton
-                    android:id="@+id/imageView15"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView14"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_c3" />
+                               <ImageButton
+                                   android:id="@+id/imageView16"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView15"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_d3" />
 
-                <ImageButton
-                    android:id="@+id/imageView16"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView15"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_d3" />
+                               <ImageButton
+                                   android:id="@+id/imageView17"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView16"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_e3" />
 
-                <ImageButton
-                    android:id="@+id/imageView17"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView16"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_e3" />
+                               <ImageButton
+                                   android:id="@+id/imageView18"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView17"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_f3" />
 
-                <ImageButton
-                    android:id="@+id/imageView18"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView17"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_f3" />
+                               <ImageButton
+                                   android:id="@+id/imageView19"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView18"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_g3" />
 
-                <ImageButton
-                    android:id="@+id/imageView19"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView18"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_g3" />
+                               <ImageButton
+                                   android:id="@+id/imageView20"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView19"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_a3" />
 
-                <ImageButton
-                    android:id="@+id/imageView20"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView19"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_a3" />
+                               <ImageButton
+                                   android:id="@+id/imageView21"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView20"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_b3" />
 
-                <ImageButton
-                    android:id="@+id/imageView21"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView20"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_b3" />
+                               <ImageButton
+                                   android:id="@+id/imageView22"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView21"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_c4" />
 
-                <ImageButton
-                    android:id="@+id/imageView22"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView21"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_c4" />
+                               <ImageButton
+                                   android:id="@+id/imageView23"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView22"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_d4" />
 
-                <ImageButton
-                    android:id="@+id/imageView23"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView22"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_d4" />
+                               <ImageButton
+                                   android:id="@+id/imageView24"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView23"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_e4" />
 
-                <ImageButton
-                    android:id="@+id/imageView24"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView23"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_e4" />
+                               <ImageButton
+                                   android:id="@+id/imageView25"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView24"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_f4" />
 
-                <ImageButton
-                    android:id="@+id/imageView25"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView24"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_f4" />
+                               <ImageButton
+                                   android:id="@+id/imageView26"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView25"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_g4" />
 
-                <ImageButton
-                    android:id="@+id/imageView26"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView25"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_g4" />
+                               <ImageButton
+                                   android:id="@+id/imageView27"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView26"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_a4" />
 
-                <ImageButton
-                    android:id="@+id/imageView27"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView26"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_a4" />
-
-                <ImageButton
-                    android:id="@+id/imageView28"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView27"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_b4" />
+                               <ImageButton
+                                   android:id="@+id/imageView28"
+                                   style="@style/star_style_relative"
+                                   android:layout_marginStart="@dimen/margin_star"
+                                   android:layout_toEndOf="@+id/imageView27"
+                                   android:contentDescription="@string/todo"
+                                   app:srcCompat="@drawable/star_b4" />-->
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/relativeLayout1"
