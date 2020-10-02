@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
+import com.example.pianoforkid.data.model.LikedSong;
+import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.view.adaper.SongListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
@@ -51,6 +53,7 @@ public class SongListActivity extends AppCompatActivity {
         recyclerView.setAdapter(songListAdapter);
 
         songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        songListAdapter.setOnItemHeartClickListener(this::likeSong);
     }
 
     public void showAlertDialogButtonClicked(int id) {
@@ -76,5 +79,8 @@ public class SongListActivity extends AppCompatActivity {
         button_back.setOnClickListener(v -> dialog.cancel());
     }
 
-
+    public void likeSong(int id){
+        Song song = songListAdapter.getSongById(id);
+        viewModel.insertLikedSong(new LikedSong(song.songId, song.songName));
+    }
 }

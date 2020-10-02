@@ -36,47 +36,7 @@
                     android:textSize="@dimen/text_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/image_star_1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:contentDescription="@string/todo"
-                        android:padding="@dimen/padding_image"
-                        android:src="@drawable/star" />
-
-                    <ImageView
-                        android:id="@+id/image_star_2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="@dimen/margin_top_button"
-                        android:contentDescription="@string/todo"
-                        android:padding="@dimen/padding_image"
-                        android:src="@drawable/star_null" />
-
-                    <ImageView
-                        android:id="@+id/image_star_3"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="@dimen/margin_top_button"
-                        android:contentDescription="@string/todo"
-                        android:padding="@dimen/padding_image"
-                        android:src="@drawable/star_null" />
-                </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/image_heart"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/hearth_selector" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
