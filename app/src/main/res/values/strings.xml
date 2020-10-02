@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">PianoForKid</string>
+    <string name="facebook_app_id">954490725034037</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="text_title">Let\'s play music</string>
     <string name="todo">TODO</string>

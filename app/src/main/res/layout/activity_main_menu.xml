@@ -49,15 +49,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
-    <ImageButton
-        android:id="@+id/imageButtonUser"
+   <Button
+        android:id="@+id/btn_share_facebook"
         style="@style/small_button_style"
         android:layout_marginTop="@dimen/margin_top_button"
         android:layout_marginEnd="@dimen/margin_top_button"
         android:contentDescription="@string/todo"
-        android:src="@drawable/user"
+        android:background="@drawable/user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageButton
         android:id="@+id/imageButtonSetting"
