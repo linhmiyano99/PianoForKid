@@ -62,4 +62,9 @@
     <string name="sign_up_title">Sign Up</string>
     <string name="button_sign_up">Sign Up</string>
     <string name="login_here">Already have an account? Login here!</string>
+    <string name="share_facebook">Share Facebook</string>
+    <string name="lesson">Lesson</string>
+    <string name="like">Like</string>
+    <string name="saved">Saved</string>
+    <string name="list_song_item">1-Lesson 1: Do Re Mi</string>
 </resources>

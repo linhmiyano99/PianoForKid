@@ -46,7 +46,7 @@ public class SongListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         songListAdapter = new SongListAdapter();
 
-        viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
+       viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
 
         recyclerView.setAdapter(songListAdapter);
 
@@ -64,8 +64,8 @@ public class SongListActivity extends AppCompatActivity {
         // add a button
 
         ImageButton button_back = customLayout.findViewById(R.id.btn_back);
-        CardView listen =  customLayout.findViewById(R.id.card_view_listen);
-        CardView play =  customLayout.findViewById(R.id.card_view_play);
+        ImageButton listen =  customLayout.findViewById(R.id.card_view_listen);
+        ImageButton play =  customLayout.findViewById(R.id.card_view_play);
 
         // create and show the alert dialog
         AlertDialog dialog = builder.create();
