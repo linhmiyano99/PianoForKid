@@ -21,6 +21,11 @@ public class Sound {
         this.note = note;
         this.duration = duration;
     }
+    @Override
+    public String toString() {
+        return "("+note + "," + duration+")";
+    }
+
     public int getNote() {
         return note;
     }

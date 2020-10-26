@@ -21,8 +21,10 @@ import java.util.List;
 public class FirebaseService {
     private static  FirebaseService INSTANCE ;
     private MutableLiveData<List<User>> leaderBoard;
+    private MutableLiveData<List<Song>> songList;
     private DatabaseReference databaseReference;
     private FirebaseDatabase firebaseDatabase;
+
     public static FirebaseService getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new FirebaseService();
@@ -37,6 +39,8 @@ public class FirebaseService {
         list.add(new User(null, "Satoh", null, 100));
         leaderBoard.setValue(list);
         firebaseDatabase = FirebaseDatabase.getInstance();
+        songList = new MutableLiveData<>();
+
     }
 
     public void loadLeaderBoard() {
@@ -67,5 +71,34 @@ public class FirebaseService {
     }
     public LiveData<List<User>> getUserList(){
         return leaderBoard;
+    }
+    public void loadAllSongs() {
+        databaseReference = firebaseDatabase.getReference("Song");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.e("Count ", "" + dataSnapshot.getChildrenCount());
+                List<Song> list = new ArrayList<>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Song post = postSnapshot.getValue(Song.class);
+                    list.add(post);
+
+                    // properties of song
+                }
+                songList.setValue(list);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("The read failed: ", databaseError.getMessage());
+
+            }
+        });
+
+    }
+
+
+    public LiveData<List<Song>> getListSongs() {
+        return songList;
     }
 }
