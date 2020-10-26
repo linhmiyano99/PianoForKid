@@ -13,7 +13,7 @@ public class Song {
     public String songName;
     public String songAuthor;
     public long songDuration;
-
+    public String sheet;
 	public Song(int songId, String songName) {
 		this.songId = songId;
 		this.songName = songName;

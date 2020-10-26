@@ -16,6 +16,18 @@
         <activity android:name=".view.activity.DetailLessonListActivity"></activity>
         <activity
             android:name=".view.activity.AllListActivity"
+        <activity android:name=".view.activity.LeaderBoardActivity"></activity>
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.UserActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.MainMenuActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.SplashScreenActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,7 +62,6 @@
         <activity
             android:name=".view.activity.SettingActivity"
             android:screenOrientation="landscape" />
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

@@ -9,46 +9,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
-import com.example.pianoforkid.data.model.Song;
+import com.example.pianoforkid.data.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHolder> {
-    private List<Song> listSongs;
-    public SongListAdapter() {
-        listSongs = new ArrayList<>();
-        listSongs.add(new Song(100, "Only you"));
-        listSongs.add(new Song(101, "Only you2"));
-    }
+public class LeaderBoardAdapter  extends RecyclerView.Adapter<LeaderBoardAdapter.ViewHolder> {
+    List<User> userList;
+
     private OnItemSongClickListener listener;
 
     public void setOnItemSongClickListener(OnItemSongClickListener listener){
         this.listener = listener;
     }
+
     public interface OnItemSongClickListener{
         void onItemClick(int id);
     }
 
+    public LeaderBoardAdapter() {
+        userList = new ArrayList<>();
+    }
     @NonNull
     @Override
-    public SongListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View view = inflater.inflate(R.layout.song_adapter_item, parent, false);
-        return new ViewHolder(view);
+        View view = inflater.inflate(R.layout.user_item, parent, false);
+        return new LeaderBoardAdapter.ViewHolder(view);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull SongListAdapter.ViewHolder holder, int position) {
-        Song song = listSongs.get(position);
-        holder.tvDetail.setText(song.toString());
-        holder.tvDetail.setTag(song.songId);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        User user = userList.get(position);
+        holder.tvDetail.setText(user.name + " - " + user.score);
     }
+
     @Override
     public int getItemCount() {
-        return listSongs.size();
+        return userList.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder {
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvDetail;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,7 +63,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         }
     }
 
-    public void setListSongs(List<Song> listSongs) {
-        this.listSongs = listSongs;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 }
