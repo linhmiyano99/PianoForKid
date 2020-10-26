@@ -18,6 +18,8 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
     private List<Song> listSongs;
     public SongListAdapter() {
         listSongs = new ArrayList<>();
+        listSongs.add(new Song(100, "Only you"));
+        listSongs.add(new Song(101, "Only you2"));
     }
     private OnItemSongClickListener listener;
 

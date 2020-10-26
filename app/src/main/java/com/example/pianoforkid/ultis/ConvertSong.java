@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class ConvertSong {
 
-	static String ConvertSoundToStringSong(List<Sound> listSound){
+	public static String getConvertSoundToStringSong(List<Sound> listSound){
         String song = null;
         for (Sound s: listSound
              ) {
@@ -18,7 +18,7 @@ public class ConvertSong {
         return song;
     }
 
-    static List<Sound> getStringSongSound(String song, int songId){
+    public static List<Sound> getConvertStringSongToSound(String song, int songId){
         List<Sound> soundList = new ArrayList<>();
         while (song.length() > 0){
             Pattern pattern = Pattern.compile("([1-20],[1-999999])");

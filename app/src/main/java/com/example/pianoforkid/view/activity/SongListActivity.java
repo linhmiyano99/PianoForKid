@@ -44,7 +44,7 @@ public class SongListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         songListAdapter = new SongListAdapter();
 
-        viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
+        //viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
 
         recyclerView.setAdapter(songListAdapter);
 
