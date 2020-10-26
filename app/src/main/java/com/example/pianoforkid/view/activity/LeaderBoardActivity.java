@@ -1,30 +1,26 @@
 package com.example.pianoforkid.view.activity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
 import com.example.pianoforkid.R;
-import com.example.pianoforkid.view.adaper.SongListAdapter;
-import com.example.pianoforkid.viewmodel.SongViewModel;
+import com.example.pianoforkid.view.adaper.LeaderBoardAdapter;
+import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 
-public class SongListActivity extends AppCompatActivity {
+public class LeaderBoardActivity extends AppCompatActivity {
 
-    private SongListAdapter songListAdapter;
-    SongViewModel viewModel;
+    FirebaseViewModel viewModel;
+    private LeaderBoardAdapter leaderBoardAdapter;
 
     public static void startActivity(Context context){
-        Intent intent = new Intent(context, SongListActivity.class);
+        Intent intent = new Intent(context, LeaderBoardActivity.class);
         context.startActivity(intent);
     }
 
@@ -34,26 +30,25 @@ public class SongListActivity extends AppCompatActivity {
         // set view layout for this activity
         setContentView(R.layout.activity_song_list);
 
-        Log.d("SongListActivity", "onCreate");
+        Log.d("LeaderBoardActivity", "onCreate");
 
-        viewModel = new ViewModelProvider(this).get(SongViewModel.class);
+
+        viewModel = new ViewModelProvider(this).get(FirebaseViewModel.class);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        songListAdapter = new SongListAdapter();
+        leaderBoardAdapter = new LeaderBoardAdapter();
 
-        viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
+        viewModel.getUserList().observe(this, users -> leaderBoardAdapter.setUserList(users));
 
-        recyclerView.setAdapter(songListAdapter);
-
-        songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        recyclerView.setAdapter(leaderBoardAdapter);
+        leaderBoardAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
     }
 
     public void showAlertDialogButtonClicked(int id) {
-        viewModel.loadSongById(id);
-        // create an alert builder
+        /*// create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Song id: " + id);
         // set the custom layout
@@ -71,7 +66,7 @@ public class SongListActivity extends AppCompatActivity {
         listen.setOnClickListener(v -> PlayMusicWithInstructionActivity.startActivity(this, id));
         play.setOnClickListener(v -> InstructionActivity.startActivity(this, id));
 
-        button_back.setOnClickListener(v -> dialog.cancel());
+        button_back.setOnClickListener(v -> dialog.cancel());*/
     }
 
 

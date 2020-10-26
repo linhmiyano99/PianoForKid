@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "747147466334",
+    "firebase_url": "https://happymusicapp.firebaseio.com",
+    "project_id": "happymusicapp",
+    "storage_bucket": "happymusicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747147466334:android:d5bc9f7393e02ea4e986cf",
+        "android_client_info": {
+          "package_name": "com.example.pianoforkid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747147466334-fnsvh2jcvu1g0h836330qep1gvqk1637.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pianoforkid",
+            "certificate_hash": "961bc92a780f2c79a9d8722cf2f759c95520fc6e"
+          }
+        },
+        {
+          "client_id": "747147466334-pjm1fqnpn08vbfqubhmqb8004nof4vgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzeDOCVHldaT5gy8GEeOGjqH_1vUerOjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747147466334-pjm1fqnpn08vbfqubhmqb8004nof4vgo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

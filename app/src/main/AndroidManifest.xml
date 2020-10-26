@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pianoforkid">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-
-        <activity android:name=".view.activity.LoginActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".view.activity.UserActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+        <activity android:name=".view.activity.LeaderBoardActivity"></activity>
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".view.activity.UserActivity"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.MainMenuActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.SplashScreenActivity"
             android:screenOrientation="landscape">
@@ -37,36 +34,28 @@
         </activity>
         <activity
             android:name=".view.activity.InstructionActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.PlayMusicWithInstructionActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.SongListActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.SaveMusicActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.SettingActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"></activity>
 
-        </activity>
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-        <provider android:authorities="com.facebook.app.FacebookContentProvider954490725034037"
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
             android:name="com.facebook.FacebookContentProvider"
-            android:exported="false"/>
-
+            android:authorities="com.facebook.app.FacebookContentProvider954490725034037"
+            android:exported="false" />
     </application>
-
 
 </manifest>
