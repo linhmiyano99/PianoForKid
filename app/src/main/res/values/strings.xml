@@ -69,4 +69,6 @@
     <string name="like">Like</string>
     <string name="saved">Saved</string>
     <string name="list_song_item">1-Lesson 1: Do Re Mi</string>
+    <string name="user_name">User Name</string>
+    <string name="score">Score</string>
 </resources>
