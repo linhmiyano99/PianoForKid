@@ -44,9 +44,10 @@
         android:layout_width="90dp"
         android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
-        android:background="@null"
+        android:background="@drawable/custom_button"
+        android:text="@string/cancel"
+        android:textColor="#151414"
         android:padding="1dp"
         android:scaleType="fitXY"
-        android:src="@drawable/custom_button"
         android:contentDescription="@string/todo"/>
 </LinearLayout>

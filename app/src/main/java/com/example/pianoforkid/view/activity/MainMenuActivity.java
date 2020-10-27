@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     CallbackManager callbackManager;
     ShareDialog shareDialog;
     Button btn_share_facebook;
+    ImageButton btn_rank;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, MainMenuActivity.class);
@@ -56,13 +58,12 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
 
         btn_share_facebook = findViewById(R.id.btn_share_facebook);
-
+        btn_rank= findViewById(R.id.imageButtonRank);
         ImageView button_settings = findViewById(R.id.imageButtonSetting);
         button_songs.setOnClickListener(this);
         button_instruments.setOnClickListener(this);
         btn_share_facebook.setOnClickListener(this);
-
-
+        btn_rank.setOnClickListener(this);
 
         button_settings.setOnClickListener(this);
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
@@ -136,6 +137,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
 
                     break;
+            case R.id.imageButtonRank:
+                LeaderBoardActivity.startActivity(this);
+                break;
         }
     }
 

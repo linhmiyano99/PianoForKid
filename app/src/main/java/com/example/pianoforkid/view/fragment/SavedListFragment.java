@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
+import com.example.pianoforkid.view.adaper.SavedListAdapter;
 import com.example.pianoforkid.view.adaper.SongListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
@@ -24,7 +26,7 @@ import java.util.Objects;
 
 
 public class SavedListFragment extends Fragment {
-    SongListAdapter songListAdapter;
+    SavedListAdapter savedListAdapter;
     SongViewModel viewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,9 +37,9 @@ public class SavedListFragment extends Fragment {
         RecyclerView recyclerView= view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        songListAdapter = new SongListAdapter();
-        recyclerView.setAdapter(songListAdapter);
-        songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        savedListAdapter = new SavedListAdapter();
+        recyclerView.setAdapter(savedListAdapter);
+        savedListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
 
         return view;
     }
@@ -52,7 +54,7 @@ public class SavedListFragment extends Fragment {
         builder.setView(customLayout);
         // add a button
 
-        ImageButton button_back = customLayout.findViewById(R.id.btn_back);
+        Button button_back = customLayout.findViewById(R.id.btn_back);
         ImageButton listen =  customLayout.findViewById(R.id.card_view_listen);
         ImageButton play =  customLayout.findViewById(R.id.card_view_play);
 

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pianoforkid.R;
@@ -44,7 +45,7 @@ public class LikeListFragment extends Fragment {
         builder.setView(customLayout);
         // add a button
 
-        ImageButton button_back = customLayout.findViewById(R.id.btn_back);
+        Button button_back = customLayout.findViewById(R.id.btn_back);
         ImageButton listen =  customLayout.findViewById(R.id.card_view_listen);
         ImageButton play =  customLayout.findViewById(R.id.card_view_play);
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
-    android:background="@drawable/bg_list_song"
+    android:background="@drawable/bg_main_menu"
     tools:context=".view.activity.MainMenuActivity">
 
     <TextView
@@ -56,11 +56,11 @@
     <Button
         android:id="@+id/btn_share_facebook"
         style="@style/small_button_style"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="292dp"
-        android:layout_marginEnd="652dp"
         android:background="@drawable/user"
         android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -73,4 +73,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButtonShareFaceBook"
+        style="@style/small_button_style"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="224dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/facebook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonRank"
+        style="@style/small_button_style"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="164dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/chess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
