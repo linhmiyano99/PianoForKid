@@ -39,14 +39,14 @@
         </ImageButton>
     </LinearLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_back"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:background="@null"
         android:padding="1dp"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_back"
+        android:src="@drawable/custom_button"
         android:contentDescription="@string/todo"/>
 </LinearLayout>

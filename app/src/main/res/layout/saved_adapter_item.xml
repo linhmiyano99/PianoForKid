@@ -10,7 +10,6 @@
         android:layout_marginStart="@dimen/margin_title"
         android:layout_marginEnd="@dimen/margin_title"
         android:layout_width="match_parent"
-        app:cardCornerRadius="30dp"
         android:layout_height="140dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,18 +45,6 @@
                 android:src="@drawable/heart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/image_view_download"
-                android:src="@drawable/download"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="@dimen/margin_top_button"
-                android:contentDescription="@string/todo"
-                android:scaleType="fitXY"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/image_view_hearth"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView

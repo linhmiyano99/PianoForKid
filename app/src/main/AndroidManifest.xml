@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".view.activity.DetailLessonListActivity"></activity>
+        <activity android:name=".view.activity.DetailLessonListActivity"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.AllListActivity"
-        <activity android:name=".view.activity.LeaderBoardActivity"></activity>
+            android:screenOrientation="landscape"/>
+        <activity android:name=".view.activity.LeaderBoardActivity"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.LoginActivity"
             android:screenOrientation="landscape"></activity>
@@ -35,18 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.activity.LoginActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".view.activity.UserActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".view.activity.MainMenuActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".view.activity.SplashScreenActivity"
-            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".view.activity.InstructionActivity"
             android:screenOrientation="landscape" />

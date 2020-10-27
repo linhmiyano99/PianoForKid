@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,6 +18,10 @@ public class AllListActivity extends AppCompatActivity {
     TabLayout tabLayout;
     TabItem tab_lesson, tab_like, tab_saved;
     ViewPager viewPager;
+    public static void startActivity(Context context){
+        Intent intent = new Intent(context, AllListActivity.class);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
