@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.repository.FirebaseRepository;
 
@@ -28,4 +29,11 @@ public class FirebaseViewModel  extends AndroidViewModel {
     public LiveData<List<User>> getUserList(){
         return firebaseRepository.getUserList();
     }
+    public void loadAllSongs(){
+        firebaseRepository.loadAllSongs();
+    }
+    public LiveData<List<Song>> getListSongs() {
+        return firebaseRepository.getListSongs();
+    }
+
 }

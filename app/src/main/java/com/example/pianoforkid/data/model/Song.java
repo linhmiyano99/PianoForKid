@@ -19,6 +19,9 @@ public class Song {
 		this.songName = songName;
 		songAuthor = "you";
 	}
+	public Song(){
+
+    }
 
     @Override
     public String toString() {

@@ -3,10 +3,9 @@ package com.example.pianoforkid.repository;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.service.FirebaseService;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -32,4 +31,12 @@ public class FirebaseRepository {
     public LiveData<List<User>> getUserList(){
         return firebaseService.getUserList();
     }
+
+    public void loadAllSongs(){
+        firebaseService.loadAllSongs();
+    }
+    public LiveData<List<Song>> getListSongs() {
+        return firebaseService.getListSongs();
+    }
+
 }

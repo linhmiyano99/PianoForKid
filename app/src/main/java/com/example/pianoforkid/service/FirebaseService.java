@@ -73,7 +73,7 @@ public class FirebaseService {
         return leaderBoard;
     }
     public void loadAllSongs() {
-        databaseReference = firebaseDatabase.getReference("Song");
+        databaseReference = firebaseDatabase.getReference("song_table");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -86,6 +86,8 @@ public class FirebaseService {
                     // properties of song
                 }
                 songList.setValue(list);
+                Log.e("Count ", String.valueOf(songList));
+
             }
 
             @Override
