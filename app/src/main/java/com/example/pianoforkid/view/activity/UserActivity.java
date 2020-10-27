@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pianoforkid.R;
@@ -33,7 +34,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     TextView txt_user_name;
     TextView txt_score;
     Button btn_sign_out;
-    Button btn_back;
+    ImageButton btn_back;
 
     // Choose an arbitrary request code value
     private static final int RC_SIGN_IN = 1;
