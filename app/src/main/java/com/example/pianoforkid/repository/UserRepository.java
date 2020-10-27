@@ -25,7 +25,7 @@ public class UserRepository {
         user = userDao.getUser();
     }
     public void insertUser(User userX){
-        userDao.insert(userX);
+        AppRoomDatabase.databaseWriteExecutor.execute(() -> userDao.insert(userX));
     }
     public LiveData<User> getUser(){
         return user;

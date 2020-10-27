@@ -1,11 +1,15 @@
 package com.example.pianoforkid.data.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import com.google.firebase.database.PropertyName;
 
 @Entity(tableName = "user_table")
 public class User {
+    @PrimaryKey
+    @NonNull
     @PropertyName("userId")
     public String userId;
     @PropertyName("identifier")

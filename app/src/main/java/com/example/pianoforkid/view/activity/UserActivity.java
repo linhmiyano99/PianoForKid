@@ -3,12 +3,16 @@ package com.example.pianoforkid.view.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.pianoforkid.R;
+import com.example.pianoforkid.data.model.User;
+import com.example.pianoforkid.viewmodel.UserViewModel;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,12 +34,13 @@ public class UserActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String mUsername;
+    User userX;
+    TextView email;
 
     // Choose an arbitrary request code value
     private static final int RC_SIGN_IN = 1;
-
-
     //*****************
+    UserViewModel userViewModel;
     public static void startActivity(Context context){
         Intent intent = new Intent(context, UserActivity.class);
         context.startActivity(intent);
@@ -46,6 +51,19 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        email = findViewById(R.id.text_view_username);
+
+        userViewModel.getUser().observe(this, u ->
+        {
+            userX = u;
+            try {
+                email.setText(u.identifier);
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
+        });
         mUsername = ANONYMOUS;
         //*****************
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -72,6 +90,8 @@ public class UserActivity extends AppCompatActivity {
                                 .build(),
 
                         RC_SIGN_IN);
+
+
             }
         };
         //*****************
@@ -148,8 +168,7 @@ public class UserActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                MainMenuActivity.startActivity(this);
+                userViewModel.insertUser(new User(user.getUid(), user.getDisplayName(), user.getEmail(), 0));
                 // ...
             } else {
                 // Sign in failed. If response is null the user canceled the
