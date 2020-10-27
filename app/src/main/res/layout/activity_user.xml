@@ -136,7 +136,7 @@
         android:padding="10dp"
         android:textSize="16sp" />
 
-    <Button
+   <!-- <Button
         android:id="@+id/button_sign_out"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -146,5 +146,5 @@
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="17dp"
         android:background="@drawable/custom_button_login"
-        android:text="@string/sign_out_title" />
+        android:text="@string/sign_out_title" />-->
 </RelativeLayout>
