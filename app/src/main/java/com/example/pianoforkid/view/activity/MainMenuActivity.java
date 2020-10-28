@@ -19,16 +19,8 @@ import com.example.pianoforkid.viewmodel.SongViewModel;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.share.ShareApi;
 import com.facebook.share.Sharer;
-import com.facebook.share.model.ShareContent;
 import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.model.ShareMediaContent;
-import com.facebook.share.model.SharePhoto;
-import com.facebook.share.model.SharePhotoContent;
-import com.facebook.share.widget.MessageDialog;
-import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
@@ -108,7 +100,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 AllListActivity.startActivity(this);
                 break;
             case R.id.buttonInstrument:
-                SaveMusicActivity.startActivity(this);
+                UserActivity.startActivity(this);
                 break;
             case R.id.imageButtonSetting:
                 SettingActivity.startActivity(this);

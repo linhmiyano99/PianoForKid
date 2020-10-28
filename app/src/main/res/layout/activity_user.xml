@@ -9,7 +9,7 @@
     tools:context=".view.activity.UserActivity">
     <ImageButton
         android:layout_marginStart="@dimen/margin_top_button"
-        android:id="@+id/button_back"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="73dp"
         android:layout_gravity="start"
@@ -42,7 +42,7 @@
         android:id="@+id/textView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_account"
+        android:layout_above="@+id/txt_user_name"
         android:layout_below="@+id/text_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -51,13 +51,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/margin_login"
         android:padding="5dp"
-        android:text="@string/account_information"
+        android:text="@string/user_name"
         android:textColor="#FAF9F9"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/text_view_account"
+        android:id="@+id/txt_user_name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
@@ -76,7 +76,7 @@
         android:id="@+id/textView2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_username"
+        android:layout_above="@+id/txt_email"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
@@ -89,7 +89,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/text_view_username"
+        android:id="@+id/txt_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
@@ -108,20 +108,20 @@
         android:id="@+id/textView3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_view_password"
+        android:layout_above="@+id/txt_score"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/margin_login"
         android:layout_marginEnd="@dimen/margin_login"
         android:padding="5dp"
-        android:text="@string/password"
+        android:text="@string/score"
         android:textColor="#FAF9F9"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/text_view_password"
+        android:id="@+id/txt_score"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -137,7 +137,7 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/button_sign_out"
+        android:id="@+id/btn_sign_out"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

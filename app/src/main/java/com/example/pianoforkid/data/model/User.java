@@ -1,20 +1,27 @@
 package com.example.pianoforkid.data.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.firebase.database.PropertyName;
 
+@Entity(tableName = "user_table")
 public class User {
-    @PropertyName("email")
-    public String email;
+    @PrimaryKey
+    @NonNull
+    @PropertyName("userId")
+    public String userId;
+    @PropertyName("identifier")
+    public String identifier;
     @PropertyName("name")
     public String name;
-    @PropertyName("photo")
-    public String photo;
     @PropertyName("score")
     public int score;
-    public User(String email, String name, String photo, int score){
-        this.email = email;
+    public User(String userId, String name, String identifier, int score){
+        this.userId = userId;
         this.name = name;
-        this.photo = photo;
+        this.identifier = identifier;
         this.score = score;
     }
 }

@@ -5,9 +5,9 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.pianoforkid.data.song.SongDao;
-import com.example.pianoforkid.data.song.SongRoomDatabase;
-import com.example.pianoforkid.data.song.SoundDao;
+import com.example.pianoforkid.data.localdatabase.SongDao;
+import com.example.pianoforkid.data.localdatabase.AppRoomDatabase;
+import com.example.pianoforkid.data.localdatabase.SoundDao;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.Sound;
 
@@ -31,7 +31,7 @@ public class SongRepository {
     }
     private static SongRepository INSTANCE;
     private SongRepository(Application application){
-        SongRoomDatabase db = SongRoomDatabase.getDatabase(application);
+        AppRoomDatabase db = AppRoomDatabase.getDatabase(application);
         songDao = db.songDao();
         soundDao = db.soundDao();
         listSongs = songDao.getListSong();
@@ -62,7 +62,7 @@ public class SongRepository {
     }
 
     public void insertSong(final Song song, final List<Sound> soundList){
-        SongRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
+        AppRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 long duration = 0;

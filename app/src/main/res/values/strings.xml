@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">PianoForKid</string>
     <string name="facebook_app_id">954490725034037</string>
+    <string name="facebook_application_id" translatable="false">954490725034037</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb954490725034037</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="text_title">Let\'s play music</string>
     <string name="todo">TODO</string>
@@ -67,4 +69,6 @@
     <string name="like">Like</string>
     <string name="saved">Saved</string>
     <string name="list_song_item">1-Lesson 1: Do Re Mi</string>
+    <string name="user_name">User Name</string>
+    <string name="score">Score</string>
 </resources>
