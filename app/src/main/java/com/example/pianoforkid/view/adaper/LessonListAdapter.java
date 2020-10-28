@@ -26,16 +26,23 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         listLessons.add(new Lesson(4, "Lesson 4: Minor Chord"));
         listLessons.add(new Lesson(5, "Lesson 5: More practice"));*/
     }
-    private LessonListAdapter.OnItemLessonClickListener listener;
-    private LessonListAdapter.OnItemLessonDownloadClickListener downloadListener;
+    private OnItemLessonClickListener listener;
+    private OnItemLessonDownloadClickListener downloadListener;
+    private OnItemLikeClickListener likedListener;
 
-    public void setOnItemLessonClickListener(LessonListAdapter.OnItemLessonClickListener listener){
+
+    public void setOnItemLessonClickListener(OnItemLessonClickListener listener){
         this.listener = listener;
     }
-    public void setOnItemLessonDownloadClickListener(LessonListAdapter.OnItemLessonDownloadClickListener listener){
+    public void setOnItemLessonDownloadClickListener(OnItemLessonDownloadClickListener listener){
         this.downloadListener = listener;
     }
-
+    public void setOnItemLikeClickListener(OnItemLikeClickListener listener){
+        this.likedListener = listener;
+    }
+    public interface OnItemLikeClickListener{
+        void onItemClick(int id);
+    }
     public interface OnItemLessonClickListener{
         void onItemClick(int id);
     } public interface OnItemLessonDownloadClickListener{
@@ -54,7 +61,9 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
     public void onBindViewHolder(@NonNull LessonListAdapter.ViewHolder holder, int position) {
         Song lesson = listLessons.get(position);
         holder.tvDetail.setText(lesson.toString());
-        holder.image_view_download.setTag(position);
+        holder.image_view_download.setTag(lesson.songId);
+        holder.tvDetail.setTag(lesson.songId);
+        holder.image_view_hearth.setTag(lesson.songId);
     }
 
     @Override
@@ -65,20 +74,31 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvDetail;
         ImageView image_view_download;
+        ImageView image_view_hearth;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvDetail = itemView.findViewById(R.id.text_view_song);
             image_view_download = itemView.findViewById(R.id.image_view_download);
+            image_view_hearth = itemView.findViewById(R.id.image_view_hearth);
+
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemClick((int) v.getTag());
                 }
             });
+
             image_view_download.setOnClickListener(v -> {
                 if (downloadListener != null) {
                     downloadListener.onItemClick((int) v.getTag());
                 }
             });
+
+            image_view_hearth.setOnClickListener(v->{
+                if (likedListener != null) {
+                    likedListener.onItemClick((int) v.getTag());
+                }
+            });
+
         }
 
     }
@@ -86,7 +106,13 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         this.listLessons = listSongs;
         notifyDataSetChanged();
     }
-    public Song getSong(int i){
-        return listLessons.get(i);
+
+    public Song getSong(int songId){
+        for (Song song: listLessons
+             ) {
+            if(song.songId == songId)
+                return song;
+        }
+        return null;
     }
 }

@@ -7,6 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
+import com.example.pianoforkid.data.model.LikedSong;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.Sound;
 import com.example.pianoforkid.data.model.User;
@@ -14,11 +15,12 @@ import com.example.pianoforkid.data.model.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Song.class, Sound.class, User.class}, version = 2, exportSchema = false)
+@Database(entities = {Song.class, Sound.class, User.class, LikedSong.class}, version = 1, exportSchema = false)
 public abstract class AppRoomDatabase extends RoomDatabase {
     public abstract SongDao songDao();
     public abstract SoundDao soundDao();
     public abstract UserDao userDao();
+    public abstract LikedDao likedDao();
     private static AppRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREAD = 4;
     public static final ExecutorService databaseWriteExecutor =

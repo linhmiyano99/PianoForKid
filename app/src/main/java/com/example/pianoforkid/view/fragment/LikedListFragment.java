@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,23 +17,37 @@ import android.widget.ImageButton;
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
+import com.example.pianoforkid.view.adaper.LikedListAdapter;
 import com.example.pianoforkid.view.adaper.SongListAdapter;
+import com.example.pianoforkid.viewmodel.SongViewModel;
 
 
-public class LikeListFragment extends Fragment {
-    SongListAdapter songListAdapter;
+public class LikedListFragment extends Fragment {
+    LikedListAdapter songListAdapter;
+    SongViewModel viewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_like_list, container, false);
+
+        viewModel = new ViewModelProvider(this).get(SongViewModel.class);
+
         RecyclerView recyclerView= view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        songListAdapter = new SongListAdapter();
+        songListAdapter = new LikedListAdapter();
         recyclerView.setAdapter(songListAdapter);
+        viewModel.getListLikedSongs().observe(getViewLifecycleOwner(), songs -> songListAdapter.setListSongs(songs));
+
         songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        songListAdapter.setOnItemLikeClickListener(this::unLiked);
         return view;
+    }
+
+    private void unLiked(int i) {
+        viewModel.deleteFromListLikedSong(i);
     }
 
     private void showAlertDialogButtonClicked(int id) {

@@ -10,14 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
-import com.example.pianoforkid.data.model.Song;
+import com.example.pianoforkid.data.model.LikedSong;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.ViewHolder>{
-    private List<Song> listSongs;
-    public SavedListAdapter() {
+public class LikedListAdapter extends RecyclerView.Adapter<LikedListAdapter.ViewHolder>{
+    private List<LikedSong> listSongs;
+    public LikedListAdapter() {
         listSongs = new ArrayList<>();
    /*     listSongs.add(new Song(1, "Merrily We Roll Along"));
         listSongs.add(new Song(2, "Ode To Joy"));
@@ -25,37 +25,37 @@ public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.View
         listSongs.add(new Song(4, "Left Hand Warm-Up"));*/
     }
     private OnItemSongClickListener listener;
-    private OnItemLikeClickListener likedListener;
+    private OnItemLikeClickListener listenerLiked;
 
-    public void setOnItemSongClickListener(SavedListAdapter.OnItemSongClickListener listener){
+    public void setOnItemSongClickListener(OnItemSongClickListener listener){
         this.listener = listener;
     }
     public void setOnItemLikeClickListener(OnItemLikeClickListener listener){
-        this.likedListener = listener;
-    }
-    public interface OnItemLikeClickListener{
-        void onItemClick(int id);
+        this.listenerLiked = listener;
     }
     public interface OnItemSongClickListener{
         void onItemClick(int id);
     }
+    public interface OnItemLikeClickListener{
+        void onItemClick(int id);
+    }
     @NonNull
     @Override
-    public SavedListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View view = inflater.inflate(R.layout.saved_adapter_item, parent, false);
-        return new SavedListAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SavedListAdapter.ViewHolder holder, int position) {
-        Song song = listSongs.get(position);
-        holder.tvDetail.setText(song.toString());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        LikedSong song = listSongs.get(position);
+        holder.tvDetail.setText(song.songName);
         holder.tvDetail.setTag(song.songId);
         holder.image_view_hearth.setTag(song.songId);
-
     }
+
 
     @Override
     public int getItemCount() {
@@ -69,29 +69,22 @@ public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.View
             super(itemView);
             tvDetail = itemView.findViewById(R.id.text_view_song);
             image_view_hearth = itemView.findViewById(R.id.image_view_hearth);
+
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemClick((int) v.getTag());
                 }
             });
+
             image_view_hearth.setOnClickListener(v->{
-                if (likedListener != null) {
-                    likedListener.onItemClick((int) v.getTag());
+                if(listenerLiked != null){
+                    listenerLiked.onItemClick((int)v.getTag());
                 }
             });
         }
     }
-    public void setListSongs(List<Song> listSongs) {
+    public void setListSongs(List<LikedSong> listSongs) {
         this.listSongs = listSongs;
         notifyDataSetChanged();
-    }
-
-    public Song getSong(int songId){
-        for (Song song: listSongs
-        ) {
-            if(song.songId == songId)
-                return song;
-        }
-        return null;
     }
 }

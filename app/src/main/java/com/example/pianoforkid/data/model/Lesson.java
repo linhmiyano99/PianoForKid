@@ -1,9 +1,11 @@
 package com.example.pianoforkid.data.model;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity(tableName = "song_table")
+@Entity(tableName = "lesion_table")
 public class Lesson {
+    @PrimaryKey
     public int lessonId;
     public String lessonName;
 

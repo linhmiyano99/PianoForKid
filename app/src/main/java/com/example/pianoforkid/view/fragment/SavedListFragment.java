@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pianoforkid.R;
+import com.example.pianoforkid.data.model.LikedSong;
+import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
 import com.example.pianoforkid.view.adaper.SavedListAdapter;
@@ -41,8 +43,18 @@ public class SavedListFragment extends Fragment {
         recyclerView.setAdapter(savedListAdapter);
         viewModel.getListSongs().observe(getViewLifecycleOwner(), songs -> savedListAdapter.setListSongs(songs));
         savedListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        savedListAdapter.setOnItemLikeClickListener(this::like);
 
         return view;
+    }
+
+    private void like(int i) {
+        Song tempSong = savedListAdapter.getSong(i);
+        LikedSong song = new LikedSong();
+        song.remoteId = tempSong.songId;
+        song.songName = tempSong.songName;
+        song.songId = tempSong.songId;
+        viewModel.insertLikedSong(song);
     }
 
     private void showAlertDialogButtonClicked(int id) {
