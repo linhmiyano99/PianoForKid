@@ -10,9 +10,9 @@ import com.google.firebase.database.PropertyName;
 public class User {
     @PrimaryKey
     @NonNull
-    @PropertyName("userId")
+    @PropertyName("email")
     public String userId;
-    @PropertyName("identifier")
+    @PropertyName("uid")
     public String identifier;
     @PropertyName("name")
     public String name;
@@ -24,4 +24,5 @@ public class User {
         this.identifier = identifier;
         this.score = score;
     }
+    public User(){}
 }

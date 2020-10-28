@@ -65,5 +65,6 @@ public class LeaderBoardAdapter  extends RecyclerView.Adapter<LeaderBoardAdapter
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+        notifyDataSetChanged();
     }
 }

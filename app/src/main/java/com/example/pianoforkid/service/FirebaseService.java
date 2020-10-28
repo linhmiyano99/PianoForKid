@@ -34,18 +34,15 @@ public class FirebaseService {
 
     private FirebaseService() {
         leaderBoard = new MutableLiveData<>();
-        List<User> list= new ArrayList<>();
-        list.add(new User(null, "Linh", null, 300));
-        list.add(new User(null, "Satoh", null, 100));
-        leaderBoard.setValue(list);
         firebaseDatabase = FirebaseDatabase.getInstance();
         songList = new MutableLiveData<>();
 
     }
 
     public void loadLeaderBoard() {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        databaseReference = firebaseDatabase.getReference("user");
+        Log.e("Count ", "loadLeaderBoard");
+
+        databaseReference = firebaseDatabase.getReference("leaderboard");
 
         databaseReference.orderByChild("score")
                 .addValueEventListener(new ValueEventListener() {
@@ -58,6 +55,9 @@ public class FirebaseService {
                                                  list.add(post);
                                                  // properties of song
                                              }
+
+                                             list.add(new User(null, "Linh", null, 300));
+                                             list.add(new User(null, "Satoh", null, 100));
                                              leaderBoard.setValue(list);
                                          }
 

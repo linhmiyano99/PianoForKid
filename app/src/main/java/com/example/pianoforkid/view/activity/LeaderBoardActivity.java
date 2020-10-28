@@ -40,14 +40,14 @@ public class LeaderBoardActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         leaderBoardAdapter = new LeaderBoardAdapter();
-
+        viewModel.loadLeaderBoard();
         viewModel.getUserList().observe(this, users -> leaderBoardAdapter.setUserList(users));
 
         recyclerView.setAdapter(leaderBoardAdapter);
-        leaderBoardAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        leaderBoardAdapter.setOnItemSongClickListener(this::showUserDetail);
     }
 
-    public void showAlertDialogButtonClicked(int id) {
+    public void showUserDetail(int id) {
         /*// create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Song id: " + id);
