@@ -29,8 +29,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     SettingViewModel settingViewModel;
     CallbackManager callbackManager;
     ShareDialog shareDialog;
-    Button btn_share_facebook;
+    ImageButton btn_share_facebook;
     ImageButton btn_rank;
+    Button btn_user;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, MainMenuActivity.class);
@@ -44,18 +45,18 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Log.d("MainMenuActivity", "onCreate");
 
-
         Button button_songs = findViewById(R.id.buttonListSong);
         Button button_instruments = findViewById(R.id.buttonInstrument);
 
-
         btn_share_facebook = findViewById(R.id.btn_share_facebook);
         btn_rank= findViewById(R.id.imageButtonRank);
+        btn_user = findViewById(R.id.btn_user);
         ImageView button_settings = findViewById(R.id.imageButtonSetting);
         button_songs.setOnClickListener(this);
         button_instruments.setOnClickListener(this);
         btn_share_facebook.setOnClickListener(this);
         btn_rank.setOnClickListener(this);
+        btn_user.setOnClickListener(this);
 
         button_settings.setOnClickListener(this);
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
@@ -100,7 +101,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 AllListActivity.startActivity(this);
                 break;
             case R.id.buttonInstrument:
-                UserActivity.startActivity(this);
+                SaveMusicActivity.startActivity(this);
                 break;
             case R.id.imageButtonSetting:
                 SettingActivity.startActivity(this);
@@ -122,15 +123,14 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                             .setContentUrl(Uri.parse("https://developer.android.com/training/wearables"))
                             .setQuote("Connect on a global scale.")
                             .build();
-
                     shareDialog.show(content);
                 }
-
-
-
                     break;
             case R.id.imageButtonRank:
                 LeaderBoardActivity.startActivity(this);
+                break;
+            case R.id.btn_user:
+                UserActivity.startActivity(this);
                 break;
         }
     }
@@ -140,5 +140,4 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
-
 }

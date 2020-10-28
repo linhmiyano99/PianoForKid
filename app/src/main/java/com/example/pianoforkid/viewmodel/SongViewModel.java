@@ -40,6 +40,9 @@ public class SongViewModel extends AndroidViewModel {
     public void insertSong(Song song, List<Sound> soundList) {
         songRepository.insertSong(song, soundList);
     }
+    public void insertSong(Song song) {
+        songRepository.insertSong(song);
+    }
     public LiveData<Integer> getLastSongId(){
         return lastSongId;
     }

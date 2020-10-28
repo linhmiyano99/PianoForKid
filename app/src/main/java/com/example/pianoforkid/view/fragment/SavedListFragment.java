@@ -1,11 +1,10 @@
 package com.example.pianoforkid.view.fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +18,7 @@ import com.example.pianoforkid.R;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
 import com.example.pianoforkid.view.adaper.SavedListAdapter;
-import com.example.pianoforkid.view.adaper.SongListAdapter;
+import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 import java.util.Objects;
@@ -34,11 +33,13 @@ public class SavedListFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_saved_list, container, false);
+        viewModel = new ViewModelProvider(this).get(SongViewModel.class);
         RecyclerView recyclerView= view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         savedListAdapter = new SavedListAdapter();
         recyclerView.setAdapter(savedListAdapter);
+        viewModel.getListSongs().observe(getViewLifecycleOwner(), songs -> savedListAdapter.setListSongs(songs));
         savedListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
 
         return view;

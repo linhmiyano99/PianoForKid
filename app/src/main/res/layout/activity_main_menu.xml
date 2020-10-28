@@ -54,7 +54,7 @@
 
 
     <Button
-        android:id="@+id/btn_share_facebook"
+        android:id="@+id/btn_user"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
         android:layout_marginTop="292dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButtonShareFaceBook"
+        android:id="@+id/btn_share_facebook"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
         android:layout_marginTop="224dp"

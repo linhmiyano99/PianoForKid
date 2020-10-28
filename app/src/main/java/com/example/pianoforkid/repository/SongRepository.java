@@ -80,6 +80,14 @@ public class SongRepository {
             }
         });
     }
+    public void insertSong(final Song song){
+        AppRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                songDao.insert(song);
+            }
+        });
+    }
     public LiveData<Integer> getLastSongId(){
         return lastSongId;
     }
