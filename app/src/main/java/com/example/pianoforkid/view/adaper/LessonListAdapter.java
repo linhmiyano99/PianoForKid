@@ -10,19 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
     import com.example.pianoforkid.data.model.Lesson;
+import com.example.pianoforkid.data.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.ViewHolder> {
-    private List<Lesson> listLessons;
+    private List<Song> listLessons;
     public LessonListAdapter() {
-        listLessons = new ArrayList<>();
+        listLessons = new ArrayList<>();/*
         listLessons.add(new Lesson(1, "Lesson 1: Do Re Mi"));
         listLessons.add(new Lesson(2, "Lesson 2: Left Hand"));
         listLessons.add(new Lesson(3, "Lesson 3: Major Chord"));
         listLessons.add(new Lesson(4, "Lesson 4: Minor Chord"));
-        listLessons.add(new Lesson(5, "Lesson 5: More practice"));
+        listLessons.add(new Lesson(5, "Lesson 5: More practice"));*/
     }
     private LessonListAdapter.OnItemLessonClickListener listener;
 
@@ -44,9 +45,8 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull LessonListAdapter.ViewHolder holder, int position) {
-        Lesson lesson = listLessons.get(position);
+        Song lesson = listLessons.get(position);
         holder.tvDetail.setText(lesson.toString());
-        holder.tvDetail.setTag(lesson.lessonId);
     }
 
     @Override
@@ -67,7 +67,8 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         }
 
     }
-    public void setListSongs(List<Lesson> listSongs) {
+    public void setListSongs(List<Song> listSongs) {
         this.listLessons = listSongs;
+        notifyDataSetChanged();
     }
 }
