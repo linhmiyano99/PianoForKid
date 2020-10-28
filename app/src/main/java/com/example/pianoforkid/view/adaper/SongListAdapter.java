@@ -18,8 +18,10 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
     private List<Song> listSongs;
     public SongListAdapter() {
         listSongs = new ArrayList<>();
-        listSongs.add(new Song(100, "Only you"));
-        listSongs.add(new Song(101, "Only you2"));
+        listSongs.add(new Song(1, "Merrily We Roll Along"));
+        listSongs.add(new Song(2, "Ode To Joy"));
+        listSongs.add(new Song(3, "Twinkle Twinkle Little Star"));
+        listSongs.add(new Song(4, "Left Hand Warm-Up"));
     }
     private OnItemSongClickListener listener;
 
@@ -35,7 +37,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
     public SongListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View view = inflater.inflate(R.layout.song_adapter_item, parent, false);
+        View view = inflater.inflate(R.layout.detail_lesson_adapter_item, parent, false);
         return new ViewHolder(view);
     }
     @Override
@@ -52,7 +54,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         TextView tvDetail;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDetail = itemView.findViewById(R.id.tvDetail);
+            tvDetail = itemView.findViewById(R.id.text_view_song);
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemClick((int) v.getTag());

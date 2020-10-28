@@ -35,7 +35,7 @@ public class LeaderBoardAdapter  extends RecyclerView.Adapter<LeaderBoardAdapter
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View view = inflater.inflate(R.layout.user_item, parent, false);
+        View view = inflater.inflate(R.layout.leader_board_item, parent, false);
         return new LeaderBoardAdapter.ViewHolder(view);
     }
 
@@ -54,7 +54,7 @@ public class LeaderBoardAdapter  extends RecyclerView.Adapter<LeaderBoardAdapter
         TextView tvDetail;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDetail = itemView.findViewById(R.id.tvDetail);
+            tvDetail = itemView.findViewById(R.id.text_view_leader);
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemClick((int) v.getTag());

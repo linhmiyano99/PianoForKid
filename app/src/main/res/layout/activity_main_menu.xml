@@ -14,10 +14,10 @@
         style="@style/text_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_title"
+        android:layout_marginTop="@dimen/margin_top_button"
         android:gravity="center_horizontal"
         android:text="@string/text_title"
-        android:textColor="@color/colorAccent"
+        android:textColor="#F0F006"
         android:textSize="@dimen/title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,47 +27,69 @@
     <Button
         android:id="@+id/buttonListSong"
         style="@style/text_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_list_song"
-        android:layout_marginTop="@dimen/margin_title"
+        android:layout_width="220dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:background="@drawable/group_1"
         android:text="@string/list_song"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="textStart"
+        android:layout_marginStart="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
     <Button
         android:id="@+id/buttonInstrument"
         style="@style/text_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="93dp"
         android:layout_marginTop="@dimen/margin_title"
-        android:background="@drawable/button_instrument"
+        android:background="@drawable/group_2"
         android:text="@string/instrument"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+        app:layout_constraintStart_toEndOf="@+id/buttonListSong"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"
+        app:layout_constraintVertical_bias="0.47" />
 
-   <Button
+
+    <Button
         android:id="@+id/btn_share_facebook"
         style="@style/small_button_style"
-        android:layout_marginTop="@dimen/margin_top_button"
-        android:layout_marginEnd="@dimen/margin_top_button"
-        android:contentDescription="@string/todo"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="292dp"
         android:background="@drawable/user"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageButton
         android:id="@+id/imageButtonSetting"
         style="@style/small_button_style"
-        android:layout_marginStart="@dimen/margin_top_button"
-        android:layout_marginTop="@dimen/margin_top_button"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="344dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButtonShareFaceBook"
+        style="@style/small_button_style"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="224dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/facebook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonRank"
+        style="@style/small_button_style"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="164dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/chess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

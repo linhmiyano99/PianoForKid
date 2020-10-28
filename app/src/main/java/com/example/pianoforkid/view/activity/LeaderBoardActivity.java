@@ -28,7 +28,7 @@ public class LeaderBoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // set view layout for this activity
-        setContentView(R.layout.activity_song_list);
+        setContentView(R.layout.activity_leader_board);
 
         Log.d("LeaderBoardActivity", "onCreate");
 
