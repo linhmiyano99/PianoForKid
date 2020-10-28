@@ -40,10 +40,18 @@ public class SongViewModel extends AndroidViewModel {
         return currentSong;
     }
 
+    public LiveData<Song> getSongById(int songId){
+        return songRepository.getSongById(songId);
+    }
+
     public void loadSongById(int songId){
         if(currentSongId == songId)
             return;
         songRepository.loadSongById(songId);
+    }
+
+    public void updateCurrentSong(Song song){
+        songRepository.updateCurrentSong(song);
     }
 
     public void insertSong(Song song, List<Sound> soundList) {

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.key.KeyNote;
 import com.example.pianoforkid.data.model.Sound;
+import com.example.pianoforkid.ultis.ConvertSong;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 import java.util.ArrayList;
@@ -67,6 +68,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     Animation anim_not_nhac;
 
     KeyNote keyNote;
+
 
     public static void startActivity(Context context, int id){
         Intent intent = new Intent(context, PlayMusicWithInstructionActivity.class);
@@ -120,16 +122,27 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         songId = 1;
         if(getIntent().getExtras() != null) {
             songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
+            try{
+                viewModel.loadSongById(songId);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
         }        Log.d("TAG Song", String.valueOf(songId));
         song = new ArrayList<>();
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
-        viewModel.loadSongById(songId);
         viewModel.getCurrentSong().observe(this, soundList -> {
             if (soundList.size() > 0) {
                 song.addAll(soundList);
                 play();
             }
         });
+       /* viewModel.getSongById(songId).observe(this, songById->{
+            if(songById.sheet!=null) {
+                song = ConvertSong.getConvertStringSongToSound(songById.sheet, songId);
+                play();
+            }
+        });*/
 
     }
 

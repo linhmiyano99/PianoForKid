@@ -18,4 +18,6 @@ public interface SongDao {
     LiveData<List<Song>> getListSong();
     @Query("Select COUNT(*) from song_table")
     LiveData<Integer> getLastId();
+    @Query("Select * from song_table where songId = :songId")
+    LiveData<Song> getSongById(int songId);
 }

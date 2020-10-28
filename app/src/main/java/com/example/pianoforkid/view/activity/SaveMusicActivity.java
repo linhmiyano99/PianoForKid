@@ -74,6 +74,8 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	ImageView imageF2;
 	ImageView imageG2;
 
+	String sheet;
+
 	float onUp;
 	float onDown;
 	float onUp2;
@@ -111,6 +113,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		viewModel.getLastSongId().observe(this, integer -> {
 			songId = integer + 1;
 			resetSetSong();
+			sheet = "";
 		});
 
 		btn1 = findViewById(R.id.btnC1);
@@ -177,7 +180,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 
 	void save(String songName) {
 		Song _song = new Song(songId, songName);
+		_song.sheet = sheet;
 		viewModel.insertSong(_song, song);
+		viewModel.insertSong(_song);
 		Log.d("Song", String.valueOf(song));
 		Log.i("SAVE", "pressed");
 
@@ -193,6 +198,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		if (lastDown > 0) {
 			lastDuration = System.currentTimeMillis() - lastDown;
 			sound.setDuration(lastDuration);
+			sheet += (lastDuration + ")");
 			song.add(sound);
 			Log.d("Sound", String.valueOf(sound));
 		}
@@ -245,6 +251,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		sound = new Sound();
 		lastDown = System.currentTimeMillis();
 		sound.setNote(note);
+		sheet += ("(" + note +",");
 		Log.d("XXX", String.valueOf(note));
 
 		check(note);

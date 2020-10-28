@@ -126,13 +126,18 @@ public class InstructionActivity extends AppCompatActivity {
         sizeTemp = 0;
         if(getIntent().getExtras() != null) {
             songId = Objects.requireNonNull(getIntent().getExtras()).getInt("songId");
-        }        Log.d("TAG Song", String.valueOf(songId));
+            try{
+                viewModel.loadSongById(songId);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
+        Log.d("TAG Song", String.valueOf(songId));
         song = new ArrayList<>();
         songTemp = new ArrayList<>();
 
         lastNote = 0;
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
-        viewModel.loadSongById(songId);
         viewModel.getCurrentSong().observe(this, soundList -> {
             if (soundList.size() > 0) {
                 song.addAll(soundList);
@@ -509,6 +514,7 @@ public class InstructionActivity extends AppCompatActivity {
         });
         cancel.setOnClickListener(v -> {
             replay.clearAnimation();
+            dialog.cancel();
             onBackPressed();
         });
     }

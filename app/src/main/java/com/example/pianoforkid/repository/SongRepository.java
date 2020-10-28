@@ -12,6 +12,7 @@ import com.example.pianoforkid.data.localdatabase.SoundDao;
 import com.example.pianoforkid.data.model.LikedSong;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.Sound;
+import com.example.pianoforkid.ultis.ConvertSong;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -65,6 +66,11 @@ public class SongRepository {
         });
     }
 
+    public void updateCurrentSong(Song song){
+        currentSong.setValue(ConvertSong.getConvertStringSongToSound(song.sheet, song.songId));
+        currentSongId =song.songId;
+    }
+
     public void insertSong(final Song song, final List<Sound> soundList){
         AppRoomDatabase.databaseWriteExecutor.execute(() -> {
             long duration = 0;
@@ -100,5 +106,9 @@ public class SongRepository {
 
     public LiveData<List<LikedSong>> getListLikedSongs(){
         return listLikedSongs;
+    }
+
+    public LiveData<Song> getSongById(int songId){
+        return songDao.getSongById(songId);
     }
 }
