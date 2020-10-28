@@ -1,19 +1,21 @@
 package com.example.pianoforkid.service;
 
+import android.app.Application;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.pianoforkid.data.localdatabase.AppRoomDatabase;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.User;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,19 +26,20 @@ public class FirebaseService {
     private MutableLiveData<List<Song>> songList;
     private DatabaseReference databaseReference;
     private FirebaseDatabase firebaseDatabase;
+    private Application application;
 
-    public static FirebaseService getInstance() {
+    public static FirebaseService getInstance(Application application) {
         if (INSTANCE == null) {
-            INSTANCE = new FirebaseService();
+            INSTANCE = new FirebaseService(application);
         }
         return INSTANCE;
     }
 
-    private FirebaseService() {
+    private FirebaseService(Application application) {
         leaderBoard = new MutableLiveData<>();
         firebaseDatabase = FirebaseDatabase.getInstance();
         songList = new MutableLiveData<>();
-
+        this.application = application;
     }
 
     public void loadLeaderBoard() {
@@ -69,9 +72,11 @@ public class FirebaseService {
                                      }
                 );
     }
+
     public LiveData<List<User>> getUserList(){
         return leaderBoard;
     }
+
     public void loadAllSongs() {
         databaseReference = firebaseDatabase.getReference("song_table");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -99,7 +104,45 @@ public class FirebaseService {
 
     }
 
+    public void createUser(FirebaseUser fUser){
+        User player = new User();
+        databaseReference = firebaseDatabase.getReference("leaderboard").child(fUser.getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getChildrenCount() == 0) {
+                    player.userId = fUser.getUid();
+                    player.name = fUser.getDisplayName();
+                    player.identifier = fUser.getUid();
+                    player.score = 0;
+                    databaseReference.child(fUser.getUid()).setValue(player);
+                }
+                AppRoomDatabase.databaseWriteExecutor.execute(() ->AppRoomDatabase.getDatabase(application).userDao().insert(player));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("The read failed: ", databaseError.getMessage());
+
+            }
+        });
+    }
+
+    public void addScore(int score, User user) {
+        user.score += score;
+        firebaseDatabase.getReference("leaderboard")
+                .child(user.userId)
+                .child("score")
+                .setValue(user.score);
+        AppRoomDatabase.databaseWriteExecutor
+                .execute(() -> AppRoomDatabase.getDatabase(application).userDao()
+                .updateScore(user.userId, user.score));
+
+        Log.e("score ", String.valueOf(user.score + score));
+    }
+
     public LiveData<List<Song>> getListSongs() {
         return songList;
     }
+
 }

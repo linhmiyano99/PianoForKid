@@ -20,7 +20,10 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.key.KeyNote;
 import com.example.pianoforkid.data.model.Sound;
+import com.example.pianoforkid.data.model.User;
+import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 import com.example.pianoforkid.viewmodel.SongViewModel;
+import com.example.pianoforkid.viewmodel.UserViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,8 @@ public class InstructionActivity extends AppCompatActivity {
     List<Sound> song;
     List<Sound> songTemp;
     SongViewModel viewModel;
+    FirebaseViewModel firebaseViewModel;
+    UserViewModel userViewModel;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -68,6 +73,8 @@ public class InstructionActivity extends AppCompatActivity {
     int songLeft =0;
 
     KeyNote keyNote;
+
+    User u;
 
     public static void startActivity(Context context, int id){
         Intent intent = new Intent(context, InstructionActivity.class);
@@ -138,6 +145,11 @@ public class InstructionActivity extends AppCompatActivity {
 
         lastNote = 0;
         viewModel = new ViewModelProvider(this).get(SongViewModel.class);
+        firebaseViewModel = new ViewModelProvider(this).get(FirebaseViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+
+        userViewModel.getUser().observe(this, user -> u = user);
+
         viewModel.getCurrentSong().observe(this, soundList -> {
             if (soundList.size() > 0) {
                 song.addAll(soundList);
@@ -484,16 +496,19 @@ public class InstructionActivity extends AppCompatActivity {
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star);
             star3.setImageResource(R.drawable.star);
+            firebaseViewModel.addScore(100, u);
         }
         else if (score == 60){
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star);
             star3.setImageResource(R.drawable.star_null);
+            firebaseViewModel.addScore(60, u);
         }
         else if(score == 30){
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star_null);
             star3.setImageResource(R.drawable.star_null);
+            firebaseViewModel.addScore(30, u);
         }
         else{
             star1.setImageResource(R.drawable.star_null);

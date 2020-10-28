@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,12 +14,14 @@ import android.widget.TextView;
 
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.model.User;
+import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 import com.example.pianoforkid.viewmodel.UserViewModel;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.protobuf.StringValue;
 
 import java.util.Arrays;
 
@@ -29,6 +32,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String mUsername;
+    private String userId;
     User userX;
     TextView txt_email;
     TextView txt_user_name;
@@ -40,6 +44,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     private static final int RC_SIGN_IN = 1;
     //*****************
     UserViewModel userViewModel;
+    FirebaseViewModel firebaseViewModel;
     public static void startActivity(Context context){
         Intent intent = new Intent(context, UserActivity.class);
         context.startActivity(intent);
@@ -51,6 +56,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_user);
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        firebaseViewModel = new ViewModelProvider(this).get(FirebaseViewModel.class);
         txt_email = findViewById(R.id.txt_email);
         txt_user_name = findViewById(R.id.txt_user_name);
         txt_score = findViewById(R.id.txt_score);
@@ -72,9 +78,12 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     userX = u;
                     try {
+                        Log.d("mAuthStateListener", String.valueOf(u));
                         txt_email.setText(u.identifier);
                         txt_user_name.setText(u.name);
-                        txt_score.setText(u.score);
+                        txt_score.setText(String.valueOf(u.score));
+                        userId = u.userId;
+                        Log.d("mAuthStateListener2", "mAuthStateListener2");
                     }
                     catch (Exception e){
                         System.out.println(e);
@@ -112,6 +121,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("UserActivity", "onResume");
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 
@@ -152,6 +162,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                             txt_email.setText("");
                             txt_user_name.setText("");
                             txt_score.setText("");
+                            userViewModel.delete(userId);
                             MainMenuActivity.startActivity(this);
                         });
                 break;
@@ -160,4 +171,5 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }
