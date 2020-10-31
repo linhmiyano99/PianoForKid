@@ -136,7 +136,7 @@ public class InstructionActivity extends AppCompatActivity {
             try{
                 viewModel.loadSongById(songId);
             }catch (Exception e){
-                System.out.println(e);
+                System.out.println(e.toString());
             }
         }
         Log.d("TAG Song", String.valueOf(songId));
