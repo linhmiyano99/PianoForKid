@@ -73,4 +73,6 @@
     <string name="score">Score</string>
     <string name="your_score">Your score</string>
     <string name="system_score">System score</string>
+    <string name="win">Win</string>
+    <string name="game_over">Game Over</string>
 </resources>

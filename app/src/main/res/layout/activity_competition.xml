@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_list_song"
     tools:context=".view.activity.CompetitionActivity">
 
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:padding="3dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/btnC1"
         style="@style/button_kb_seven_style"
@@ -81,81 +94,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnA1" />
-    <Button
-        android:id="@+id/btn_C1"
-        style="@style/button_kb_seven_style"
-        android:background="@drawable/kb_c"
-        android:text="@string/c1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_D1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_D1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_D1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btnC1"
-        android:background="@drawable/kb_d"
-        android:text="@string/d1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_E1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_E1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_C1" />
-
-    <Button
-        android:id="@+id/btn_E1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btnD1"
-        android:background="@drawable/kb_e"
-        android:text="@string/e1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_F1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_F1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_D1" />
-
-    <Button
-        android:id="@+id/btn_F1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btnE1"
-        android:background="@drawable/kb_f"
-        android:text="@string/f1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_G1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_G1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_E1" />
-
-    <Button
-        android:id="@+id/btn_G1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btn_F1"
-        android:background="@drawable/kb_g"
-        android:text="@string/g1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_A1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_A1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_F1" />
-
-    <Button
-        android:id="@+id/btn_A1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btn_G1"
-        android:background="@drawable/kb_a"
-        android:text="@string/a1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_B1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_G1" />
-
-    <Button
-        android:id="@+id/btn_B1"
-        style="@style/button_kb_seven_style"
-        android:layout_toEndOf="@+id/btn_A1"
-        android:background="@drawable/kb_b"
-        android:text="@string/b1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_A1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_A1" />
 
     <ImageView
         android:id="@+id/image_view_note"
@@ -164,19 +102,24 @@
         android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:src="@drawable/ic_image_note"
-        app:layout_constraintBottom_toTopOf="@+id/btnC1"
+        app:layout_constraintBottom_toTopOf="@+id/btnF1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_C1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/text_view__user_score"
-        android:textColor="#ff00"
+        style="@style/text_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/your_score"
-        style="@style/text_button"
+        android:textColor="#ff00"
         app:layout_constraintBottom_toTopOf="@+id/btnD1"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_note_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_D1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/image_view_note_2"
@@ -185,17 +128,103 @@
         android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:src="@drawable/ic_image_note"
-        app:layout_constraintBottom_toTopOf="@+id/btnB1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_B1" />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_view_system_score"
-        android:textColor="#ff00"
+        style="@style/text_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/system_score"
-        style="@style/text_button"
-        app:layout_constraintBottom_toTopOf="@+id/btnA1"
+        android:textColor="#ff00"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_note_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_A1" />
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView1"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/star_c1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView1"
+        app:srcCompat="@drawable/star_d1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView4"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:srcCompat="@drawable/star_e1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:srcCompat="@drawable/star_f1" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:srcCompat="@drawable/star_g1" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/imageView7"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:srcCompat="@drawable/star_a1" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        style="@style/star_style"
+        android:layout_marginStart="@dimen/margin_top_button"
+        android:layout_marginEnd="@dimen/margin_top_button"
+        android:layout_marginBottom="@dimen/margin_button"
+        android:baselineAlignBottom="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star_b1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

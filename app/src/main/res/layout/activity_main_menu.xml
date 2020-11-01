@@ -29,11 +29,11 @@
         style="@style/text_button"
         android:layout_width="220dp"
         android:layout_height="93dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="@dimen/margin_top_button"
         android:background="@drawable/group_1"
         android:text="@string/list_song"
         android:textAlignment="textStart"
-        android:layout_marginStart="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
@@ -57,39 +57,39 @@
         android:id="@+id/btn_user"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="292dp"
         android:background="@drawable/user"
         android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonSetting"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_share_facebook" />
 
     <ImageButton
         android:id="@+id/imageButtonSetting"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="344dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_user" />
 
     <ImageButton
         android:id="@+id/btn_share_facebook"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="224dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/facebook"
+        app:layout_constraintBottom_toTopOf="@+id/btn_user"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonRank" />
 
     <ImageButton
         android:id="@+id/imageButtonRank"
         style="@style/small_button_style"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="164dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/chess"
+        app:layout_constraintBottom_toTopOf="@+id/btn_share_facebook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
