@@ -98,7 +98,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 viewModel.getListSongs().observe(this, songs ->
                 {
                 });
-                AllListActivity.startActivity(this);
+                CompetitionActivity.startActivity(this);
                 break;
             case R.id.buttonInstrument:
                 SaveMusicActivity.startActivity(this);
