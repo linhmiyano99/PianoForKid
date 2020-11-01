@@ -49,7 +49,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     // Songs of lesson 1
     List<Sound> getSongConCoBeBe(){
-        return ConvertSong.getConvertStringSongToSound("(1,2)",1);
+        return ConvertSong.getConvertStringSongToSound("(1,200)(2,300)(5,300)",1);
     }
     /*
     List<Sound> getSongPractice1Lesson1(){
