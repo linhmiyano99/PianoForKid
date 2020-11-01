@@ -273,6 +273,7 @@ public class CompetitionActivity extends AppCompatActivity {
             }
             if(sizeTemp == songSize){
                 Log.d("[SCORE]", String.valueOf(getScore()));
+                done = 1;
                 showAlertDialogButtonClicked();
             }
         }
@@ -467,7 +468,7 @@ public class CompetitionActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // set the custom layout
         final View customLayout;
-        if(done >1) {
+        if(done == 1) {
             customLayout = getLayoutInflater().inflate(R.layout.dialog_win, null);
         }
         else {
