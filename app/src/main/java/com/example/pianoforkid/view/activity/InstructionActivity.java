@@ -496,20 +496,24 @@ public class InstructionActivity extends AppCompatActivity {
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star);
             star3.setImageResource(R.drawable.star);
-            firebaseViewModel.addScore(100, u);
+            if(!u.userId.equals("")) {
+                firebaseViewModel.addScore(100, u);
+            }
         }
         else if (score == 60){
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star);
             star3.setImageResource(R.drawable.star_null);
-            firebaseViewModel.addScore(60, u);
-        }
+            if(!u.userId.equals("")) {
+                firebaseViewModel.addScore(60, u);
+            }        }
         else if(score == 30){
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star_null);
             star3.setImageResource(R.drawable.star_null);
-            firebaseViewModel.addScore(30, u);
-        }
+            if(!u.userId.equals("")) {
+                firebaseViewModel.addScore(30, u);
+            }        }
         else{
             star1.setImageResource(R.drawable.star_null);
             star2.setImageResource(R.drawable.star_null);
