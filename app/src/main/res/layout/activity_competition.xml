@@ -110,7 +110,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/text_view__user_score"
+        android:id="@+id/txt_user_score"
         style="@style/text_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_system_score"
+        android:id="@+id/txt_system_score"
         style="@style/text_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
