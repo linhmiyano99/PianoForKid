@@ -39,9 +39,6 @@ public class FirebaseViewModel  extends AndroidViewModel {
         return firebaseRepository.getListSongs();
     }
 
-    public void createUser(FirebaseUser user){
-        firebaseRepository.createUser(user);
-    }
 
     public void addScore(int score, User user){
         firebaseRepository.addScore(score, user);

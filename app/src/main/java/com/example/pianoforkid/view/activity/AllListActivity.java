@@ -1,13 +1,11 @@
 package com.example.pianoforkid.view.activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.pianoforkid.R;
 import com.google.android.material.tabs.TabItem;
@@ -26,11 +24,11 @@ public class AllListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_list);
-        tabLayout= (TabLayout) findViewById(R.id.tab_layout);
-        tab_lesson= (TabItem) findViewById(R.id.tab_item_lesson);
-        tab_like= (TabItem) findViewById(R.id.tab_item_like);
-        tab_saved= (TabItem) findViewById(R.id.tab_item_saved);
-        viewPager= (ViewPager) findViewById(R.id.fragment_container);
+        tabLayout= findViewById(R.id.tab_layout);
+        tab_lesson= findViewById(R.id.tab_item_lesson);
+        tab_like= findViewById(R.id.tab_item_like);
+        tab_saved= findViewById(R.id.tab_item_saved);
+        viewPager= findViewById(R.id.fragment_container);
 
         PagerAdapter pagerAdapter= new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);

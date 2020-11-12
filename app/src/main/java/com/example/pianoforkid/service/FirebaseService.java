@@ -58,9 +58,6 @@ public class FirebaseService {
                                                  list.add(post);
                                                  // properties of song
                                              }
-
-                                             list.add(new User(null, "Linh", null, 300));
-                                             list.add(new User(null, "Satoh", null, 100));
                                              leaderBoard.setValue(list);
                                          }
 
@@ -113,9 +110,9 @@ public class FirebaseService {
                 if(dataSnapshot.getChildrenCount() == 0) {
                     player.userId = fUser.getUid();
                     player.name = fUser.getDisplayName();
-                    player.identifier = fUser.getUid();
+                    player.email = fUser.getEmail();
                     player.score = 0;
-                    databaseReference.child(fUser.getUid()).setValue(player);
+                    databaseReference.setValue(player);
                 }
                 AppRoomDatabase.databaseWriteExecutor.execute(() ->AppRoomDatabase.getDatabase(application).userDao().insert(player));
             }
@@ -134,6 +131,10 @@ public class FirebaseService {
                 .child(user.userId)
                 .child("score")
                 .setValue(user.score);
+        firebaseDatabase.getReference("leaderboard")
+                .child(user.userId)
+                .child("name")
+                .setValue(user.name);
         AppRoomDatabase.databaseWriteExecutor
                 .execute(() -> AppRoomDatabase.getDatabase(application).userDao()
                 .updateScore(user.userId, user.score));
@@ -143,6 +144,37 @@ public class FirebaseService {
 
     public LiveData<List<Song>> getListSongs() {
         return songList;
+    }
+
+    public User getUser(String uid){
+        final User[] user = {new User()};
+        databaseReference = firebaseDatabase.getReference("leaderboard").child(uid);
+
+        databaseReference
+                .addValueEventListener(new ValueEventListener() {
+                                           @Override
+                                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                               Log.e("Count ", "" + dataSnapshot.getChildrenCount());
+                                               List<User> list = new ArrayList<>();
+                                               for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                                                   try {
+                                                       user[0] = postSnapshot.getValue(User.class);
+                                                   }
+                                                   catch (Exception e){
+                                                       user[0] = null;
+                                                   }
+                                               }
+                                               leaderBoard.setValue(list);
+                                           }
+
+                                           @Override
+                                           public void onCancelled(@NonNull DatabaseError databaseError) {
+                                               Log.e("The read failed: ", databaseError.getMessage());
+
+                                           }
+                                       }
+                );
+        return user[0];
     }
 
 }

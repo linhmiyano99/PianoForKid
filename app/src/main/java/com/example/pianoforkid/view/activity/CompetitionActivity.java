@@ -462,7 +462,7 @@ public class CompetitionActivity extends AppCompatActivity {
         }
         return 0;
     }
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "InflateParams"})
     public void showAlertDialogButtonClicked() {
         // create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

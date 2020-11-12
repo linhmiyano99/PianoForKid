@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.protobuf.StringValue;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class UserActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String ANONYMOUS = "anonymous";
@@ -79,7 +80,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                     userX = u;
                     try {
                         Log.d("mAuthStateListener", String.valueOf(u));
-                        txt_email.setText(u.identifier);
+                        txt_email.setText(u.email);
                         txt_user_name.setText(u.name);
                         txt_score.setText(String.valueOf(u.score));
                         userId = u.userId;
@@ -141,7 +142,10 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                userViewModel.insertUser(new User(user.getUid(), user.getDisplayName(), user.getEmail(), 200));
+                if (user != null) {
+                    Log.d("xxuser", Objects.requireNonNull(user.getDisplayName()));
+                    userViewModel.insertUser(user);
+                }
                 // ...
             } else {
                 // Sign in failed. If response is null the user canceled the

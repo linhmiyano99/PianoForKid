@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.repository.UserRepository;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class UserViewModel extends AndroidViewModel {
@@ -20,7 +21,7 @@ public class UserViewModel extends AndroidViewModel {
         user = userRepository.getUser();
     }
 
-    public void insertUser(User userX){
+    public void insertUser(FirebaseUser userX){
         userRepository.insertUser(userX);
     }
 

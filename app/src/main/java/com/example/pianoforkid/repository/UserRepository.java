@@ -8,6 +8,7 @@ import com.example.pianoforkid.data.localdatabase.AppRoomDatabase;
 import com.example.pianoforkid.data.localdatabase.UserDao;
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.service.FirebaseService;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class UserRepository {
@@ -30,8 +31,17 @@ public class UserRepository {
         userDao = AppRoomDatabase.getDatabase(application).userDao();
         user = userDao.getUser();
     }
-    public void insertUser(User userX){
-        AppRoomDatabase.databaseWriteExecutor.execute(() -> userDao.insert(userX));
+    public void insertUser(FirebaseUser userX){
+        AppRoomDatabase.databaseWriteExecutor.execute(() -> {
+            firebaseService.createUser(userX);
+            User newUser = firebaseService.getUser(userX.getUid());
+            if(newUser != null) {
+                userDao.insert(newUser);
+            }
+            else{
+                userDao.insert(new User(userX.getUid(), userX.getDisplayName(), userX.getEmail(), 0));
+            }
+        });
     }
     public LiveData<User> getUser(){
         return userDao.getUser();
