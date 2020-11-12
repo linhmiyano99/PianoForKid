@@ -114,7 +114,6 @@ public class FirebaseService {
                     player.score = 0;
                     databaseReference.setValue(player);
                 }
-                AppRoomDatabase.databaseWriteExecutor.execute(() ->AppRoomDatabase.getDatabase(application).userDao().insert(player));
             }
 
             @Override
@@ -137,7 +136,7 @@ public class FirebaseService {
                 .setValue(user.name);
         AppRoomDatabase.databaseWriteExecutor
                 .execute(() -> AppRoomDatabase.getDatabase(application).userDao()
-                .updateScore(user.userId, user.score));
+                        .updateScore(user.userId, user.score));
 
         Log.e("score ", String.valueOf(user.score + score));
     }
