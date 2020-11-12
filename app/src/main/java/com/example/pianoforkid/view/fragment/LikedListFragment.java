@@ -41,8 +41,17 @@ public class LikedListFragment extends Fragment {
         recyclerView.setAdapter(songListAdapter);
         viewModel.getListLikedSongs().observe(getViewLifecycleOwner(), songs -> songListAdapter.setListSongs(songs));
 
-        songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
-        songListAdapter.setOnItemLikeClickListener(this::unLiked);
+        songListAdapter.setOnItemSongClickListener(new LikedListAdapter.OnItemSongClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                showAlertDialogButtonClicked(id);
+            }
+
+            @Override
+            public void onHeartClick(int id) {
+                unLiked(id);
+            }
+        });
         return view;
     }
 

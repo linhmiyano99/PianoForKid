@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
-    import com.example.pianoforkid.data.model.Lesson;
 import com.example.pianoforkid.data.model.Song;
 
 import java.util.ArrayList;
@@ -26,27 +25,16 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         listLessons.add(new Lesson(4, "Lesson 4: Minor Chord"));
         listLessons.add(new Lesson(5, "Lesson 5: More practice"));*/
     }
-    private OnItemLessonClickListener listener;
-    private OnItemLessonDownloadClickListener downloadListener;
-    private OnItemLikeClickListener likedListener;
+    private OnItemClickListener listener;
 
 
-    public void setOnItemLessonClickListener(OnItemLessonClickListener listener){
+    public void setOnItemLessonClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
-    public void setOnItemLessonDownloadClickListener(OnItemLessonDownloadClickListener listener){
-        this.downloadListener = listener;
-    }
-    public void setOnItemLikeClickListener(OnItemLikeClickListener listener){
-        this.likedListener = listener;
-    }
-    public interface OnItemLikeClickListener{
-        void onItemClick(int id);
-    }
-    public interface OnItemLessonClickListener{
-        void onItemClick(int id);
-    } public interface OnItemLessonDownloadClickListener{
-        void onItemClick(int id);
+     public interface OnItemClickListener{
+        void onItemDownload(int id);
+        void onItemLike(int id);
+        void onItemLesson(int id);
     }
     @NonNull
     @Override
@@ -83,19 +71,19 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
 
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onItemClick((int) v.getTag());
+                    listener.onItemLesson((int) v.getTag());
                 }
             });
 
             image_view_download.setOnClickListener(v -> {
-                if (downloadListener != null) {
-                    downloadListener.onItemClick((int) v.getTag());
+                if (listener != null) {
+                    listener.onItemDownload((int) v.getTag());
                 }
             });
 
             image_view_hearth.setOnClickListener(v->{
-                if (likedListener != null) {
-                    likedListener.onItemClick((int) v.getTag());
+                if (listener != null) {
+                    listener.onItemLike((int) v.getTag());
                 }
             });
 

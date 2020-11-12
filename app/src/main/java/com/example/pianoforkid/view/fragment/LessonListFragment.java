@@ -45,9 +45,22 @@ public class LessonListFragment extends Fragment {
         recyclerView.setAdapter(lessonListAdapter);
         viewModel.loadAllSongs();
         viewModel.getListSongs().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListSongs(songs));
-        lessonListAdapter.setOnItemLessonClickListener(this::showLessonActivityButtonClicked);
-        lessonListAdapter.setOnItemLessonDownloadClickListener(this::downloadLesson);
-        lessonListAdapter.setOnItemLikeClickListener(this::like);
+        lessonListAdapter.setOnItemLessonClickListener(new LessonListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemDownload(int id) {
+                downloadLesson(id);
+            }
+
+            @Override
+            public void onItemLike(int id) {
+                like(id);
+            }
+
+            @Override
+            public void onItemLesson(int id) {
+                showLessonActivityButtonClicked(id);
+            }
+        });
         return view;
     }
 

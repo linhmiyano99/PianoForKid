@@ -25,19 +25,13 @@ public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.View
         listSongs.add(new Song(4, "Left Hand Warm-Up"));*/
     }
     private OnItemSongClickListener listener;
-    private OnItemLikeClickListener likedListener;
 
-    public void setOnItemSongClickListener(SavedListAdapter.OnItemSongClickListener listener){
+    public void setOnItemLikeClickListener(OnItemSongClickListener listener){
         this.listener = listener;
-    }
-    public void setOnItemLikeClickListener(OnItemLikeClickListener listener){
-        this.likedListener = listener;
-    }
-    public interface OnItemLikeClickListener{
-        void onItemClick(int id);
     }
     public interface OnItemSongClickListener{
         void onItemClick(int id);
+        void onHeartClick(int id);
     }
     @NonNull
     @Override
@@ -75,8 +69,8 @@ public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.View
                 }
             });
             image_view_hearth.setOnClickListener(v->{
-                if (likedListener != null) {
-                    likedListener.onItemClick((int) v.getTag());
+                if (listener != null) {
+                    listener.onHeartClick((int) v.getTag());
                 }
             });
         }

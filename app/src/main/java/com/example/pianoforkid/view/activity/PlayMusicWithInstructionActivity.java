@@ -17,7 +17,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.key.KeyNote;
 import com.example.pianoforkid.data.model.Sound;
-import com.example.pianoforkid.ultis.ConvertSong;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 import java.util.ArrayList;
@@ -125,7 +124,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
             try{
                 viewModel.loadSongById(songId);
             }catch (Exception e){
-                System.out.println(e);
+                System.out.println(e.toString());
             }
 
         }        Log.d("TAG Song", String.valueOf(songId));
