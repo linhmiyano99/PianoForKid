@@ -145,25 +145,21 @@ public class FirebaseService {
         return songList;
     }
 
-    public User getUser(String uid){
+    public User getUser(FirebaseUser userX){
         final User[] user = {new User()};
-        databaseReference = firebaseDatabase.getReference("leaderboard").child(uid);
+        final boolean[] check = {false};
+        user[0].email = userX.getEmail();
+        user[0].name = userX.getDisplayName();
+        user[0].userId=userX.getUid();
+        user[0].score = 0;
+        databaseReference = firebaseDatabase.getReference("leaderboard").child(userX.getUid());
 
         databaseReference
                 .addValueEventListener(new ValueEventListener() {
                                            @Override
                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                               Log.e("Count ", "" + dataSnapshot.getChildrenCount());
-                                               List<User> list = new ArrayList<>();
-                                               for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                                                   try {
-                                                       user[0] = postSnapshot.getValue(User.class);
-                                                   }
-                                                   catch (Exception e){
-                                                       user[0] = null;
-                                                   }
-                                               }
-                                               leaderBoard.setValue(list);
+                                               user[0] = dataSnapshot.getValue(User.class);
+                                               check[0] = true;
                                            }
 
                                            @Override
@@ -173,6 +169,9 @@ public class FirebaseService {
                                            }
                                        }
                 );
+        while (!check[0]){
+
+        }
         return user[0];
     }
 
