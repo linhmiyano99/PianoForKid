@@ -27,31 +27,43 @@
     <Button
         android:id="@+id/buttonListSong"
         style="@style/text_button"
-        android:layout_width="220dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="@dimen/margin_top_button"
-        android:background="@drawable/group_1"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_list_song"
         android:text="@string/list_song"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInstrument"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
     <Button
         android:id="@+id/buttonInstrument"
         style="@style/text_button"
-        android:layout_width="220dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="@dimen/margin_title"
-        android:background="@drawable/group_2"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_instrument"
         android:text="@string/instrument"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCompetition"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonListSong"
-        app:layout_constraintTop_toBottomOf="@+id/text_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonListSong"
         app:layout_constraintVertical_bias="0.47" />
 
+    <Button
+        android:id="@+id/buttonCompetition"
+        style="@style/text_button"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_play_songs"
+        android:text="@string/competition"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInstrument"
+        app:layout_constraintVertical_bias="0.47" />
 
     <Button
         android:id="@+id/btn_user"
