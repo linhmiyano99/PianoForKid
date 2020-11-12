@@ -22,6 +22,8 @@ import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
 import com.example.pianoforkid.view.adaper.SavedListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
+import java.util.Objects;
+
 
 public class SavedListFragment extends Fragment {
     SavedListAdapter savedListAdapter;
@@ -66,7 +68,7 @@ public class SavedListFragment extends Fragment {
     private void showAlertDialogButtonClicked(int id) {
         //viewModel.loadSongById(id);
         // create an alert builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
        // builder.setTitle("Song id: " + id);
         // set the custom layout
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog_listsong, null);

@@ -6,43 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_list_song"
     tools:context=".view.activity.PlayMusicWithInstructionActivity">
-    <ImageButton
-        android:id="@+id/button_back"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:background="@null"
-        android:clickable="true"
-        android:contentDescription="@string/todo"
-        android:focusable="true"
-        android:padding="3dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView31"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitXY"
-        android:scaleX="2"
-        android:src="@drawable/ic_image_note"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/txt_note"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center"
-        tools:text="22"
-        android:textColor="#212122"
-        android:textSize="@dimen/num_text_size"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textStyle="bold" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -592,4 +555,43 @@
             </RelativeLayout>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:padding="3dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:scaleX="2"
+        android:src="@drawable/ic_image_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/txt_note"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        tools:text="22"
+        android:textColor="#212122"
+        android:textSize="@dimen/num_text_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
