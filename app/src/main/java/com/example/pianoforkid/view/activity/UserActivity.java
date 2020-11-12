@@ -143,7 +143,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
-                    Log.d("xxuser", Objects.requireNonNull(user.getDisplayName()));
+                    Log.d("xxuser", Objects.requireNonNull(user.getUid()));
                     userViewModel.insertUser(user);
                 }
                 // ...
