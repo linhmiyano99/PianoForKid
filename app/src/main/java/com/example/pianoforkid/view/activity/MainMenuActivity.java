@@ -47,6 +47,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Button button_songs = findViewById(R.id.buttonListSong);
         Button button_instruments = findViewById(R.id.buttonInstrument);
+        Button button_competition = findViewById(R.id.buttonCompetition);
 
         btn_share_facebook = findViewById(R.id.btn_share_facebook);
         btn_rank= findViewById(R.id.imageButtonRank);
@@ -54,6 +55,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         ImageView button_settings = findViewById(R.id.imageButtonSetting);
         button_songs.setOnClickListener(this);
         button_instruments.setOnClickListener(this);
+        button_competition.setOnClickListener(this);
         btn_share_facebook.setOnClickListener(this);
         btn_rank.setOnClickListener(this);
         btn_user.setOnClickListener(this);
@@ -102,6 +104,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.buttonInstrument:
                 SaveMusicActivity.startActivity(this);
+                break;
+            case R.id.buttonCompetition:
+                CompetitionActivity.startActivity(this);
                 break;
             case R.id.imageButtonSetting:
                 SettingActivity.startActivity(this);
