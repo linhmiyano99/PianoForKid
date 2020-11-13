@@ -24,6 +24,7 @@ public class FirebaseService {
     private static  FirebaseService INSTANCE ;
     private MutableLiveData<List<User>> leaderBoard;
     private MutableLiveData<List<Song>> songList;
+    private MutableLiveData<List<String>> lessonList;
     private DatabaseReference databaseReference;
     private FirebaseDatabase firebaseDatabase;
     private Application application;
@@ -39,6 +40,7 @@ public class FirebaseService {
         leaderBoard = new MutableLiveData<>();
         firebaseDatabase = FirebaseDatabase.getInstance();
         songList = new MutableLiveData<>();
+        lessonList = new MutableLiveData<>();
         this.application = application;
     }
 
@@ -175,4 +177,64 @@ public class FirebaseService {
         return user[0];
     }
 
+    public void loadListLesson(){
+        databaseReference = firebaseDatabase.getReference("lesson_table");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.e("xxCount ", "" + dataSnapshot.getChildrenCount());
+                List<String> list = new ArrayList<>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    String post = postSnapshot.getKey();
+                    Log.e("xxCount ", post);
+
+                    list.add(post);
+
+                    // properties of song
+                }
+                lessonList.setValue(list);
+                Log.e("xxCount ", String.valueOf(lessonList));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("xxThe read failed: ", databaseError.getMessage());
+
+            }
+        });
+
+    }
+
+    public void loadListLessonById(int id){
+        databaseReference = firebaseDatabase.getReference("lesson_table").child(String.valueOf(id));
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.e("xxCount ", "" + dataSnapshot.getChildrenCount());
+                List<String> list = new ArrayList<>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    String post = postSnapshot.getKey();
+                    Log.e("xxCount ", post);
+
+                    list.add(post);
+
+                    // properties of song
+                }
+                lessonList.setValue(list);
+                Log.e("xxCount ", String.valueOf(lessonList));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("xxThe read failed: ", databaseError.getMessage());
+
+            }
+        });
+
+    }
+    public LiveData<List<String>> getListLessons(){
+        return lessonList;
+    }
 }

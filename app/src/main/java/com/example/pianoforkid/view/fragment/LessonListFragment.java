@@ -20,12 +20,16 @@ import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
 import com.example.pianoforkid.view.adaper.LessonListAdapter;
+import com.example.pianoforkid.view.adaper.SongListAdapter;
 import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 import com.example.pianoforkid.viewmodel.SongViewModel;
+
+import java.util.Objects;
 
 
 public class LessonListFragment extends Fragment {
     public LessonListAdapter lessonListAdapter;
+    public SongListAdapter songListAdapter;
     FirebaseViewModel viewModel;
     SongViewModel localViewModel;
     @Override
@@ -42,10 +46,12 @@ public class LessonListFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         lessonListAdapter = new LessonListAdapter();
+        songListAdapter = new SongListAdapter();
         recyclerView.setAdapter(lessonListAdapter);
-        viewModel.loadAllSongs();
-        viewModel.getListSongs().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListSongs(songs));
-        lessonListAdapter.setOnItemLessonClickListener(new LessonListAdapter.OnItemClickListener() {
+        viewModel.loadListLesson();
+        viewModel.getListLessons().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListLessons(songs));
+        lessonListAdapter.setOnItemLessonClickListener(this::showLessonActivityButtonClicked);
+        songListAdapter.setOnItemLessonClickListener(new SongListAdapter.OnItemClickListener() {
             @Override
             public void onItemDownload(int id) {
                 downloadLesson(id);
@@ -65,7 +71,7 @@ public class LessonListFragment extends Fragment {
     }
 
     private void like(int i) {
-        Song tempSong = lessonListAdapter.getSong(i);
+        Song tempSong = songListAdapter.getSong(i);
         LikedSong song = new LikedSong();
         song.remoteId = tempSong.songId;
         song.songName = tempSong.songName;
@@ -74,14 +80,14 @@ public class LessonListFragment extends Fragment {
     }
 
     private void downloadLesson(int i) {
-        localViewModel.insertSong(lessonListAdapter.getSong(i));
+        localViewModel.insertSong(songListAdapter.getSong(i));
     }
 
     private void showLessonActivityButtonClicked(int id) {
         //viewModel.loadSongById(id);
-        localViewModel.updateCurrentSong(lessonListAdapter.getSong(id));
+        localViewModel.updateCurrentSong(songListAdapter.getSong(id));
         // create an alert builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
         // builder.setTitle("Song id: " + id);
         // set the custom layout
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog_listsong, null);

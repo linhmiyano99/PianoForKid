@@ -48,7 +48,22 @@ public class SongListActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(songListAdapter);
 
-        songListAdapter.setOnItemSongClickListener(this::showAlertDialogButtonClicked);
+        songListAdapter.setOnItemLessonClickListener(new SongListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemDownload(int id) {
+
+            }
+
+            @Override
+            public void onItemLike(int id) {
+
+            }
+
+            @Override
+            public void onItemLesson(int id) {
+
+            }
+        });
     }
 
     public void showAlertDialogButtonClicked(int id) {

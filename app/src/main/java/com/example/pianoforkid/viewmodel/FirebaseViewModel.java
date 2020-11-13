@@ -34,9 +34,15 @@ public class FirebaseViewModel  extends AndroidViewModel {
     public void loadAllSongs(){
         firebaseRepository.loadAllSongs();
     }
+    public void loadListLesson(){
+        firebaseRepository.loadListLesson();
+    }
 
     public LiveData<List<Song>> getListSongs() {
         return firebaseRepository.getListSongs();
+    }
+    public LiveData<List<String>> getListLessons() {
+        return firebaseRepository.getListLessons();
     }
 
 

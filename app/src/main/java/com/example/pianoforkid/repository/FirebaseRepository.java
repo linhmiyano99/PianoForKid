@@ -34,8 +34,16 @@ public class FirebaseRepository {
     public void loadAllSongs(){
         firebaseService.loadAllSongs();
     }
+
+    public void loadListLesson(){
+        firebaseService.loadListLesson();
+    }
     public LiveData<List<Song>> getListSongs() {
         return firebaseService.getListSongs();
+    }
+
+    public LiveData<List<String>> getListLessons() {
+        return firebaseService.getListLessons();
     }
 
     public void addScore(int score, User user){

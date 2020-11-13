@@ -3,6 +3,7 @@ package com.example.pianoforkid.view.adaper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,52 +19,83 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
     private List<Song> listSongs;
     public SongListAdapter() {
         listSongs = new ArrayList<>();
-        listSongs.add(new Song(1, "Merrily We Roll Along"));
-        listSongs.add(new Song(2, "Ode To Joy"));
-        listSongs.add(new Song(3, "Twinkle Twinkle Little Star"));
-        listSongs.add(new Song(4, "Left Hand Warm-Up"));
     }
-    private OnItemSongClickListener listener;
+    private OnItemClickListener listener;
 
-    public void setOnItemSongClickListener(OnItemSongClickListener listener){
+
+    public void setOnItemLessonClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
-    public interface OnItemSongClickListener{
-        void onItemClick(int id);
+    public interface OnItemClickListener{
+        void onItemDownload(int id);
+        void onItemLike(int id);
+        void onItemLesson(int id);
     }
-
     @NonNull
     @Override
-    public SongListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View view = inflater.inflate(R.layout.detail_lesson_adapter_item, parent, false);
         return new ViewHolder(view);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull SongListAdapter.ViewHolder holder, int position) {
-        Song song = listSongs.get(position);
-        holder.tvDetail.setText(song.toString());
-        holder.tvDetail.setTag(song.songId);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Song lesson = listSongs.get(position);
+        holder.tvDetail.setText(lesson.toString());
+        holder.image_view_download.setTag(lesson.songId);
+        holder.tvDetail.setTag(lesson.songId);
+        holder.image_view_hearth.setTag(lesson.songId);
     }
+
     @Override
     public int getItemCount() {
         return listSongs.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder {
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvDetail;
+        ImageView image_view_download;
+        ImageView image_view_hearth;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvDetail = itemView.findViewById(R.id.text_view_song);
+            image_view_download = itemView.findViewById(R.id.image_view_download);
+            image_view_hearth = itemView.findViewById(R.id.image_view_hearth);
+
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onItemClick((int) v.getTag());
+                    listener.onItemLesson((int) v.getTag());
                 }
             });
-        }
-    }
 
+            image_view_download.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemDownload((int) v.getTag());
+                }
+            });
+
+            image_view_hearth.setOnClickListener(v->{
+                if (listener != null) {
+                    listener.onItemLike((int) v.getTag());
+                }
+            });
+
+        }
+
+    }
     public void setListSongs(List<Song> listSongs) {
         this.listSongs = listSongs;
+        notifyDataSetChanged();
+    }
+
+    public Song getSong(int songId){
+        for (Song song: listSongs
+        ) {
+            if(song.songId == songId)
+                return song;
+        }
+        return null;
     }
 }
