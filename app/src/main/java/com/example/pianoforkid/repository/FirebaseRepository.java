@@ -11,8 +11,9 @@ import com.example.pianoforkid.service.FirebaseService;
 import java.util.List;
 
 public class FirebaseRepository {
-    private static FirebaseRepository INSTANCE ;
+    private static FirebaseRepository INSTANCE;
     private FirebaseService firebaseService;
+
     public static FirebaseRepository getInstance(Application application) {
         if (INSTANCE == null) {
             INSTANCE = new FirebaseRepository(application);
@@ -27,17 +28,19 @@ public class FirebaseRepository {
     public void loadLeaderBoard() {
         firebaseService.loadLeaderBoard();
     }
-    public LiveData<List<User>> getUserList(){
+
+    public LiveData<List<User>> getUserList() {
         return firebaseService.getUserList();
     }
 
-    public void loadAllSongs(){
+    public void loadAllSongs() {
         firebaseService.loadAllSongs();
     }
 
-    public void loadListLesson(){
+    public void loadListLesson() {
         firebaseService.loadListLesson();
     }
+
     public LiveData<List<Song>> getListSongs() {
         return firebaseService.getListSongs();
     }
@@ -46,7 +49,15 @@ public class FirebaseRepository {
         return firebaseService.getListLessons();
     }
 
-    public void addScore(int score, User user){
+    public LiveData<List<Song>> getListLessonSongs() {
+        return firebaseService.getListLessonSongs();
+    }
+
+    public void addScore(int score, User user) {
         firebaseService.addScore(score, user);
+    }
+
+    public void loadListLessonById(String lesson) {
+        firebaseService.loadListLessonById(lesson);
     }
 }

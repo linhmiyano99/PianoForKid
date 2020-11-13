@@ -26,7 +26,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         this.listener = listener;
     }
      public interface OnItemClickListener{
-        void onItemLesson(int id);
+        void onItemLesson(String lesson);
     }
     @NonNull
     @Override
@@ -41,6 +41,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
     public void onBindViewHolder(@NonNull LessonListAdapter.ViewHolder holder, int position) {
         String lesson = listLessons.get(position);
         holder.tvDetail.setText(lesson);
+        holder.tvDetail.setTag(lesson);
     }
 
     @Override
@@ -58,7 +59,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
 
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onItemLesson((int) v.getTag());
+                    listener.onItemLesson(String.valueOf(v.getTag()));
                 }
             });
 

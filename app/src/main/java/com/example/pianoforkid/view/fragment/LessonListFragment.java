@@ -32,6 +32,7 @@ public class LessonListFragment extends Fragment {
     public SongListAdapter songListAdapter;
     FirebaseViewModel viewModel;
     SongViewModel localViewModel;
+    RecyclerView recyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class LessonListFragment extends Fragment {
         localViewModel = new ViewModelProvider(this).get(SongViewModel.class);
 
 
-        RecyclerView recyclerView= view.findViewById(R.id.recyclerView);
+        recyclerView= view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         lessonListAdapter = new LessonListAdapter();
@@ -50,7 +51,8 @@ public class LessonListFragment extends Fragment {
         recyclerView.setAdapter(lessonListAdapter);
         viewModel.loadListLesson();
         viewModel.getListLessons().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListLessons(songs));
-        lessonListAdapter.setOnItemLessonClickListener(this::showLessonActivityButtonClicked);
+        viewModel.getListLessonSongs().observe(getViewLifecycleOwner(), songs->songListAdapter.setListSongs(songs));
+        lessonListAdapter.setOnItemLessonClickListener(this::loadLesson);
         songListAdapter.setOnItemLessonClickListener(new SongListAdapter.OnItemClickListener() {
             @Override
             public void onItemDownload(int id) {
@@ -105,6 +107,11 @@ public class LessonListFragment extends Fragment {
         play.setOnClickListener(v -> InstructionActivity.startActivity(getActivity(), id));
 
         button_back.setOnClickListener(v -> dialog.cancel());
+    }
+
+    void loadLesson(String lesson){
+        viewModel.loadListLessonById(lesson);
+        recyclerView.setAdapter(songListAdapter);
     }
 
 }

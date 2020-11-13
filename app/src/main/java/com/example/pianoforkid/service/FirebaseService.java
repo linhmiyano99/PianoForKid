@@ -19,12 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FirebaseService {
     private static  FirebaseService INSTANCE ;
     private MutableLiveData<List<User>> leaderBoard;
     private MutableLiveData<List<Song>> songList;
     private MutableLiveData<List<String>> lessonList;
+    private MutableLiveData<List<Song>> songLessonList;
     private DatabaseReference databaseReference;
     private FirebaseDatabase firebaseDatabase;
     private Application application;
@@ -41,6 +43,7 @@ public class FirebaseService {
         firebaseDatabase = FirebaseDatabase.getInstance();
         songList = new MutableLiveData<>();
         lessonList = new MutableLiveData<>();
+        songLessonList = new MutableLiveData<>();
         this.application = application;
     }
 
@@ -186,7 +189,7 @@ public class FirebaseService {
                 List<String> list = new ArrayList<>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     String post = postSnapshot.getKey();
-                    Log.e("xxCount ", post);
+                    Log.e("xxCount ", Objects.requireNonNull(post));
 
                     list.add(post);
 
@@ -206,23 +209,22 @@ public class FirebaseService {
 
     }
 
-    public void loadListLessonById(int id){
-        databaseReference = firebaseDatabase.getReference("lesson_table").child(String.valueOf(id));
+    public void loadListLessonById(String lesson){
+        databaseReference = firebaseDatabase.getReference("lesson_table").child(lesson);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.e("xxCount ", "" + dataSnapshot.getChildrenCount());
-                List<String> list = new ArrayList<>();
+                List<Song> list = new ArrayList<>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    String post = postSnapshot.getKey();
-                    Log.e("xxCount ", post);
+                    Song post = postSnapshot.getValue(Song.class);
 
                     list.add(post);
 
                     // properties of song
                 }
-                lessonList.setValue(list);
-                Log.e("xxCount ", String.valueOf(lessonList));
+                songLessonList.setValue(list);
+                Log.e("xxCount ", String.valueOf(songLessonList));
 
             }
 
@@ -236,5 +238,8 @@ public class FirebaseService {
     }
     public LiveData<List<String>> getListLessons(){
         return lessonList;
+    }
+    public LiveData<List<Song>> getListLessonSongs(){
+        return songLessonList;
     }
 }
