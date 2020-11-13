@@ -1,63 +1,69 @@
 package com.example.pianoforkid.ultis;
 
+import android.util.Log;
+
 import com.example.pianoforkid.data.model.Sound;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ConvertSong {
 
-	public static String getConvertSoundToStringSong(List<Sound> listSound){
-        String song = null;
-        for (Sound s: listSound
-             ) {
-            song += s.toString();
+    public static String getConvertSoundToStringSong(List<Sound> listSound) {
+        StringBuilder song = new StringBuilder();
+        for (Sound s : listSound
+        ) {
+            song.append(s.toString());
         }
-        return song;
+        return song.toString();
     }
 
-    public static List<Sound> getConvertStringSongToSound(String song, int songId){
+    public static List<Sound> getConvertStringSongToSound(String song, int songId) {
         List<Sound> soundList = new ArrayList<>();
-        while (song.length() > 0){
-            Pattern pattern = Pattern.compile("([1-20],[1-999999])");
-            Matcher matcher = pattern.matcher(song);
-            if(matcher.find()){
-                String temp = (String) matcher.group().subSequence(0, matcher.group().length());
-				soundList.add(splitString(temp, songId));
+        StringBuilder tempSong = new StringBuilder();
+        for (char c : song.toCharArray()) {
+            if (c == '(') {
+                continue;
             }
-            else {
-            	break;
+            if (c == ')') {
+                soundList.add(splitString(String.valueOf(tempSong), songId));
+                tempSong = new StringBuilder();
+                continue;
             }
-            song = song.substring(matcher.end());
+            tempSong.append(c);
         }
         return soundList;
     }
+
     static Sound splitString(String sound, int songId) {
-    	String sNote = "";
+        StringBuilder sNote = new StringBuilder();
         int note = 0;
-        String sDuration = "";
+        StringBuilder sDuration = new StringBuilder();
         long duration = 0;
         Sound s = null;
         boolean isNote = true;
+        Log.d("xxsound", sound);
+
         for (char i : sound.toCharArray()) {
-        if(i == ',') {
-        	 isNote = false;
-        	 continue;
+            if (i == ',') {
+                isNote = false;
+                continue;
+            }
+            if (isNote) {
+                sNote.append(i);
+            } else {
+                sDuration.append(i);
+                Log.d("xxduration", sDuration.toString());
+            }
         }
-        if(isNote) {
-        	sNote+=i;
-        }
-        else {
-        	sDuration+=i;
-         	}
-        }
-		note = Integer.parseInt(sNote); 
-		duration =Long.parseLong(sDuration);
-		 
+        note = Integer.parseInt(sNote.toString());
+        Log.d("xxnote", sNote.toString());
+        duration = Long.parseLong(sDuration.toString());
+        Log.d("xxduảtion", sDuration.toString());
+
+
         s = new Sound(songId, note, duration);
-         return s;
+        return s;
     }
 
 }

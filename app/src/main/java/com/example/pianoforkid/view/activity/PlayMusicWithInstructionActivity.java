@@ -149,7 +149,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        onUp = (int) imageA.getY() + 100;
+        onUp = (int) imageA.getY();
         onDown = onUp - 100;
         resetAllNote();
     }
