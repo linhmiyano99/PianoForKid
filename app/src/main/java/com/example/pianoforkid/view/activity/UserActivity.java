@@ -148,7 +148,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_sign_out:
-                if(btn_sign_out.getText() == "Sign out") {
+                if(btn_sign_out.getText().toString().equals("Sign out")) {
                     AuthUI.getInstance()
                             .signOut(this)
                             .addOnCompleteListener(task -> {
@@ -156,7 +156,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                                 txt_user_name.setText("");
                                 txt_score.setText("");
                                 userViewModel.delete(userId);
-                                MainMenuActivity.startActivity(this);
                             });
                 }
                 else{
