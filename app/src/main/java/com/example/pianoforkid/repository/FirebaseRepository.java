@@ -1,6 +1,9 @@
 package com.example.pianoforkid.repository;
 
 import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import androidx.lifecycle.LiveData;
 
@@ -13,6 +16,7 @@ import java.util.List;
 public class FirebaseRepository {
     private static FirebaseRepository INSTANCE;
     private FirebaseService firebaseService;
+    private Application application;
 
     public static FirebaseRepository getInstance(Application application) {
         if (INSTANCE == null) {
@@ -23,6 +27,7 @@ public class FirebaseRepository {
 
     private FirebaseRepository(Application application) {
         firebaseService = FirebaseService.getInstance(application);
+        this.application = application;
     }
 
     public void loadLeaderBoard() {
@@ -54,10 +59,19 @@ public class FirebaseRepository {
     }
 
     public void addScore(int score, User user) {
-        firebaseService.addScore(score, user);
+        if(isNetworkAvailable()) {
+            firebaseService.addScore(score, user);
+        }
     }
 
     public void loadListLessonById(String lesson) {
         firebaseService.loadListLessonById(lesson);
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager)  application.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

@@ -32,4 +32,8 @@ public class UserViewModel extends AndroidViewModel {
     public void delete(String useId){
         userRepository.deleteUser(useId);
     }
+
+    public void addScore(int score){
+        userRepository.addScore(score);
+    }
 }

@@ -17,22 +17,20 @@ import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 import com.example.pianoforkid.viewmodel.UserViewModel;
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.protobuf.StringValue;
 
 import java.util.Arrays;
 import java.util.Objects;
 
 public class UserActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String ANONYMOUS = "anonymous";
+    //public static final String ANONYMOUS = "anonymous";
     //*****************
-    private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+/*
     private String mUsername;
+*/
     private String userId;
     User userX;
     TextView txt_email;
@@ -64,9 +62,10 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         btn_sign_out = findViewById(R.id.btn_sign_out);
         btn_back = findViewById(R.id.btn_back);
 
+/*
         mUsername = ANONYMOUS;
+*/
         //*****************
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
         //*****************
 
@@ -74,7 +73,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if(user != null){
                 //sign in
-                onSignInInitialize(user.getDisplayName());
+                //onSignInInitialize(user.getDisplayName());
                 userViewModel.getUser().observe(this, u ->
                 {
                     userX = u;
@@ -87,29 +86,21 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d("mAuthStateListener2", "mAuthStateListener2");
                     }
                     catch (Exception e){
-                        System.out.println(e);
+                        e.printStackTrace();
                     }
                 });
             }else{
                 //sign out
-                onSignedOutCleanUp();
-                startActivityForResult(
-                        AuthUI.getInstance()
-                                .createSignInIntentBuilder()
-                                .setAvailableProviders(Arrays.asList(
-                                        new AuthUI.IdpConfig.GoogleBuilder().build(),
-                                        new AuthUI.IdpConfig.FacebookBuilder().build(),
-                                        new AuthUI.IdpConfig.AnonymousBuilder().build()))
-                                .setTheme(R.style.FirebaseLoginTheme)
-                                .build(),
+                //onSignedOutCleanUp();
+                btn_sign_out.setText(R.string.sign_in);
 
-                        RC_SIGN_IN);
             }
         };
         //*****************
         btn_sign_out.setOnClickListener(this);
         btn_back.setOnClickListener(this);
     }
+/*
     private void onSignInInitialize(String username){
         mUsername = username;
     }
@@ -117,6 +108,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     private void onSignedOutCleanUp(){
         mUsername = ANONYMOUS;
     }
+*/
 
 
     @Override
@@ -137,7 +129,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_SIGN_IN) {
-            IdpResponse response = IdpResponse.fromResultIntent(data);
+            //IdpResponse response = IdpResponse.fromResultIntent(data);
 
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
@@ -147,11 +139,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                     userViewModel.insertUser(user);
                 }
                 // ...
-            } else {
-                // Sign in failed. If response is null the user canceled the
-                // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
+                btn_sign_out.setText(R.string.sign_out);
             }
         }
     }
@@ -160,15 +148,30 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_sign_out:
-                AuthUI.getInstance()
-                        .signOut(this)
-                        .addOnCompleteListener(task -> {
-                            txt_email.setText("");
-                            txt_user_name.setText("");
-                            txt_score.setText("");
-                            userViewModel.delete(userId);
-                            MainMenuActivity.startActivity(this);
-                        });
+                if(btn_sign_out.getText() == "Sign out") {
+                    AuthUI.getInstance()
+                            .signOut(this)
+                            .addOnCompleteListener(task -> {
+                                txt_email.setText("");
+                                txt_user_name.setText("");
+                                txt_score.setText("");
+                                userViewModel.delete(userId);
+                                MainMenuActivity.startActivity(this);
+                            });
+                }
+                else{
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                    .createSignInIntentBuilder()
+                                    .setAvailableProviders(Arrays.asList(
+                                            new AuthUI.IdpConfig.GoogleBuilder().build(),
+                                            new AuthUI.IdpConfig.FacebookBuilder().build(),
+                                            new AuthUI.IdpConfig.AnonymousBuilder().build()))
+                                    .setTheme(R.style.FirebaseLoginTheme)
+                                    .build(),
+
+                            RC_SIGN_IN);
+                }
                 break;
             case R.id.btn_back:
                 onBackPressed();

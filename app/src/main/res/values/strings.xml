@@ -76,4 +76,6 @@
     <string name="win">Win</string>
     <string name="game_over">Game Over</string>
     <string name="competition">Competition</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
 </resources>

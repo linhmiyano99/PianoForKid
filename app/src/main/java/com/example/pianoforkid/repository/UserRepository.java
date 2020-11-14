@@ -1,15 +1,17 @@
 package com.example.pianoforkid.repository;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.pianoforkid.data.localdatabase.AppRoomDatabase;
 import com.example.pianoforkid.data.localdatabase.UserDao;
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.service.FirebaseService;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 
 public class UserRepository {
@@ -48,5 +50,9 @@ public class UserRepository {
 
     public void deleteUser(String userId) {
         AppRoomDatabase.databaseWriteExecutor.execute(() -> userDao.deleteById(userId));
+    }
+
+    public void addScore(int score) {
+        AppRoomDatabase.databaseWriteExecutor.execute(() -> userDao.updateScore(Objects.requireNonNull(user.getValue()).userId, user.getValue().score + score));
     }
 }
