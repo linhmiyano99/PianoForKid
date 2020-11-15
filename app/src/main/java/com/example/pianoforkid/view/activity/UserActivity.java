@@ -24,13 +24,9 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class UserActivity extends AppCompatActivity implements View.OnClickListener {
-    //public static final String ANONYMOUS = "anonymous";
     //*****************
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-/*
-    private String mUsername;
-*/
     private String userId;
     User userX;
     TextView txt_email;
@@ -62,9 +58,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         btn_sign_out = findViewById(R.id.btn_sign_out);
         btn_back = findViewById(R.id.btn_back);
 
-/*
-        mUsername = ANONYMOUS;
-*/
+
         //*****************
         mFirebaseAuth = FirebaseAuth.getInstance();
         //*****************
@@ -73,7 +67,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if(user != null){
                 //sign in
-                //onSignInInitialize(user.getDisplayName());
                 userViewModel.getUser().observe(this, u ->
                 {
                     userX = u;
@@ -91,7 +84,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                 });
             }else{
                 //sign out
-                //onSignedOutCleanUp();
                 btn_sign_out.setText(R.string.sign_in);
 
             }
@@ -100,15 +92,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         btn_sign_out.setOnClickListener(this);
         btn_back.setOnClickListener(this);
     }
-/*
-    private void onSignInInitialize(String username){
-        mUsername = username;
-    }
-
-    private void onSignedOutCleanUp(){
-        mUsername = ANONYMOUS;
-    }
-*/
 
 
     @Override

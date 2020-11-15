@@ -12,13 +12,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class UserViewModel extends AndroidViewModel {
-    private LiveData<User> user;
     private UserRepository userRepository;
 
     public UserViewModel(@NonNull Application application) {
         super(application);
         userRepository = UserRepository.getInstance(application);
-        user = userRepository.getUser();
     }
 
     public void insertUser(FirebaseUser userX){
