@@ -1,5 +1,6 @@
 package com.example.pianoforkid.view.adaper;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +40,10 @@ public class LeaderBoardAdapter  extends RecyclerView.Adapter<LeaderBoardAdapter
         return new LeaderBoardAdapter.ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = userList.get(position);
+        User user = userList.get(userList.size() - 1 - position);
         holder.tvDetail.setText(user.name + " - " + user.score);
     }
 
