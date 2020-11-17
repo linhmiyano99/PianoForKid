@@ -19,10 +19,6 @@ public class SavedListAdapter extends RecyclerView.Adapter<SavedListAdapter.View
     private List<Song> listSongs;
     public SavedListAdapter() {
         listSongs = new ArrayList<>();
-   /*     listSongs.add(new Song(1, "Merrily We Roll Along"));
-        listSongs.add(new Song(2, "Ode To Joy"));
-        listSongs.add(new Song(3, "Twinkle Twinkle Little Star"));
-        listSongs.add(new Song(4, "Left Hand Warm-Up"));*/
     }
     private OnItemSongClickListener listener;
 

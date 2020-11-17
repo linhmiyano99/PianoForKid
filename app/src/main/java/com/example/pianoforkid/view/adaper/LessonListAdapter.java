@@ -3,7 +3,6 @@ package com.example.pianoforkid.view.adaper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,8 +50,6 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvDetail;
-        ImageView image_view_download;
-        ImageView image_view_hearth;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvDetail = itemView.findViewById(R.id.text_view_song);
