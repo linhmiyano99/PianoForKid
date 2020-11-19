@@ -33,7 +33,11 @@ public class FirebaseService {
 
     public static FirebaseService getInstance(Application application) {
         if (INSTANCE == null) {
-            INSTANCE = new FirebaseService(application);
+            synchronized (FirebaseService.class){
+                if(INSTANCE == null){
+                    INSTANCE = new FirebaseService(application);
+                }
+            }
         }
         return INSTANCE;
     }
@@ -153,6 +157,7 @@ public class FirebaseService {
     public User getUser(FirebaseUser userX){
         final User[] user = {new User()};
         final boolean[] check = {false};
+
         user[0].email = userX.getEmail();
         user[0].name = userX.getDisplayName();
         user[0].userId=userX.getUid();

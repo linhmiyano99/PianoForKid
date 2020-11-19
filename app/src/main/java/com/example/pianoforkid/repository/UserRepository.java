@@ -22,7 +22,11 @@ public class UserRepository {
 
     public static UserRepository getInstance(Application application) {
         if (INSTANCE == null) {
-            INSTANCE = new UserRepository(application);
+            synchronized (UserRepository.class){
+                if(INSTANCE == null){
+                    INSTANCE = new UserRepository(application);
+                }
+            }
         }
         return INSTANCE;
     }

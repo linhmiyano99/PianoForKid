@@ -6,7 +6,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Room;
 
+import com.example.pianoforkid.data.localdatabase.AppRoomDatabase;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.data.model.User;
 import com.example.pianoforkid.service.FirebaseService;
@@ -20,7 +22,11 @@ public class FirebaseRepository {
 
     public static FirebaseRepository getInstance(Application application) {
         if (INSTANCE == null) {
-            INSTANCE = new FirebaseRepository(application);
+            synchronized (FirebaseRepository.class){
+                if(INSTANCE == null){
+                    INSTANCE = new FirebaseRepository(application);
+                }
+            }
         }
         return INSTANCE;
     }

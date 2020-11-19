@@ -6,6 +6,8 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.pianoforkid.repository.UserRepository;
+
 import java.util.Map;
 
 public class SettingDatabase implements ListSettingResponse {
@@ -27,6 +29,11 @@ public class SettingDatabase implements ListSettingResponse {
 	public static SettingDatabase getSettingRepository(Application application) {
 		if (INSTANCE == null) {
 			INSTANCE = new SettingDatabase(application);
+			synchronized (UserRepository.class){
+				if(INSTANCE == null){
+					INSTANCE = new SettingDatabase(application);
+				}
+			}
 		}
 		return INSTANCE;
 	}

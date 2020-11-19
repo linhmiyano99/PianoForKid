@@ -30,7 +30,11 @@ public class SongRepository {
 
     public static SongRepository getSongRepository(Application application){
         if(INSTANCE == null){
-            INSTANCE = new SongRepository(application);
+            synchronized (SongRepository.class){
+                if(INSTANCE == null){
+                    INSTANCE = new SongRepository(application);
+                }
+            }
         }
         return INSTANCE;
     }

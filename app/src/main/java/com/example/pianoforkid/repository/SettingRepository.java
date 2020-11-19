@@ -16,7 +16,11 @@ public class SettingRepository {
 
     public static SettingRepository getSettingRepository(Application application) {
         if(INSTANCE == null){
-            INSTANCE = new SettingRepository(application);
+            synchronized (SettingRepository.class){
+                if(INSTANCE == null){
+                    INSTANCE = new SettingRepository(application);
+                }
+            }
         }
         return INSTANCE;
     }
