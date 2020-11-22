@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +19,6 @@ import com.example.pianoforkid.viewmodel.SongViewModel;
 
 public class SongListActivity extends AppCompatActivity {
 
-    private SongListAdapter songListAdapter;
     SongViewModel viewModel;
 
     public static void startActivity(Context context){
@@ -42,7 +40,7 @@ public class SongListActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        songListAdapter = new SongListAdapter();
+        SongListAdapter songListAdapter = new SongListAdapter();
 
         //viewModel.getListSongs().observe(this, songs -> songListAdapter.setListSongs(songs));
 
@@ -61,7 +59,7 @@ public class SongListActivity extends AppCompatActivity {
 
             @Override
             public void onItemLesson(int id) {
-
+                showAlertDialogButtonClicked(id);
             }
         });
     }
