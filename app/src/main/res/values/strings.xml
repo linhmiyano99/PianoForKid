@@ -78,4 +78,7 @@
     <string name="competition">Competition</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_out">Sign out</string>
+    <string name="online">Online</string>
+    <string name="search">Enter your find</string>
+
 </resources>

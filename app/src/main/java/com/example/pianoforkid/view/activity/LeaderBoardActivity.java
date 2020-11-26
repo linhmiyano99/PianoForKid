@@ -9,12 +9,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.view.adaper.LeaderBoardAdapter;
 import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 
 public class LeaderBoardActivity extends AppCompatActivity {
+    TextView text_view_grade;
 
     FirebaseViewModel viewModel;
     private LeaderBoardAdapter leaderBoardAdapter;
@@ -39,6 +41,9 @@ public class LeaderBoardActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        text_view_grade= findViewById(R.id.text_view_grade);
+
         leaderBoardAdapter = new LeaderBoardAdapter();
         viewModel.loadLeaderBoard();
         viewModel.getUserList().observe(this, users -> leaderBoardAdapter.setUserList(users));

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.pianoforkid.view.fragment.LessonListFragment;
 import com.example.pianoforkid.view.fragment.LikedListFragment;
+import com.example.pianoforkid.view.fragment.OnlineListFragment;
 import com.example.pianoforkid.view.fragment.SavedListFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
@@ -26,7 +27,8 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new LikedListFragment();
             case 2:
                 return new SavedListFragment();
-
+            case 3:
+                return new OnlineListFragment();
 
         }
         return null;

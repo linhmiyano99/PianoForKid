@@ -33,7 +33,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
     public LessonListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View view = inflater.inflate(R.layout.detail_lesson_adapter_item, parent, false);
+        View view = inflater.inflate(R.layout.all_list_adapter_item, parent, false);
         return new LessonListAdapter.ViewHolder(view);
     }
 
@@ -55,7 +55,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Vi
         ImageView image_view_hearth;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDetail = itemView.findViewById(R.id.text_view_song);
+            tvDetail = itemView.findViewById(R.id.text_view_lesson_list);
 
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
