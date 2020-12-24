@@ -12,7 +12,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.pianoforkid.R;
-import com.example.pianoforkid.view.adaper.LeaderBoardAdapter;
+import com.example.pianoforkid.adaper.LeaderBoardAdapter;
 import com.example.pianoforkid.viewmodel.FirebaseViewModel;
 
 public class LeaderBoardActivity extends AppCompatActivity {

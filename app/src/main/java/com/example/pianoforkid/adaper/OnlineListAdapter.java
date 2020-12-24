@@ -1,4 +1,4 @@
-package com.example.pianoforkid.view.adaper;
+package com.example.pianoforkid.adaper;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,35 +15,35 @@ import com.example.pianoforkid.data.model.Song;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHolder> {
+public class OnlineListAdapter extends RecyclerView.Adapter<OnlineListAdapter.ViewHolder> {
     private List<Song> listSongs;
-    public SongListAdapter() {
+    public OnlineListAdapter() {
         listSongs = new ArrayList<>();
     }
-    private OnItemClickListener listener;
+
+    public OnlineListAdapter.OnItemClickListener listener;
 
 
-    public void setOnItemLessonClickListener(OnItemClickListener listener){
+    public void setOnItemLessonClickListener(OnlineListAdapter.OnItemClickListener listener){
         this.listener = listener;
     }
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
+        void onItemClick(int id);
         void onItemDownload(int id);
         void onItemLike(int id);
-        void onItemLesson(int id);
     }
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OnlineListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View view = inflater.inflate(R.layout.detail_lesson_adapter_item, parent, false);
-        return new ViewHolder(view);
+        return new OnlineListAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OnlineListAdapter.ViewHolder holder, int position) {
         Song lesson = listSongs.get(position);
-        holder.tvDetail.setText(lesson.toString());
         holder.image_view_download.setTag(lesson.songId);
         holder.tvDetail.setTag(lesson.songId);
         holder.image_view_hearth.setTag(lesson.songId);
@@ -66,10 +66,9 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
 
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onItemLesson((int) v.getTag());
+                    listener.onItemClick((int) v.getTag());
                 }
             });
-
             image_view_download.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemDownload((int) v.getTag());

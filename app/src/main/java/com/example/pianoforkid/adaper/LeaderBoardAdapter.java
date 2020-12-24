@@ -1,4 +1,4 @@
-package com.example.pianoforkid.view.adaper;
+package com.example.pianoforkid.adaper;
 
 import android.view.LayoutInflater;
 import android.view.View;

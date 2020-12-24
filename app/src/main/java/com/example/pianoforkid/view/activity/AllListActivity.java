@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.example.pianoforkid.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.example.pianoforkid.view.adaper.PagerAdapter;
+import com.example.pianoforkid.adaper.PagerAdapter;
 
 public class AllListActivity extends AppCompatActivity {
     TabLayout tabLayout;

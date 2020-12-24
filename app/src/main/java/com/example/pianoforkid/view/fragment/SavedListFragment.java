@@ -19,7 +19,7 @@ import com.example.pianoforkid.data.model.LikedSong;
 import com.example.pianoforkid.data.model.Song;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
-import com.example.pianoforkid.view.adaper.SavedListAdapter;
+import com.example.pianoforkid.adaper.SavedListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 import java.util.Objects;

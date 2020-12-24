@@ -17,8 +17,7 @@ import android.widget.ImageButton;
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.view.activity.InstructionActivity;
 import com.example.pianoforkid.view.activity.PlayMusicWithInstructionActivity;
-import com.example.pianoforkid.view.adaper.LikedListAdapter;
-import com.example.pianoforkid.view.adaper.SongListAdapter;
+import com.example.pianoforkid.adaper.LikedListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 

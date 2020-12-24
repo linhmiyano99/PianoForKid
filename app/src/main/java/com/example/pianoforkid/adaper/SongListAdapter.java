@@ -1,4 +1,4 @@
-package com.example.pianoforkid.view.adaper;
+package com.example.pianoforkid.adaper;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,40 +11,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
 import com.example.pianoforkid.data.model.Song;
-import com.example.pianoforkid.view.fragment.OnlineListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OnlineListAdapter extends RecyclerView.Adapter<OnlineListAdapter.ViewHolder> {
+public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHolder> {
     private List<Song> listSongs;
-    public OnlineListAdapter() {
+    public SongListAdapter() {
         listSongs = new ArrayList<>();
     }
+    private OnItemClickListener listener;
 
-    public OnlineListAdapter.OnItemClickListener listener;
 
-
-    public void setOnItemLessonClickListener(OnlineListAdapter.OnItemClickListener listener){
+    public void setOnItemLessonClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
-    public interface OnItemClickListener {
-        void onItemClick(int id);
+    public interface OnItemClickListener{
         void onItemDownload(int id);
         void onItemLike(int id);
+        void onItemLesson(int id);
     }
     @NonNull
     @Override
-    public OnlineListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View view = inflater.inflate(R.layout.detail_lesson_adapter_item, parent, false);
-        return new OnlineListAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OnlineListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Song lesson = listSongs.get(position);
+        holder.tvDetail.setText(lesson.toString());
         holder.image_view_download.setTag(lesson.songId);
         holder.tvDetail.setTag(lesson.songId);
         holder.image_view_hearth.setTag(lesson.songId);
@@ -67,9 +66,10 @@ public class OnlineListAdapter extends RecyclerView.Adapter<OnlineListAdapter.Vi
 
             tvDetail.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onItemClick((int) v.getTag());
+                    listener.onItemLesson((int) v.getTag());
                 }
             });
+
             image_view_download.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onItemDownload((int) v.getTag());

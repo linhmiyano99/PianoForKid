@@ -1,4 +1,4 @@
-package com.example.pianoforkid.view.adaper;
+package com.example.pianoforkid.adaper;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
