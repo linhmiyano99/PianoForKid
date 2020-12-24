@@ -4,8 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_list_song"
+    android:background="@drawable/bg_competition"
     tools:context=".view.activity.CompetitionActivity">
+
+    <RelativeLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#D00AF1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/text_view_1"
+            style="@style/text_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/system_score"
+            android:textColor="#040304" />
+
+        <ImageView
+            android:id="@+id/image_view_note_2"
+            android:padding="5dp"
+            android:layout_below="@id/text_view_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_text_diem" />
+        <TextView
+            android:id="@+id/txt_system_score"
+            android:layout_margin="5dp"
+            style="@style/text_button"
+            android:layout_below="@id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/system_score"
+            android:textColor="#FF9800" />
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_below="@id/image_view_note_2"
+            android:layout_marginTop="@dimen/margin_top_button"
+            style="@style/text_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_score"
+            android:textColor="#040304" />
+
+        <ImageView
+            android:id="@+id/image_view_note"
+            android:padding="5dp"
+            android:layout_below="@+id/text_view_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_text_diem" />
+
+        <TextView
+            android:id="@+id/txt_user_score"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/text_view_2"
+            style="@style/text_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_score"
+            android:textColor="#FFC107" />
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/button_back"
@@ -17,23 +83,24 @@
         android:focusable="true"
         android:padding="3dp"
         android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnC1"
         style="@style/button_kb_seven_style"
-        android:background="@drawable/kb_c"
+        android:background="@drawable/kb_c_new"
         android:text="@string/c1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnD1"
         app:layout_constraintEnd_toStartOf="@+id/btnD1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/frame_layout" />
 
     <Button
         android:id="@+id/btnD1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnC1"
-        android:background="@drawable/kb_d"
+        android:background="@drawable/kb_d_new"
         android:text="@string/d1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnE1"
         app:layout_constraintEnd_toStartOf="@+id/btnE1"
@@ -44,7 +111,7 @@
         android:id="@+id/btnE1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnD1"
-        android:background="@drawable/kb_e"
+        android:background="@drawable/kb_e_new"
         android:text="@string/e1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnF1"
         app:layout_constraintEnd_toStartOf="@+id/btnF1"
@@ -55,7 +122,7 @@
         android:id="@+id/btnF1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnE1"
-        android:background="@drawable/kb_f"
+        android:background="@drawable/kb_f_new"
         android:text="@string/f1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnG1"
         app:layout_constraintEnd_toStartOf="@+id/btnG1"
@@ -66,7 +133,7 @@
         android:id="@+id/btnG1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnF1"
-        android:background="@drawable/kb_g"
+        android:background="@drawable/kb_g_new"
         android:text="@string/g1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnA1"
         app:layout_constraintEnd_toStartOf="@+id/btnA1"
@@ -77,7 +144,7 @@
         android:id="@+id/btnA1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnG1"
-        android:background="@drawable/kb_a"
+        android:background="@drawable/kb_a_new"
         android:text="@string/a1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnB1"
@@ -88,59 +155,15 @@
         android:id="@+id/btnB1"
         style="@style/button_kb_seven_style"
         android:layout_toEndOf="@+id/btnA1"
-        android:background="@drawable/kb_b"
+        android:background="@drawable/kb_b_new"
         android:text="@string/b1"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnA1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnA1" />
 
-    <ImageView
-        android:id="@+id/image_view_note"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_image_note"
-        app:layout_constraintBottom_toTopOf="@+id/btnF1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/txt_user_score"
-        style="@style/text_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/your_score"
-        android:textColor="#ff00"
-        app:layout_constraintBottom_toTopOf="@+id/btnD1"
-        app:layout_constraintEnd_toEndOf="@+id/image_view_note_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-    <ImageView
-        android:id="@+id/image_view_note_2"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_image_note"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txt_system_score"
-        style="@style/text_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/system_score"
-        android:textColor="#ff00"
-        app:layout_constraintBottom_toBottomOf="@+id/image_view_note_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/imageView1"
         style="@style/star_style"
@@ -150,7 +173,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/frame_layout"
         app:srcCompat="@drawable/star_c1" />
 
     <ImageView

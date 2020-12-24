@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class InstructionActivity extends AppCompatActivity {
     ImageView image5;
     ImageView image6;
     ImageView image7;
+
     int position;
     int lastNote;
     List<Sound> song;
@@ -56,9 +58,9 @@ public class InstructionActivity extends AppCompatActivity {
     Button btn9;
     Button btn10;
     Button btn11;
-    Button btn12;
-    Button btn13;
-    Button btn14;
+    //Button btn12;
+    //Button btn13;
+    //Button btn14;
     ImageButton button_back;
     TextView txt_note;
 
@@ -103,6 +105,8 @@ public class InstructionActivity extends AppCompatActivity {
         image6 = findViewById(R.id.imageView6);
         image7 = findViewById(R.id.imageView7);
 
+
+
         image1.setTag(0);
         image2.setTag(0);
         image3.setTag(0);
@@ -122,9 +126,9 @@ public class InstructionActivity extends AppCompatActivity {
         btn9 = findViewById(R.id.btnD2);
         btn10 = findViewById(R.id.btnE2);
         btn11 = findViewById(R.id.btnF2);
-        btn12 = findViewById(R.id.btnG2);
-        btn13 = findViewById(R.id.btnA2);
-        btn14 = findViewById(R.id.btnB2);
+       // btn12 = findViewById(R.id.btnG2);
+        //btn13 = findViewById(R.id.btnA2);
+        //btn14 = findViewById(R.id.btnB2);
 
         button_back = findViewById(R.id.button_back);
         fault = 0;
@@ -178,11 +182,13 @@ public class InstructionActivity extends AppCompatActivity {
         btn9.setOnClickListener(this::check);
         btn10.setOnClickListener(this::check);
         btn11.setOnClickListener(this::check);
-        btn12.setOnClickListener(this::check);
-        btn13.setOnClickListener(this::check);
-        btn14.setOnClickListener(this::check);
+        //btn12.setOnClickListener(this::check);
+        //btn13.setOnClickListener(this::check);
+        //btn14.setOnClickListener(this::check);
 
         button_back.setOnClickListener(v -> onBackPressed());
+
+
     }
 
     @Override
@@ -572,9 +578,9 @@ public class InstructionActivity extends AppCompatActivity {
         btn9.clearAnimation();
         btn10.clearAnimation();
         btn11.clearAnimation();
-        btn12.clearAnimation();
-        btn13.clearAnimation();
-        btn14.clearAnimation();
+        //btn12.clearAnimation();
+        //btn13.clearAnimation();
+        //btn14.clearAnimation();
     }
     void setNoteAni(int note){
         switch (note){
@@ -589,9 +595,9 @@ public class InstructionActivity extends AppCompatActivity {
             case 9: btn9.startAnimation(anim_not_nhac);break;
             case 10: btn10.startAnimation(anim_not_nhac);break;
             case 11: btn11.startAnimation(anim_not_nhac);break;
-            case 12: btn12.startAnimation(anim_not_nhac);break;
-            case 13: btn13.startAnimation(anim_not_nhac);break;
-            case 14: btn14.startAnimation(anim_not_nhac);break;
+            //case 12: btn12.startAnimation(anim_not_nhac);break;
+            //case 13: btn13.startAnimation(anim_not_nhac);break;
+            //case 14: btn14.startAnimation(anim_not_nhac);break;
         }
     }
     void clearAni(int note){
@@ -607,9 +613,9 @@ public class InstructionActivity extends AppCompatActivity {
             case 9 : btn9.clearAnimation();break;
             case 10 : btn10.clearAnimation();break;
             case 11 : btn11.clearAnimation();break;
-            case 12 : btn12.clearAnimation();break;
-            case 13 : btn13.clearAnimation();break;
-            case 14 : btn14.clearAnimation();break;
+            //case 12 : btn12.clearAnimation();break;
+            //case 13 : btn13.clearAnimation();break;
+            //case 14 : btn14.clearAnimation();break;
         }
     }
 }

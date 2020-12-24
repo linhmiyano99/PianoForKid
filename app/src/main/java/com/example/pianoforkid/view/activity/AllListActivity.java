@@ -14,7 +14,7 @@ import com.example.pianoforkid.adaper.PagerAdapter;
 
 public class AllListActivity extends AppCompatActivity {
     TabLayout tabLayout;
-    TabItem tab_lesson, tab_like, tab_saved, tab_online;
+    TabItem tab_all_list, tab_like, tab_saved;
     ViewPager viewPager;
     public static void startActivity(Context context){
         Intent intent = new Intent(context, AllListActivity.class);
@@ -25,10 +25,9 @@ public class AllListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_list);
         tabLayout= findViewById(R.id.tab_layout);
-        tab_lesson= findViewById(R.id.tab_item_lesson);
+        tab_all_list= findViewById(R.id.tab_item_all_list);
         tab_like= findViewById(R.id.tab_item_like);
         tab_saved= findViewById(R.id.tab_item_saved);
-        tab_online= findViewById(R.id.tab_item_online);
         viewPager= findViewById(R.id.fragment_container);
 
         PagerAdapter pagerAdapter= new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());

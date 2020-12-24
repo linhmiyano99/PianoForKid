@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.pianoforkid.R;
+import com.example.pianoforkid.service.MyService;
 import com.example.pianoforkid.viewmodel.SettingViewModel;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
@@ -34,26 +36,30 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         final ImageButton btnSound = findViewById(R.id.button_sound);
         final ImageButton  btnBackgroundMusic = findViewById(R.id.button_music);
+        final CardView cvLanguage= findViewById(R.id.card_view_language);
         ImageButton button_back = findViewById(R.id.button_back);
         button_back.setOnClickListener(v -> onBackPressed());
 
         btnSound.setOnClickListener(v -> settingViewModel.updateSetting("isSound"));
         btnBackgroundMusic.setOnClickListener(v -> settingViewModel.updateSetting("isBackgroundMusic"));
-
+        cvLanguage.setOnClickListener(v -> settingViewModel.updateSetting("language"));
 
         settingViewModel.getIsSound().observe(this, value -> {
             Log.d("getIsBackgroundMusic", String.valueOf(value));
-            if(value)
+            if(value) {
                 btnSound.setImageResource(R.drawable.sound_on);
+            }
             else
                 btnSound.setImageResource(R.drawable.sound_off);
         });
         settingViewModel.getIsBackgroundMusic().observe(this, value -> {
             Log.d("getIsBackgroundMusic", String.valueOf(value));
-            if(value)
-                btnBackgroundMusic.setImageResource(R.drawable.sound_on);
-            else
-                btnBackgroundMusic.setImageResource(R.drawable.sound_off);
+            if(value) {
+                btnBackgroundMusic.setImageResource(R.drawable.background_music_on);
+
+            }else {
+                btnBackgroundMusic.setImageResource(R.drawable.background_music_off);
+            }
         });
 
         btnBackgroundMusic.setOnClickListener(this);
@@ -64,6 +70,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.card_view_language:
+                settingViewModel.updateSetting("language");
+                break;
             case R.id.button_sound:
                 settingViewModel.updateSetting("isSound");
                 break;

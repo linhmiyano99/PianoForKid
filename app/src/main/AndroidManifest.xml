@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <activity android:name=".view.activity.LessonActivity"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".view.activity.CompetitionActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".view.activity.DetailLessonListActivity"
             android:screenOrientation="landscape" />
@@ -64,6 +66,9 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"

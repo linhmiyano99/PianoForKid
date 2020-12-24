@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory
+    android:title="Language">
+    <ListPreference
+        android:defaultValue="false"
+        android:key="LANGUAGE"
+        android:entries="@array/item_names"
+        android:entryValues="@array/item_value"
+        android:title="Choose language"
+        />
+
+</PreferenceCategory>
+    <PreferenceCategory
+        android:title="Sound settings">
+        <SwitchPreference
+            android:title="Turn On/Off sound"
+            android:key="SOUND"
+            android:defaultValue="true"
+            android:summaryOff="The sound is Off"
+            android:summaryOn="The sound is On"/>
+        <SwitchPreference
+            android:title="Turn On/Off background music"
+            android:key="BACKGROUND_MUSIC"
+            android:defaultValue="true"
+            android:summaryOff="The background music is Off"
+            android:summaryOn="The background music is On"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

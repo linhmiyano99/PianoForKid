@@ -28,7 +28,7 @@ import java.util.Objects;
 
 
 public class LessonListFragment extends Fragment {
-    public LessonListAdapter lessonListAdapter;
+   // public LessonListAdapter lessonListAdapter;
     public SongListAdapter songListAdapter;
     FirebaseViewModel viewModel;
     SongViewModel localViewModel;
@@ -46,13 +46,13 @@ public class LessonListFragment extends Fragment {
         recyclerView= view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        lessonListAdapter = new LessonListAdapter();
+        //lessonListAdapter = new LessonListAdapter();
         songListAdapter = new SongListAdapter();
-        recyclerView.setAdapter(lessonListAdapter);
-        viewModel.loadListLesson();
-        viewModel.getListLessons().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListLessons(songs));
-        viewModel.getListLessonSongs().observe(getViewLifecycleOwner(), songs->songListAdapter.setListSongs(songs));
-        lessonListAdapter.setOnItemLessonClickListener(this::loadLesson);
+        recyclerView.setAdapter(songListAdapter);
+        viewModel.loadAllSongs();
+       // viewModel.getListLessons().observe(getViewLifecycleOwner(), songs->lessonListAdapter.setListLessons(songs));
+        viewModel.getListSongs().observe(getViewLifecycleOwner(), songs->songListAdapter.setListSongs(songs));
+        //lessonListAdapter.setOnItemLessonClickListener(this::loadLesson);
         songListAdapter.setOnItemLessonClickListener(new SongListAdapter.OnItemClickListener() {
             @Override
             public void onItemDownload(int id) {

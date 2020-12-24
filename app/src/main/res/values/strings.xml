@@ -80,5 +80,13 @@
     <string name="sign_out">Sign out</string>
     <string name="online">Online</string>
     <string name="search">Enter your find</string>
+    <string name="detail_lesson">Learn new notes and great songs using the on-screen keyboard by right hand</string>
+    <string name="play_lesson">PLAY</string>
+    <string name="setting">Settings</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="sound">Sound</string>
+    <string name="background_music">Background Music</string>
+    <string name="all_list">ALL LIST</string>
 
 </resources>

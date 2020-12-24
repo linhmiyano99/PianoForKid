@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.pianoforkid.R;
@@ -45,9 +46,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Log.d("MainMenuActivity", "onCreate");
 
-        Button button_songs = findViewById(R.id.buttonListSong);
-        Button button_instruments = findViewById(R.id.buttonInstrument);
-        Button button_competition = findViewById(R.id.buttonCompetition);
+        CardView button_songs = findViewById(R.id.buttonListSong);
+        CardView button_instruments = findViewById(R.id.buttonInstrument);
+        CardView button_competition = findViewById(R.id.buttonCompetition);
+        CardView button_lesson= findViewById(R.id.buttonLesson);
 
         btn_share_facebook = findViewById(R.id.btn_share_facebook);
         btn_rank= findViewById(R.id.imageButtonRank);
@@ -56,6 +58,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         button_songs.setOnClickListener(this);
         button_instruments.setOnClickListener(this);
         button_competition.setOnClickListener(this);
+        button_lesson.setOnClickListener(this);
         btn_share_facebook.setOnClickListener(this);
         btn_rank.setOnClickListener(this);
         btn_user.setOnClickListener(this);
@@ -107,6 +110,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.buttonCompetition:
                 CompetitionActivity.startActivity(this);
+                break;
+            case R.id.buttonLesson:
+                LessonActivity.startActivity(this);
                 break;
             case R.id.imageButtonSetting:
                 SettingActivity.startActivity(this);

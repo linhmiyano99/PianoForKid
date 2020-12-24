@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -40,6 +42,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     ImageView imageA2;
     ImageView imageB2;
 
+
     Button btn1;
     Button btn2;
     Button btn3;
@@ -54,6 +57,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
     Button btn12;
     Button btn13;
     Button btn14;
+
 
     int onUp;
     int onDown;
@@ -94,9 +98,10 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         imageD2 = findViewById(R.id.imageView9);
         imageE2 = findViewById(R.id.imageView10);
         imageF2 = findViewById(R.id.imageView11);
-        imageG2 = findViewById(R.id.imageView12);
-        imageA2 = findViewById(R.id.imageView13);
-        imageB2 = findViewById(R.id.imageView14);
+        //imageG2 = findViewById(R.id.imageView12);
+        //imageA2 = findViewById(R.id.imageView13);
+        //imageB2 = findViewById(R.id.imageView14);
+
 
         btn1 = findViewById(R.id.btnC1);
         btn2 = findViewById(R.id.btnD1);
@@ -109,9 +114,9 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         btn9 = findViewById(R.id.btnD2);
         btn10 = findViewById(R.id.btnE2);
         btn11 = findViewById(R.id.btnF2);
-        btn12 = findViewById(R.id.btnG2);
-        btn13 = findViewById(R.id.btnA2);
-        btn14 = findViewById(R.id.btnB2);
+       // btn12 = findViewById(R.id.btnG2);
+        //btn13 = findViewById(R.id.btnA2);
+        //btn14 = findViewById(R.id.btnB2);
 
         ImageButton button_back = findViewById(R.id.button_back);
         anim_not_nhac= AnimationUtils.loadAnimation(this,R.anim.anim_key_board);
@@ -209,7 +214,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
             case 11:
                 imageF2.setY(onDown);
                 break;
-            case 12:
+           /* case 12:
                 imageG2.setY(onDown);
                 break;
             case 13:
@@ -217,7 +222,7 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
                 break;
             case 14:
                 imageB2.setY(onDown);
-                break;
+                break;*/
         }
         lastNote = note;
 
@@ -234,9 +239,9 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
         imageD2.setY(onUp);
         imageE2.setY(onUp);
         imageF2.setY(onUp);
-        imageG2.setY(onUp);
-        imageA2.setY(onUp);
-        imageB2.setY(onUp);
+       // imageG2.setY(onUp);
+       // imageA2.setY(onUp);
+       // imageB2.setY(onUp);
     }
 
     void setNoteAni(int note){
@@ -252,9 +257,9 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
             case 9: btn9.startAnimation(anim_not_nhac);imageD2.startAnimation(anim_not_nhac);break;
             case 10: btn10.startAnimation(anim_not_nhac);imageE2.startAnimation(anim_not_nhac);break;
             case 11: btn11.startAnimation(anim_not_nhac);imageF2.startAnimation(anim_not_nhac);break;
-            case 12: btn12.startAnimation(anim_not_nhac);imageG2.startAnimation(anim_not_nhac);break;
-            case 13: btn13.startAnimation(anim_not_nhac);imageA2.startAnimation(anim_not_nhac);break;
-            case 14: btn14.startAnimation(anim_not_nhac);imageB2.startAnimation(anim_not_nhac);break;
+           // case 12: btn12.startAnimation(anim_not_nhac);imageG2.startAnimation(anim_not_nhac);break;
+            //case 13: btn13.startAnimation(anim_not_nhac);imageA2.startAnimation(anim_not_nhac);break;
+            //case 14: btn14.startAnimation(anim_not_nhac);imageB2.startAnimation(anim_not_nhac);break;
         }
     }
     void clearAni(int note){
@@ -270,10 +275,12 @@ public class PlayMusicWithInstructionActivity extends AppCompatActivity {
             case 9 : btn9.clearAnimation();imageD2.clearAnimation();break;
             case 10 : btn10.clearAnimation();imageE2.clearAnimation();break;
             case 11 : btn11.clearAnimation();imageF2.clearAnimation();break;
-            case 12 : btn12.clearAnimation();imageG2.clearAnimation();break;
-            case 13 : btn13.clearAnimation();imageA2.clearAnimation();break;
-            case 14 : btn14.clearAnimation();imageB2.clearAnimation();break;
+            //case 12 : btn12.clearAnimation();imageG2.clearAnimation();break;
+            //case 13 : btn13.clearAnimation();imageA2.clearAnimation();break;
+            //case 14 : btn14.clearAnimation();imageB2.clearAnimation();break;
         }
     }
+
+
 
 }

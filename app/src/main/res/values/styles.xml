@@ -81,4 +81,12 @@
         <item name="android:screenOrientation">landscape</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
+    <style name="text_view_setting">
+        <item name="android:layout_marginTop">@dimen/margin_title</item>
+        <item name="android:layout_marginStart">@dimen/margin_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#673AB7</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
 </resources>

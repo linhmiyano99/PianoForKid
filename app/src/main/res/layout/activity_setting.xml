@@ -2,16 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_play_song"
+    android:background="@drawable/bg_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
         android:id="@+id/settings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animationCache="true"
-        android:background="@drawable/frame_custom_layout"
+        android:background="@drawable/bg_frame_setting"
         android:layout_marginTop="@dimen/margin_title"
         android:layout_marginBottom="@dimen/margin_title"
         android:layout_marginStart="@dimen/margin_button"
@@ -21,133 +34,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+    <TextView
+        android:id="@+id/text_view_setting"
+        android:layout_marginTop="@dimen/margin_top_button"
+        android:textStyle="bold"
+        android:textSize="@dimen/num_text_size"
+        android:gravity="center"
+        android:textColor="#673AB7"
+        android:text="@string/setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
         <LinearLayout
-            android:background="@null"
+            android:layout_marginEnd="@dimen/margin_button"
+            android:layout_marginStart="@dimen/margin_button"
+            android:layout_below="@id/text_view_setting"
+            android:background="#9C27B0"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="3dp"/>
 
-            <ImageButton
-                android:id="@+id/button_back"
+    <TextView
+        android:id="@+id/text_view_language"
+        android:layout_below="@+id/text_view_setting"
+        android:text="@string/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_view_setting" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_language"
+            android:layout_marginStart="@dimen/margin_top_button"
+            android:layout_marginTop="@dimen/margin_title"
+            android:layout_below="@+id/text_view_setting"
+            android:layout_toEndOf="@+id/text_view_language"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_width="200dp"
+            android:layout_height="40dp">
+            <TextView
+                android:gravity="center"
+                android:background="@drawable/shape_background"
+                android:textColor="#F8F6F6"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:text="@string/english"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:background="@null"
-                android:clickable="true"
-                android:contentDescription="@string/todo"
-                android:elevation="10dp"
-                android:focusable="true"
-                android:src="@drawable/ic_back" />
+                android:layout_height="wrap_content"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/text_view_sound"
+            android:layout_below="@+id/text_view_language"
+            style="@style/text_view_setting"
+            android:text="@string/sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/button_sound"
+            android:layout_marginStart="@dimen/margin_top_button"
+            android:layout_marginTop="@dimen/margin_top_button"
+            android:layout_below="@id/card_view_language"
+            android:layout_toEndOf="@+id/text_view_sound"
+            android:background="@drawable/sound_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/text_view_background_music"
+            android:layout_toEndOf="@id/button_sound"
+            android:layout_below="@+id/text_view_language"
+            style="@style/text_view_setting"
+            android:text="@string/background_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/button_music"
+            android:layout_marginStart="@dimen/margin_top_button"
+            android:layout_marginTop="@dimen/margin_top_button"
+            android:layout_below="@id/card_view_language"
+            android:layout_toEndOf="@+id/text_view_background_music"
+            android:background="@drawable/background_music_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/image_view_sound_setting"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/music" />
-
-                <TextView
-                    android:id="@+id/text_view_sound_setting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="100dp"
-                    android:layout_toEndOf="@+id/image_view_sound_setting"
-                    android:text="@string/sound_settings"
-                    android:textColor="#000"
-                    android:textSize="@dimen/button_text_size"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="2dp"
-                android:background="#0055FF"
-                android:padding="5dp"/>
-
-            <RelativeLayout
-                android:layout_marginStart="@dimen/margin_top_button"
-                android:layout_marginEnd="@dimen/margin_top_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:id="@+id/image_view_sound"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/bell" />
-
-                <TextView
-                    android:id="@+id/text_view_sound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toStartOf="@+id/button_sound"
-                    android:layout_toEndOf="@id/image_view_sound"
-                    android:text="@string/sound_text_view"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/button_sound"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/custom_play"
-                    android:contentDescription="@string/todo"
-                    android:scaleType="fitXY" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginStart="@dimen/margin_top_button"
-                android:layout_marginEnd="@dimen/margin_top_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:id="@+id/image_view_music"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/ic_music_settings" />
-
-                <TextView
-                    android:id="@+id/text_view_music"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="122dp"
-                    android:layout_toStartOf="@+id/button_music"
-                    android:layout_toEndOf="@id/image_view_music"
-                    android:text="@string/background_music_on_off"
-                    android:textColor="#000"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/button_music"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/custom_play"
-                    android:contentDescription="@string/todo"
-                    android:scaleType="fitXY"
-                    android:text="@string/on_off" />
-
-
-            </RelativeLayout>
-        </LinearLayout>
-
-    </FrameLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
