@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pianoforkid.R;
-import com.example.pianoforkid.adaper.SongListAdapter;
+import com.example.pianoforkid.view.adaper.SongListAdapter;
 import com.example.pianoforkid.viewmodel.SongViewModel;
 
 public class SongListActivity extends AppCompatActivity {

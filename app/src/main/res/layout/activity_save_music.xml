@@ -110,7 +110,7 @@
                     android:contentDescription="@string/todo"
                     app:srcCompat="@drawable/star_f2" />
 
-                <ImageButton
+            <!--    <ImageButton
                     android:id="@+id/imageView12"
                     style="@style/star_style_relative"
                     android:layout_marginStart="@dimen/margin_star"
@@ -132,7 +132,7 @@
                     android:layout_marginStart="@dimen/margin_star"
                     android:layout_toEndOf="@+id/imageView13"
                     android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_b2" />
+                    app:srcCompat="@drawable/star_b2" />-->
 
             </RelativeLayout>
             <RelativeLayout
@@ -204,7 +204,7 @@
                     style="@style/button_kb_style"
                     android:background="@drawable/kb_f_new"
                     android:text="@string/f2" />
-                <Button
+               <!-- <Button
                     android:id="@+id/btnG2"
                     android:layout_toEndOf="@+id/btnF2"
                     style="@style/button_kb_style"
@@ -221,7 +221,7 @@
                     android:layout_toEndOf="@+id/btnA2"
                     style="@style/button_kb_style"
                     android:background="@drawable/kb_b_new"
-                    android:text="@string/b2" />
+                    android:text="@string/b2" /> -->
 
                 <Button
                     android:id="@+id/btnCs1"
@@ -251,18 +251,18 @@
                     android:id="@+id/btnDs2"
                     android:layout_toEndOf="@id/btnD2"
                     style="@style/black_piano_key_style"/>
+                <!--  <Button
+                     android:id="@+id/btnFs2"
+                     android:layout_toEndOf="@id/btnF2"
+                     style="@style/black_piano_key_style"/>
                 <Button
-                    android:id="@+id/btnFs2"
-                    android:layout_toEndOf="@id/btnF2"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnGs2"
-                    android:layout_toEndOf="@id/btnG2"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnAs2"
-                    android:layout_toEndOf="@id/btnA2"
-                    style="@style/black_piano_key_style"/>
+                     android:id="@+id/btnGs2"
+                     android:layout_toEndOf="@id/btnG2"
+                     style="@style/black_piano_key_style"/>
+                 <Button
+                     android:id="@+id/btnAs2"
+                     android:layout_toEndOf="@id/btnA2"
+                     style="@style/black_piano_key_style"/>-->
 
 
             </RelativeLayout>

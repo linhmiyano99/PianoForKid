@@ -146,5 +146,5 @@
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="17dp"
         android:background="@drawable/custom_button_login"
-        android:text="@string/sign_out_title" />
+        android:text="@string/sign_in" />
 </RelativeLayout>

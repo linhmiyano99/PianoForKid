@@ -151,15 +151,8 @@
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <HorizontalScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@null">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -396,72 +389,71 @@
                     style="@style/black_piano_key_style"
                     android:layout_toEndOf="@id/btnD2" />
 
-                <Button
-                    android:id="@+id/btnFs2"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnF2" />
+                <!--   <Button
+                     android:id="@+id/btnFs2"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnF2" />
 
-              <!--  <Button
-                    android:id="@+id/btnGs2"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnG2" />
+               <Button
+                     android:id="@+id/btnGs2"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnG2" />
 
-                <Button
-                    android:id="@+id/btnAs2"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnA2" />
+                 <Button
+                     android:id="@+id/btnAs2"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnA2" />
 
-                <Button
-                    android:id="@+id/btnCs3"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnC3" />
+                 <Button
+                     android:id="@+id/btnCs3"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnC3" />
 
-                <Button
-                    android:id="@+id/btnDs3"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnD3" />
+                 <Button
+                     android:id="@+id/btnDs3"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnD3" />
 
-                <Button
-                    android:id="@+id/btnFs3"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnF3" />
+                 <Button
+                     android:id="@+id/btnFs3"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnF3" />
 
-                <Button
-                    android:id="@+id/btnGs3"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnG3" />
+                 <Button
+                     android:id="@+id/btnGs3"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnG3" />
 
-                <Button
-                    android:id="@+id/btnAs3"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnA3" />
+                 <Button
+                     android:id="@+id/btnAs3"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnA3" />
 
-                <Button
-                    android:id="@+id/btnCs4"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnC4" />
+                 <Button
+                     android:id="@+id/btnCs4"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnC4" />
 
-                <Button
-                    android:id="@+id/btnDs4"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnD4" />
+                 <Button
+                     android:id="@+id/btnDs4"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnD4" />
 
-                <Button
-                    android:id="@+id/btnFs4"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnF4" />
+                 <Button
+                     android:id="@+id/btnFs4"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnF4" />
 
-                <Button
-                    android:id="@+id/btnGs4"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnG4" />
+                 <Button
+                     android:id="@+id/btnGs4"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnG4" />
 
-                <Button
-                    android:id="@+id/btnAs4"
-                    style="@style/black_piano_key_style"
-                    android:layout_toEndOf="@id/btnA4" /> -->
+                 <Button
+                     android:id="@+id/btnAs4"
+                     style="@style/black_piano_key_style"
+                     android:layout_toEndOf="@id/btnA4" /> -->
             </RelativeLayout>
-        </HorizontalScrollView>
 
     </RelativeLayout>
 

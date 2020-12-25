@@ -54,9 +54,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	Button btn9;
 	Button btn10;
 	Button btn11;
-	Button btn12;
-	Button btn13;
-	Button btn14;
+	//Button btn12;
+	//Button btn13;
+	//Button btn14;
 	Animation anim_not_nhac_2;
 
 	ImageView imageA;
@@ -66,13 +66,13 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 	ImageView imageE;
 	ImageView imageF;
 	ImageView imageG;
-	ImageView imageA2;
-	ImageView imageB2;
+	//ImageView imageA2;
+	//ImageView imageB2;
 	ImageView imageC2;
 	ImageView imageD2;
 	ImageView imageE2;
 	ImageView imageF2;
-	ImageView imageG2;
+	//ImageView imageG2;
 
 	String sheet;
 
@@ -127,9 +127,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		btn9 = findViewById(R.id.btnD2);
 		btn10 = findViewById(R.id.btnE2);
 		btn11 = findViewById(R.id.btnF2);
-		btn12 = findViewById(R.id.btnG2);
-		btn13 = findViewById(R.id.btnA2);
-		btn14 = findViewById(R.id.btnB2);
+		//btn12 = findViewById(R.id.btnG2);
+		//btn13 = findViewById(R.id.btnA2);
+		//btn14 = findViewById(R.id.btnB2);
 
 		btn1.setOnClickListener(this);
 		btn2.setOnClickListener(this);
@@ -142,9 +142,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		btn9.setOnClickListener(this);
 		btn10.setOnClickListener(this);
 		btn11.setOnClickListener(this);
-		btn12.setOnClickListener(this);
-		btn13.setOnClickListener(this);
-		btn14.setOnClickListener(this);
+		//btn12.setOnClickListener(this);
+		//btn13.setOnClickListener(this);
+		//btn14.setOnClickListener(this);
 
 		imageC = findViewById(R.id.imageView1);
 		imageD = findViewById(R.id.imageView2);
@@ -157,9 +157,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		imageD2 = findViewById(R.id.imageView9);
 		imageE2 = findViewById(R.id.imageView10);
 		imageF2 = findViewById(R.id.imageView11);
-		imageG2 = findViewById(R.id.imageView12);
-		imageA2 = findViewById(R.id.imageView13);
-		imageB2 = findViewById(R.id.imageView14);
+		//imageG2 = findViewById(R.id.imageView12);
+		//imageA2 = findViewById(R.id.imageView13);
+		//imageB2 = findViewById(R.id.imageView14);
 
 		txt_note = findViewById(R.id.txt_note);
 		txt_note.setText(String.valueOf(songLeft));
@@ -172,7 +172,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		Log.d("onWindowFocusChanged", "xx");
 
 		onUp = (int) imageA.getY();
-		onUp2 = (int) imageA2.getY();
+		//onUp2 = (int) imageA2.getY();
 		onDown = onUp - 100;
 		onDown2 = onUp2 - 100;
 
@@ -233,7 +233,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 			case R.id.btnF2:
 				note = 11;
 				break;
-			case R.id.btnG2:
+			/*case R.id.btnG2:
 				note = 12;
 				break;
 			case R.id.btnA2:
@@ -241,7 +241,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 				break;
 			case R.id.btnB2:
 				note = 14;
-				break;
+				break;*/
 
 			default:
 				note = 1;
@@ -362,7 +362,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 			case 11:
 				imageF2.setY(onDown2);
 				break;
-			case 12:
+		/*	case 12:
 				imageG2.setY(onDown2);
 				break;
 			case 13:
@@ -370,7 +370,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 				break;
 			case 14:
 				imageB2.setY(onDown2);
-				break;
+				break;*/
 		}
 		lastNote = note;
 	}
@@ -386,9 +386,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		imageD2.setY(onUp2);
 		imageE2.setY(onUp2);
 		imageF2.setY(onUp2);
-		imageG2.setY(onUp2);
+		/*imageG2.setY(onUp2);
 		imageA2.setY(onUp2);
-		imageB2.setY(onUp2);
+		imageB2.setY(onUp2);*/
 	}
 	void resetSetSong() {
 		lastNote = -1;
@@ -411,9 +411,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 			case 9: btn9.startAnimation(anim_not_nhac_2);break;
 			case 10: btn10.startAnimation(anim_not_nhac_2);break;
 			case 11: btn11.startAnimation(anim_not_nhac_2);break;
-			case 12: btn12.startAnimation(anim_not_nhac_2);break;
-			case 13: btn13.startAnimation(anim_not_nhac_2);break;
-			case 14: btn14.startAnimation(anim_not_nhac_2);break;
+			//case 12: btn12.startAnimation(anim_not_nhac_2);break;
+			//case 13: btn13.startAnimation(anim_not_nhac_2);break;
+			//case 14: btn14.startAnimation(anim_not_nhac_2);break;
 		}
 	}
 	void clearAni(int note){
@@ -429,9 +429,9 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 			case 9 : btn9.clearAnimation();break;
 			case 10 : btn10.clearAnimation();break;
 			case 11 : btn11.clearAnimation();break;
-			case 12 : btn12.clearAnimation();break;
-			case 13 : btn13.clearAnimation();break;
-			case 14 : btn14.clearAnimation();break;
+			//case 12 : btn12.clearAnimation();break;
+			//case 13 : btn13.clearAnimation();break;
+			//case 14 : btn14.clearAnimation();break;
 		}
 	}
 

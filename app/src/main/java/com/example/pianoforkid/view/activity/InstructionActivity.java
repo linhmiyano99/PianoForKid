@@ -434,7 +434,7 @@ public class InstructionActivity extends AppCompatActivity {
                 Log.d("You chose", "btnF2");
 
                 return 11;
-            case R.id.btnG2:
+          /*  case R.id.btnG2:
                 Log.d("You chose", "btnG2");
 
                 return 12;
@@ -444,7 +444,7 @@ public class InstructionActivity extends AppCompatActivity {
                 return 13;
             case R.id.btnB2:
                 Log.d("You chose", "btnB2");
-                return 14;
+                return 14;*/
         }
         return 1;
     }
