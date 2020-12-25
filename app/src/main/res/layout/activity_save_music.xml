@@ -7,110 +7,103 @@
     android:background="@drawable/bg_competition"
     tools:context=".view.activity.SaveMusicActivity">
 
-    <HorizontalScrollView
-        android:background="@null"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <RelativeLayout
-                android:layout_marginTop="50dp"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp">
+        <ImageButton
+            android:id="@+id/imageView1"
+            style="@style/star_style_relative"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_c1" />
 
-                <ImageButton
-                    android:id="@+id/imageView1"
-                    style="@style/star_style_relative"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_c1" />
+        <ImageButton
+            android:id="@+id/imageView2"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView1"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_d1" />
 
-                <ImageButton
-                    android:id="@+id/imageView2"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView1"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_d1" />
+        <ImageButton
+            android:id="@+id/imageView3"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView2"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_e1" />
 
-                <ImageButton
-                    android:id="@+id/imageView3"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView2"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_e1" />
+        <ImageButton
+            android:id="@+id/imageView4"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView3"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_f1" />
 
-                <ImageButton
-                    android:id="@+id/imageView4"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView3"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_f1" />
+        <ImageButton
+            android:id="@+id/imageView5"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView4"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_g1" />
 
-                <ImageButton
-                    android:id="@+id/imageView5"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView4"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_g1" />
+        <ImageButton
+            android:id="@+id/imageView6"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView5"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_a1" />
 
-                <ImageButton
-                    android:id="@+id/imageView6"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView5"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_a1" />
+        <ImageButton
+            android:id="@+id/imageView7"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView6"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_b1" />
 
-                <ImageButton
-                    android:id="@+id/imageView7"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView6"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_b1" />
+        <ImageButton
+            android:id="@+id/imageView8"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView7"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_c2" />
 
-                <ImageButton
-                    android:id="@+id/imageView8"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView7"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_c2" />
+        <ImageButton
+            android:id="@+id/imageView9"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView8"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_d2" />
 
-                <ImageButton
-                    android:id="@+id/imageView9"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView8"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_d2" />
+        <ImageButton
+            android:id="@+id/imageView10"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView9"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_e2" />
 
-                <ImageButton
-                    android:id="@+id/imageView10"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView9"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_e2" />
+        <ImageButton
+            android:id="@+id/imageView11"
+            style="@style/star_style_relative"
+            android:layout_marginStart="@dimen/margin_star"
+            android:layout_toEndOf="@+id/imageView10"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/star_f2" />
 
-                <ImageButton
-                    android:id="@+id/imageView11"
-                    style="@style/star_style_relative"
-                    android:layout_marginStart="@dimen/margin_star"
-                    android:layout_toEndOf="@+id/imageView10"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/star_f2" />
-
-            <!--    <ImageButton
+        <!--    <ImageButton
                     android:id="@+id/imageView12"
                     style="@style/star_style_relative"
                     android:layout_marginStart="@dimen/margin_star"
@@ -134,77 +127,93 @@
                     android:contentDescription="@string/todo"
                     app:srcCompat="@drawable/star_b2" />-->
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/btnC1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_c_new"
-                    android:text="@string/c1" />
-                <Button
-                    android:id="@+id/btnD1"
-                    style="@style/button_kb_style"
-                    android:layout_toEndOf="@+id/btnC1"
-                    android:background="@drawable/kb_d_new"
-                    android:text="@string/d1" />
-                <Button
-                    android:id="@+id/btnE1"
-                    android:layout_toEndOf="@+id/btnD1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_e_new"
-                    android:text="@string/e1" />
-                <Button
-                    android:id="@+id/btnF1"
-                    android:layout_toEndOf="@+id/btnE1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_f_new"
-                    android:text="@string/f1" />
-                <Button
-                    android:id="@+id/btnG1"
-                    android:layout_toEndOf="@+id/btnF1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_g_new"
-                    android:text="@string/g1" />
-                <Button
-                    android:id="@+id/btnA1"
-                    android:layout_toEndOf="@+id/btnG1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_a_new"
-                    android:text="@string/a1" />
-                <Button
-                    android:id="@+id/btnB1"
-                    android:layout_toEndOf="@+id/btnA1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_b_new"
-                    android:text="@string/b1" />
-                <Button
-                    android:id="@+id/btnC2"
-                    android:layout_toEndOf="@+id/btnB1"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_c_new"
-                    android:text="@string/c2" />
-                <Button
-                    android:id="@+id/btnD2"
-                    android:layout_toEndOf="@+id/btnC2"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_d_new"
-                    android:text="@string/d2" />
-                <Button
-                    android:id="@+id/btnE2"
-                    android:layout_toEndOf="@+id/btnD2"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_e_new"
-                    android:text="@string/e2" />
-                <Button
-                    android:id="@+id/btnF2"
-                    android:layout_toEndOf="@+id/btnE2"
-                    style="@style/button_kb_style"
-                    android:background="@drawable/kb_f_new"
-                    android:text="@string/f2" />
-               <!-- <Button
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnC1"
+            style="@style/button_kb_style"
+            android:background="@drawable/kb_c_new"
+            android:text="@string/c1" />
+
+        <Button
+            android:id="@+id/btnD1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnC1"
+            android:background="@drawable/kb_d_new"
+            android:text="@string/d1" />
+
+        <Button
+            android:id="@+id/btnE1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnD1"
+            android:background="@drawable/kb_e_new"
+            android:text="@string/e1" />
+
+        <Button
+            android:id="@+id/btnF1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnE1"
+            android:background="@drawable/kb_f_new"
+            android:text="@string/f1" />
+
+        <Button
+            android:id="@+id/btnG1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnF1"
+            android:background="@drawable/kb_g_new"
+            android:text="@string/g1" />
+
+        <Button
+            android:id="@+id/btnA1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnG1"
+            android:background="@drawable/kb_a_new"
+            android:text="@string/a1" />
+
+        <Button
+            android:id="@+id/btnB1"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnA1"
+            android:background="@drawable/kb_b_new"
+            android:text="@string/b1" />
+
+        <Button
+            android:id="@+id/btnC2"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnB1"
+            android:background="@drawable/kb_c_new"
+            android:text="@string/c2" />
+
+        <Button
+            android:id="@+id/btnD2"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnC2"
+            android:background="@drawable/kb_d_new"
+            android:text="@string/d2" />
+
+        <Button
+            android:id="@+id/btnE2"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnD2"
+            android:background="@drawable/kb_e_new"
+            android:text="@string/e2" />
+
+        <Button
+            android:id="@+id/btnF2"
+            style="@style/button_kb_style"
+            android:layout_toEndOf="@+id/btnE2"
+            android:background="@drawable/kb_f_new"
+            android:text="@string/f2" />
+        <!-- <Button
                     android:id="@+id/btnG2"
                     android:layout_toEndOf="@+id/btnF2"
                     style="@style/button_kb_style"
@@ -223,35 +232,41 @@
                     android:background="@drawable/kb_b_new"
                     android:text="@string/b2" /> -->
 
-                <Button
-                    android:id="@+id/btnCs1"
-                    android:layout_toEndOf="@id/btnC1"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnDs1"
-                    android:layout_toEndOf="@id/btnD1"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnFs1"
-                    android:layout_toEndOf="@id/btnF1"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnGs1"
-                    android:layout_toEndOf="@id/btnG1"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnAs1"
-                    android:layout_toEndOf="@id/btnA1"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnCs2"
-                    android:layout_toEndOf="@id/btnC2"
-                    style="@style/black_piano_key_style"/>
-                <Button
-                    android:id="@+id/btnDs2"
-                    android:layout_toEndOf="@id/btnD2"
-                    style="@style/black_piano_key_style"/>
-                <!--  <Button
+        <Button
+            android:id="@+id/btnCs1"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnC1" />
+
+        <Button
+            android:id="@+id/btnDs1"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnD1" />
+
+        <Button
+            android:id="@+id/btnFs1"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnF1" />
+
+        <Button
+            android:id="@+id/btnGs1"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnG1" />
+
+        <Button
+            android:id="@+id/btnAs1"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnA1" />
+
+        <Button
+            android:id="@+id/btnCs2"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnC2" />
+
+        <Button
+            android:id="@+id/btnDs2"
+            style="@style/black_piano_key_style"
+            android:layout_toEndOf="@id/btnD2" />
+        <!--  <Button
                      android:id="@+id/btnFs2"
                      android:layout_toEndOf="@id/btnF2"
                      style="@style/black_piano_key_style"/>
@@ -265,9 +280,7 @@
                      style="@style/black_piano_key_style"/>-->
 
 
-            </RelativeLayout>
-        </LinearLayout>
-    </HorizontalScrollView>
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/button_back"
