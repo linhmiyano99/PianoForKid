@@ -1,46 +1,46 @@
 <resources>
-    <string name="app_name">PianoForKid</string>
-    <string name="facebook_app_id">954490725034037</string>
+    <string name="app_name" translatable="false">PianoForKid</string>
+    <string name="facebook_app_id" translatable="false">954490725034037</string>
     <string name="facebook_application_id" translatable="false">954490725034037</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fb954490725034037</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="text_title">Let\'s play music</string>
-    <string name="todo">TODO</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="list_song">List song</string>
     <string name="instruction">Instruction</string>
     <string name="instrument">Instrument</string>
-    <string name="c1">C1</string>
-    <string name="d1">D1</string>
-    <string name="e1">E1</string>
-    <string name="f1">F1</string>
-    <string name="g1">G1</string>
-    <string name="a1">A1</string>
-    <string name="b1">B1</string>
-    <string name="c2">C2</string>
-    <string name="d2">D2</string>
-    <string name="e2">E2</string>
-    <string name="f2">F2</string>
-    <string name="g2">G2</string>
-    <string name="a2">A2</string>
-    <string name="b2">B2</string>
-    <string name="c3">C3</string>
-    <string name="d3">D3</string>
-    <string name="e3">E3</string>
-    <string name="f3">F3</string>
-    <string name="g3">G3</string>
-    <string name="a3">A3</string>
-    <string name="b3">B3</string>
-    <string name="c4">C4</string>
-    <string name="d4">D4</string>
-    <string name="e4">E4</string>
-    <string name="f4">F4</string>
-    <string name="g4">G4</string>
-    <string name="a4">A4</string>
-    <string name="b4">B4</string>
+    <string name="c1" translatable="false">C1</string>
+    <string name="d1" translatable="false">D1</string>
+    <string name="e1" translatable="false">E1</string>
+    <string name="f1" translatable="false">F1</string>
+    <string name="g1" translatable="false">G1</string>
+    <string name="a1" translatable="false">A1</string>
+    <string name="b1" translatable="false">B1</string>
+    <string name="c2" translatable="false">C2</string>
+    <string name="d2" translatable="false">D2</string>
+    <string name="e2" translatable="false">E2</string>
+    <string name="f2" translatable="false">F2</string>
+    <string name="g2" translatable="false">G2</string>
+    <string name="a2" translatable="false">A2</string>
+    <string name="b2" translatable="false">B2</string>
+    <string name="c3" translatable="false">C3</string>
+    <string name="d3" translatable="false">D3</string>
+    <string name="e3" translatable="false">E3</string>
+    <string name="f3" translatable="false">F3</string>
+    <string name="g3" translatable="false">G3</string>
+    <string name="a3" translatable="false">A3</string>
+    <string name="b3" translatable="false">B3</string>
+    <string name="c4" translatable="false">C4</string>
+    <string name="d4" translatable="false">D4</string>
+    <string name="e4" translatable="false">E4</string>
+    <string name="f4" translatable="false">F4</string>
+    <string name="g4" translatable="false">G4</string>
+    <string name="a4" translatable="false">A4</string>
+    <string name="b4" translatable="false">B4</string>
     <string name="finish">finish</string>
-    <string name="_1">1</string>
-    <string name="hello_hello">Hello Hello</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="hello_hello" translatable="false">Hello Hello</string>
     <string name="replay">Replay</string>
     <string name="cancel">Cancel</string>
     <string name="congratulation">Congratulation</string>
@@ -57,7 +57,7 @@
     <string name="on_off">Turn On/ Off Background Music</string>
     <string name="sound_text_view">Turn On/Off Sound</string>
     <string name="register_here">No account yet?<i><u>  Create one</u></i> .</string>
-    <string name="email">Email</string>
+    <string name="email" translatable="false">Email</string>
     <string name="account_information">Account Information</string>
     <string name="sign_out_title">Sign Out</string>
     <string name="login_title">Login</string>
@@ -68,7 +68,7 @@
     <string name="lesson">Lesson</string>
     <string name="like">Like</string>
     <string name="saved">Saved</string>
-    <string name="list_song_item">1-Lesson 1: Do Re Mi</string>
+    <string name="list_song_item" translatable="false">1-Lesson 1: Do Re Mi</string>
     <string name="user_name">User Name</string>
     <string name="score">Score</string>
     <string name="your_score">Your score</string>
@@ -78,13 +78,13 @@
     <string name="competition">Competition</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_out">Sign out</string>
-    <string name="online">Online</string>
+    <string name="online" translatable="false">Online</string>
     <string name="search">Enter your find</string>
     <string name="detail_lesson">Learn new notes and great songs using the on-screen keyboard by right hand</string>
     <string name="play_lesson">PLAY</string>
     <string name="setting">Settings</string>
     <string name="language">Language</string>
-    <string name="english">English</string>
+    <string name="english" translatable="false">English</string>
     <string name="sound">Sound</string>
     <string name="background_music">Background Music</string>
     <string name="all_list">ALL LIST</string>

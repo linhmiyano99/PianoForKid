@@ -2,9 +2,15 @@ package com.example.pianoforkid.data.setting;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.pianoforkid.R;
+import com.example.pianoforkid.view.activity.SettingActivity;
 
 import java.util.Map;
 
@@ -58,6 +64,8 @@ public class SettingDatabase implements ListSettingResponse {
 	}
 	
 	public void updateSetting(String key) {
+		MediaPlayer mediaPlayer=MediaPlayer.create(context.getApplicationContext(),R.raw.bensound_ukulele);
+		mediaPlayer.setLooping(false);
 		boolean value = false;
 		switch (key) {
 			case "language":
@@ -72,21 +80,27 @@ public class SettingDatabase implements ListSettingResponse {
 				if (!isSound.getValue()) {
 					value = true;
 					isSound.setValue(true);
+
 				} else {
 					isSound.setValue(false);
+
 				}
 				break;
 			case "isBackgroundMusic":
 				if (!isBackgroundMusic.getValue()) {
 					value = true;
 					isBackgroundMusic.setValue(true);
+					mediaPlayer.start();
 				} else {
 					isBackgroundMusic.setValue(false);
+					mediaPlayer.stop();
 				}
 				break;
 		}
 		
 		UpdateSetting task = new UpdateSetting(key, value);
 		task.execute(context);
+
+
 	}
 }
