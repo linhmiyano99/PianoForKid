@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,8 +79,6 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 
 	float onUp;
 	float onDown;
-	float onUp2;
-	float onDown2;
 	int lastNote = -1;
 
 	KeyNote keyNote;
@@ -92,6 +89,7 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		context.startActivity(intent);
 	}
 
+	@SuppressLint("ClickableViewAccessibility")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -133,17 +131,162 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		//btn13 = findViewById(R.id.btnA2);
 		//btn14 = findViewById(R.id.btnB2);
 
-		btn1.setOnClickListener(this);
-		btn2.setOnClickListener(this);
-		btn3.setOnClickListener(this);
-		btn4.setOnClickListener(this);
-		btn5.setOnClickListener(this);
-		btn6.setOnClickListener(this);
-		btn7.setOnClickListener(this);
-		btn8.setOnClickListener(this);
-		btn9.setOnClickListener(this);
-		btn10.setOnClickListener(this);
-		btn11.setOnClickListener(this);
+		btn1.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn2.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn3.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn4.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn5.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn6.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn7.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn8.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn9.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn10.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+		btn11.setOnTouchListener((v, event) -> {
+			switch (event.getAction())
+			{
+				case MotionEvent.ACTION_MOVE:
+					break;
+				case MotionEvent.ACTION_DOWN:
+					touch(v);
+					break;
+				case MotionEvent.ACTION_UP:
+					break;
+				default: break;
+			}
+			return false;
+		});
+
+		
 		//btn12.setOnClickListener(this);
 		//btn13.setOnClickListener(this);
 		//btn14.setOnClickListener(this);
@@ -176,7 +319,6 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		onUp = (int) imageA.getY();
 		//onUp2 = (int) imageA2.getY();
 		onDown = onUp - 100;
-		onDown2 = onUp2 - 100;
 
 	}
 
@@ -353,16 +495,16 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 				imageB.setY(onDown);
 				break;
 			case 8:
-				imageC2.setY(onDown2);
+				imageC2.setY(onDown);
 				break;
 			case 9:
-				imageD2.setY(onDown2);
+				imageD2.setY(onDown);
 				break;
 			case 10:
-				imageE2.setY(onDown2);
+				imageE2.setY(onDown);
 				break;
 			case 11:
-				imageF2.setY(onDown2);
+				imageF2.setY(onDown);
 				break;
 		/*	case 12:
 				imageG2.setY(onDown2);
@@ -384,10 +526,10 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 		imageG.setY(onUp);
 		imageA.setY(onUp);
 		imageB.setY(onUp);
-		imageC2.setY(onUp2);
-		imageD2.setY(onUp2);
-		imageE2.setY(onUp2);
-		imageF2.setY(onUp2);
+		imageC2.setY(onUp);
+		imageD2.setY(onUp);
+		imageE2.setY(onUp);
+		imageF2.setY(onUp);
 		/*imageG2.setY(onUp2);
 		imageA2.setY(onUp2);
 		imageB2.setY(onUp2);*/
@@ -435,6 +577,75 @@ public class SaveMusicActivity extends AppCompatActivity implements View.OnClick
 			//case 13 : btn13.clearAnimation();break;
 			//case 14 : btn14.clearAnimation();break;
 		}
+	}
+
+	public void touch(View view) {
+		Log.d("onClick_sound", String.valueOf(lastDown));
+		if(record_status == 1){
+			songLeft++;
+			txt_note.setText(String.valueOf(songLeft));
+		}
+		if (lastDown > 0) {
+			lastDuration = System.currentTimeMillis() - lastDown;
+			sound.setDuration(lastDuration);
+			sheet += (lastDuration + ")");
+			song.add(sound);
+			Log.d("Sound", String.valueOf(sound));
+		}
+		switch (view.getId()) {
+			case R.id.btnD1:
+				note = 2;
+				break;
+			case R.id.btnE1:
+				note = 3;
+				break;
+			case R.id.btnF1:
+				note = 4;
+				break;
+			case R.id.btnG1:
+				note = 5;
+				break;
+			case R.id.btnA1:
+				note = 6;
+				break;
+			case R.id.btnB1:
+				note = 7;
+				break;
+			case R.id.btnC2:
+				note = 8;
+				break;
+			case R.id.btnD2:
+				note = 9;
+				break;
+			case R.id.btnE2:
+				note = 10;
+				break;
+			case R.id.btnF2:
+				note = 11;
+				break;
+			/*case R.id.btnG2:
+				note = 12;
+				break;
+			case R.id.btnA2:
+				note = 13;
+				break;
+			case R.id.btnB2:
+				note = 14;
+				break;*/
+
+			default:
+				note = 1;
+				break;
+		}
+
+		sound = new Sound();
+		lastDown = System.currentTimeMillis();
+		sound.setNote(note);
+		sheet += ("(" + note +",");
+		Log.d("XXX", String.valueOf(note));
+
+		check(note);
+		keyNote.playNote(note);
 	}
 
 }
